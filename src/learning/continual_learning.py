@@ -41,7 +41,7 @@ except ImportError:
     logger = logging.getLogger(__name__)
     logger.warning("Avalanche not available. Using fallback implementations.")
 
-from ..core.state import StateManager, RSIState
+from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
 
@@ -270,13 +270,13 @@ class ContinualLearningModel(nn.Module):
         return self.network(x)
 
 
-class ContinualLearningSystem:
+class RSIContinualLearningSystem:
     """Main continual learning system."""
     
     def __init__(
         self,
         config: ContinualLearningConfig,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator,
         input_size: int,
         output_size: int
@@ -741,10 +741,10 @@ def create_continual_learning_system(
     strategy: ContinualLearningStrategy,
     input_size: int,
     output_size: int,
-    state_manager: StateManager,
+    state_manager: RSIStateManager,
     validator: RSIValidator,
     **kwargs
-) -> ContinualLearningSystem:
+) -> RSIContinualLearningSystem:
     """Factory function to create continual learning system."""
     config = ContinualLearningConfig(strategy=strategy, **kwargs)
     

@@ -26,7 +26,7 @@ import concurrent.futures
 import threading
 import time
 
-from ..core.state import StateManager, RSIState
+from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
 
@@ -146,7 +146,7 @@ class TrialResult:
 class OptimizationCallback:
     """Callback for optimization process."""
     
-    def __init__(self, state_manager: StateManager, audit_logger):
+    def __init__(self, state_manager: RSIStateManager, audit_logger):
         self.state_manager = state_manager
         self.audit_logger = audit_logger
         self.trial_results = []
@@ -209,7 +209,7 @@ class OptimizationCallback:
 class ObjectiveFunction:
     """Base class for optimization objectives."""
     
-    def __init__(self, state_manager: StateManager, validator: RSIValidator):
+    def __init__(self, state_manager: RSIStateManager, validator: RSIValidator):
         self.state_manager = state_manager
         self.validator = validator
         self.trial_count = 0
@@ -233,7 +233,7 @@ class MLModelObjective(ObjectiveFunction):
     
     def __init__(
         self,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator,
         train_data: Any,
         val_data: Any,
@@ -322,7 +322,7 @@ class MultiObjectiveMLObjective(ObjectiveFunction):
     
     def __init__(
         self,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator,
         train_data: Any,
         val_data: Any,
@@ -392,7 +392,7 @@ class OptunaOptimizer:
     def __init__(
         self,
         config: OptimizationConfig,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator
     ):
         self.config = config
@@ -674,7 +674,7 @@ def create_optuna_optimizer(
     study_name: str,
     objective_type: OptimizationObjective = OptimizationObjective.MAXIMIZE,
     n_trials: int = 100,
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None,
     **kwargs
 ) -> OptunaOptimizer:
@@ -699,7 +699,7 @@ def create_ml_objective(
     val_data: Any,
     model_class: type,
     evaluation_metric: str = "accuracy",
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None
 ) -> MLModelObjective:
     """Factory function to create ML optimization objective."""
@@ -722,7 +722,7 @@ def create_multi_objective(
     train_data: Any,
     val_data: Any,
     model_class: type,
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None
 ) -> MultiObjectiveMLObjective:
     """Factory function to create multi-objective optimization."""

@@ -82,7 +82,7 @@ class RSIMetrics:
     timestamp: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
 
-class RSITelemetryProvider:
+class TelemetryCollector:
     """
     Centralized telemetry provider for RSI system.
     Manages OpenTelemetry setup and custom metrics collection.
@@ -564,7 +564,7 @@ class ResourceMonitor:
 
 
 # Global telemetry provider instance
-_telemetry_provider: Optional[RSITelemetryProvider] = None
+_telemetry_provider: Optional[TelemetryCollector] = None
 
 
 def initialize_telemetry(
@@ -574,7 +574,7 @@ def initialize_telemetry(
     monitoring_level: MonitoringLevel = MonitoringLevel.STANDARD,
     jaeger_endpoint: Optional[str] = None,
     enable_console_export: bool = False
-) -> RSITelemetryProvider:
+) -> TelemetryCollector:
     """Initialize global telemetry provider."""
     global _telemetry_provider
     
@@ -590,7 +590,7 @@ def initialize_telemetry(
     return _telemetry_provider
 
 
-def get_telemetry_provider() -> Optional[RSITelemetryProvider]:
+def get_telemetry_provider() -> Optional[TelemetryCollector]:
     """Get the global telemetry provider."""
     return _telemetry_provider
 

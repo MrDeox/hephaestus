@@ -19,7 +19,7 @@ from river.base import Classifier, Regressor
 from sklearn.model_selection import train_test_split
 from loguru import logger
 
-from ..core.state import RSIState, StateManager, add_learning_record
+from ..core.state import RSIState, RSIStateManager, add_learning_record
 from ..validation.validators import RSIValidator, ValidationResult
 from ..safety.circuits import RSICircuitBreaker, create_learning_circuit
 
@@ -55,7 +55,7 @@ class LearningMetrics:
     timestamp: datetime
 
 
-class OnlineLearner:
+class RSIOnlineLearner:
     """
     Online learning component for RSI system.
     Supports continuous learning with concept drift detection.
@@ -66,7 +66,7 @@ class OnlineLearner:
         model_type: str = "logistic_regression",
         drift_detector: Optional[str] = "adwin",
         learning_rate: float = 0.01,
-        state_manager: Optional[StateManager] = None,
+        state_manager: Optional[RSIStateManager] = None,
         validator: Optional[RSIValidator] = None,
         circuit_breaker: Optional[RSICircuitBreaker] = None
     ):
@@ -589,7 +589,7 @@ class OnlineLearningOrchestrator:
     Orchestrates multiple online learners for ensemble learning.
     """
     
-    def __init__(self, learners: List[OnlineLearner]):
+    def __init__(self, learners: List[RSIOnlineLearner]):
         self.learners = learners
         self.ensemble_weights = [1.0] * len(learners)
         self.performance_history = []
@@ -689,9 +689,9 @@ class OnlineLearningOrchestrator:
 
 # Factory functions for common online learning setups
 def create_classification_learner(
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None
-) -> OnlineLearner:
+) -> RSIOnlineLearner:
     """Create online learner for classification tasks."""
     return OnlineLearner(
         model_type="adaptive_random_forest",
@@ -703,9 +703,9 @@ def create_classification_learner(
 
 
 def create_regression_learner(
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None
-) -> OnlineLearner:
+) -> RSIOnlineLearner:
     """Create online learner for regression tasks."""
     return OnlineLearner(
         model_type="adaptive_model_rules",
@@ -717,7 +717,7 @@ def create_regression_learner(
 
 
 def create_ensemble_learner(
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None
 ) -> OnlineLearningOrchestrator:
     """Create ensemble of online learners."""

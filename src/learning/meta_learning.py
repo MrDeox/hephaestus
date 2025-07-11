@@ -22,7 +22,7 @@ except ImportError:
     HIGHER_AVAILABLE = False
     logger.warning("Higher not available. Using fallback implementations.")
 
-from ..core.state import StateManager, RSIState
+from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
 
@@ -222,13 +222,13 @@ class MetaSGD:
         return self.model(x)
 
 
-class MetaLearningSystem:
+class RSIMetaLearningSystem:
     """Advanced meta-learning system for RSI."""
     
     def __init__(
         self,
         config: MetaLearningConfig,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator,
         model_architecture: Optional[Dict[str, Any]] = None
     ):
@@ -599,10 +599,10 @@ class MetaLearningSystem:
 
 def create_meta_learning_system(
     algorithm: MetaLearningAlgorithm = MetaLearningAlgorithm.MAML,
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None,
     **kwargs
-) -> MetaLearningSystem:
+) -> RSIMetaLearningSystem:
     """Factory function to create meta-learning system."""
     from ..validation.validators import create_strict_validator
     

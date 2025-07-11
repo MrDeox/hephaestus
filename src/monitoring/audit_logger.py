@@ -24,7 +24,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import base64
 import os
 
-from ..core.state import RSIState, StateManager
+from ..core.state import RSIState, RSIStateManager
 from ..validation.validators import RSIValidator
 from ..monitoring.telemetry import trace_operation
 
@@ -142,7 +142,7 @@ class AuditLogger:
         max_files: int = 10,
         compress_old_logs: bool = True,
         enable_integrity_checks: bool = True,
-        state_manager: Optional[StateManager] = None
+        state_manager: Optional[RSIStateManager] = None
     ):
         self.log_directory = Path(log_directory)
         self.max_file_size_mb = max_file_size_mb

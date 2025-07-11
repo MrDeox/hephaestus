@@ -212,7 +212,7 @@ class RSICircuitBreaker:
         return wrapper
 
 
-class RSICircuitManager:
+class CircuitBreakerManager:
     """
     Manager for multiple circuit breakers in the RSI system.
     Provides centralized configuration and monitoring.

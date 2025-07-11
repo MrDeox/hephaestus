@@ -26,7 +26,7 @@ from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.utils import set_random_seed
 from stable_baselines3.common.logger import configure
 
-from ..core.state import StateManager, RSIState
+from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
 
@@ -111,7 +111,7 @@ class RSIEnvironment(gym.Env):
     def __init__(
         self,
         task_type: RSITaskType,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator,
         config: Dict[str, Any] = None
     ):
@@ -597,7 +597,7 @@ class RSIEnvironment(gym.Env):
 class RSICallback(BaseCallback):
     """Custom callback for RSI reinforcement learning."""
     
-    def __init__(self, state_manager: StateManager, audit_logger, verbose=0):
+    def __init__(self, state_manager: RSIStateManager, audit_logger, verbose=0):
         super().__init__(verbose)
         self.state_manager = state_manager
         self.audit_logger = audit_logger
@@ -650,13 +650,13 @@ class RSICallback(BaseCallback):
             )
 
 
-class ReinforcementLearningSystem:
+class RSIRLSystem:
     """Reinforcement Learning system for RSI."""
     
     def __init__(
         self,
         config: RLConfig,
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator
     ):
         self.config = config
@@ -902,10 +902,10 @@ class ReinforcementLearningSystem:
 def create_rl_system(
     task_type: RSITaskType,
     algorithm: RLAlgorithm = RLAlgorithm.PPO,
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     validator: Optional[RSIValidator] = None,
     **kwargs
-) -> ReinforcementLearningSystem:
+) -> RSIRLSystem:
     """Factory function to create RL system."""
     from ..validation.validators import create_strict_validator
     

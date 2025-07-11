@@ -69,7 +69,7 @@ class RSIState(BaseModel):
     model_config = {"arbitrary_types_allowed": True, "frozen": True}
 
 
-class StateManager(Generic[T]):
+class RSIStateManager(Generic[T]):
     """Thread-safe state manager with immutable guarantees."""
     
     def __init__(self, initial_state: RSIState):

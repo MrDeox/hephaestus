@@ -22,7 +22,7 @@ import logging
 import os
 import json
 
-from ..core.state import StateManager, RSIState
+from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
 
@@ -198,7 +198,7 @@ class LightningRSISystem(pl.LightningModule):
         self,
         config: LightningConfig,
         task_configs: Dict[str, Dict[str, Any]],
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator
     ):
         super().__init__()
@@ -424,14 +424,14 @@ class LightningRSISystem(pl.LightningModule):
         return summary
 
 
-class LightningOrchestrator:
+class RSILightningOrchestrator:
     """Orchestrator for PyTorch Lightning training."""
     
     def __init__(
         self,
         config: LightningConfig,
         task_configs: Dict[str, Dict[str, Any]],
-        state_manager: StateManager,
+        state_manager: RSIStateManager,
         validator: RSIValidator
     ):
         self.config = config
@@ -629,10 +629,10 @@ class LightningOrchestrator:
 
 def create_lightning_orchestrator(
     task_configs: Dict[str, Dict[str, Any]],
-    state_manager: StateManager,
+    state_manager: RSIStateManager,
     validator: RSIValidator,
     config: Optional[LightningConfig] = None
-) -> LightningOrchestrator:
+) -> RSILightningOrchestrator:
     """Factory function to create Lightning orchestrator."""
     if config is None:
         config = LightningConfig()

@@ -18,7 +18,7 @@ from loguru import logger
 from pydantic import BaseModel, Field
 
 # Core system imports
-from src.core.state import RSIStateManager
+from src.core.state import RSIStateManager, RSIState
 from src.core.model_versioning import ModelVersionManager
 from src.learning.online_learning import RSIOnlineLearner
 from src.learning.meta_learning import RSIMetaLearningSystem
@@ -121,7 +121,7 @@ class RSIOrchestrator:
         """Initialize all core RSI components"""
         try:
             # Core state and model management
-            self.state_manager = RSIStateManager()
+            self.state_manager = RSIStateManager(initial_state=RSIState())
             self.model_version_manager = ModelVersionManager()
             
             # Learning systems
@@ -165,7 +165,7 @@ class RSIOrchestrator:
             from src.monitoring.audit_logger import AuditLogger
             self.audit_logger = AuditLogger(
                 log_directory=f"./logs/{self.environment}",
-                enable_encryption=True
+                
             )
         except Exception as e:
             logger.warning("Audit logger not available: {}", str(e))
@@ -233,7 +233,7 @@ class RSIOrchestrator:
         """Initialize memory system"""
         try:
             from src.memory.memory_hierarchy import RSIMemoryHierarchy
-            from src.memory.memory_manager import RSIMemoryConfig
+            from src.memory.memory_hierarchy import RSIMemoryHierarchy, RSIMemoryConfig
             
             config = RSIMemoryConfig()
             self.memory_system = RSIMemoryHierarchy(config)

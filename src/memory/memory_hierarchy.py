@@ -12,6 +12,8 @@ from dataclasses import dataclass
 import psutil
 import ray
 
+logger = logging.getLogger(__name__)
+
 from .working_memory import WorkingMemory
 from .semantic_memory import SemanticMemory
 from .episodic_memory import EpisodicMemory
@@ -36,12 +38,10 @@ except ImportError as e:
     RetrievalEngine = None
 
 try:
-    from .memory_manager import MemoryManager
+    from .memory_manager import RSIMemoryManager
 except ImportError as e:
-    logger.error(f"Failed to import MemoryManager: {e}")
-    MemoryManager = None
-
-logger = logging.getLogger(__name__)
+    logger.error(f"Failed to import RSIMemoryManager: {e}")
+    RSIMemoryManager = None
 
 
 class RSIMemoryConfig(BaseModel):
@@ -176,8 +176,8 @@ class RSIMemoryHierarchy:
                 logger.warning("MemoryConsolidation not available")
             
             # Memory Manager
-            if MemoryManager is not None:
-                self.memory_manager = MemoryManager(
+            if RSIMemoryManager is not None:
+                self.memory_manager = RSIMemoryManager(
                     ray_object_store_memory=self.config.ray_object_store_memory,
                     redis_cluster_nodes=self.config.redis_cluster_nodes,
                     compression_algorithm=self.config.compression_algorithm,
@@ -185,7 +185,7 @@ class RSIMemoryHierarchy:
                 )
             else:
                 self.memory_manager = None
-                logger.warning("MemoryManager not available")
+                logger.warning("RSIMemoryManager not available")
             
             logger.info("✅ Support systems initialized")
             

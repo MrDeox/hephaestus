@@ -26,7 +26,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
-from ..core.state import RSIState, StateManager
+from ..core.state import RSIState, RSIStateManager
 from ..validation.validators import RSIValidator
 from ..monitoring.telemetry import trace_operation, record_safety_event
 from ..safety.circuits import RSICircuitBreaker, create_database_circuit

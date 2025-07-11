@@ -24,7 +24,7 @@ from pyod.models.pca import PCA
 from pyod.models.combination import aom, moa, average, maximization
 import psutil
 
-from ..core.state import RSIState, StateManager
+from ..core.state import RSIState, RSIStateManager
 from ..monitoring.telemetry import trace_operation, record_safety_event
 from ..safety.circuits import RSICircuitBreaker, create_safety_circuit
 from loguru import logger
@@ -92,7 +92,7 @@ class BehavioralMonitor:
         window_size: int = 1000,
         anomaly_threshold: float = 0.1,
         algorithm: str = "ecod",
-        state_manager: Optional[StateManager] = None,
+        state_manager: Optional[RSIStateManager] = None,
         circuit_breaker: Optional[RSICircuitBreaker] = None
     ):
         self.window_size = window_size
@@ -590,7 +590,7 @@ class EnsembleAnomalyDetector:
 
 # Factory functions
 def create_behavioral_monitor(
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     algorithm: str = "ecod",
     threshold: float = 0.1
 ) -> BehavioralMonitor:
@@ -603,7 +603,7 @@ def create_behavioral_monitor(
 
 
 def create_ensemble_monitor(
-    state_manager: Optional[StateManager] = None,
+    state_manager: Optional[RSIStateManager] = None,
     threshold: float = 0.1
 ) -> BehavioralMonitor:
     """Create behavioral monitor with ensemble detector."""
@@ -622,7 +622,7 @@ def create_ensemble_monitor(
 
 
 def create_security_monitor(
-    state_manager: Optional[StateManager] = None
+    state_manager: Optional[RSIStateManager] = None
 ) -> BehavioralMonitor:
     """Create monitor focused on security anomalies."""
     return BehavioralMonitor(

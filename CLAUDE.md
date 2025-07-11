@@ -10,33 +10,29 @@ Hephaestus is a production-ready **Recursive Self-Improvement (RSI) AI system** 
 
 ### Installation and Setup
 ```bash
-# Install dependencies (some packages may not be available and need alternatives)
+# Install core dependencies
 pip install -r requirements.txt
 
-# Additional packages needed for full functionality
-pip install restrictedpython pyod psutil docker numpy pandas combo
-pip install opentelemetry-propagator-b3
-
-# Advanced Learning Libraries
-pip install torch torchvision pytorch-lightning
-pip install stable-baselines3 gymnasium learn2learn
-pip install optuna ray[tune] avalanche-lib
-pip install autogluon mabwiser transformers
-pip install chromadb faiss-cpu hnswlib
+# Optional: Install additional ML/optimization packages (many may fail - system degrades gracefully)
+pip install restrictedpython pyod psutil docker
+pip install torch pytorch-lightning stable-baselines3 gymnasium
+pip install optuna ray[tune] transformers chromadb faiss-cpu
 ```
 
 ### Running the System
 ```bash
-# Start the main RSI orchestrator and API server
+# Start the main RSI orchestrator and API server (port 8000)
 python -m src.main
 
 # Run comprehensive examples demonstrating all features
 python example_usage.py
 
-# Run advanced RSI learning system demo
-python examples/advanced_rsi_demo.py
+# Run integration tests
+python test_integrated_system.py
+python test_memory_system.py
+python test_river_models.py
 
-# Test individual components
+# Test individual components with quick validation
 python -c "
 import asyncio
 from src.main import RSIOrchestrator
@@ -44,7 +40,8 @@ from src.main import RSIOrchestrator
 async def test():
     orchestrator = RSIOrchestrator(environment='development')
     await orchestrator.start()
-    # Test predictions, learning, code execution, etc.
+    result = await orchestrator.predict({'x': 1.0, 'y': 2.0})
+    print(f'Test prediction: {result}')
     await orchestrator.stop()
 
 asyncio.run(test())
@@ -53,16 +50,18 @@ asyncio.run(test())
 
 ### Development and Testing
 ```bash
-# Run tests (test framework not yet implemented)
-pytest tests/
+# Run test files (no formal test framework - use Python files directly)
+python test_*.py
 
 # Code formatting and linting
 black src/
 ruff src/
 mypy src/
 
-# Check system health
+# Check system health and endpoints
 curl "http://localhost:8000/health"
+curl "http://localhost:8000/metrics" 
+curl "http://localhost:8000/performance"
 ```
 
 ## Architecture Overview
@@ -153,19 +152,31 @@ Features → Validation → Prediction → Learning → State Update → Drift D
 
 ## Development Guidelines
 
-### Pydantic v2 Compatibility
-The system uses Pydantic v2 with specific patterns:
+### Critical Library Compatibility Patterns
+
+**Pydantic v2 Requirements:**
 - Use `field_validator` instead of `@validator`
 - Use `model_config = {"frozen": True}` instead of `Config` class
 - Use `pattern` instead of `regex` in Field definitions
 - Use `mode='before'` for pre-validation transforms
 
-### River ML Library Integration
-When working with River models:
+**River ML Library (v0.21.0+):**
 - Use `optimizer=optim.SGD(lr=learning_rate)` instead of `learning_rate` parameter
 - Use `ADWINBaggingClassifier` instead of `AdaptiveRandomForestClassifier`
 - Use `LogLoss()` instead of `Log()` for loss metrics
 - Use `dummy` drift detector instead of `ddm` (not available)
+- Import structure: `from river import linear_model, tree, ensemble, drift, metrics`
+
+**FastAPI + AsyncIO Patterns:**
+- All main operations are async/await based
+- Use `RSIOrchestrator(environment='development')` for initialization
+- Always call `await orchestrator.start()` before operations
+- Always call `await orchestrator.stop()` for cleanup
+
+**Memory System Integration:**
+- Core components: episodic, semantic, procedural, working memory
+- Memory hierarchy automatically consolidates and retrieves information  
+- Access through `memory_manager` component in orchestrator
 
 ### Security Considerations
 - All code execution must go through the sandbox system
@@ -205,24 +216,55 @@ Key performance metrics to monitor:
 - Memory overhead from immutable structures (~10%)
 - Safety validation overhead (<5%)
 
-## Troubleshooting Common Issues
+## Common Issues and Solutions
 
-### Import Errors
-- Many OpenTelemetry packages have changed APIs; disable telemetry if needed
-- Some packages like `codejail` may not be available; use alternatives
-- River package APIs have changed; check current documentation
+### Import/Dependency Errors
+```bash
+# If OpenTelemetry packages fail, disable telemetry:
+export RSI_ENABLE_TELEMETRY=false
 
-### Performance Issues
-- Monitor circuit breaker states for frequent trips
-- Check anomaly detection for false positives
-- Verify immutable state isn't causing memory issues
-- Review audit logging volume
+# If codejail/Docker unavailable, system falls back to RestrictedPython
+# If advanced ML libraries fail, core River functionality still works
 
-### Security Concerns
-- All code execution is sandboxed by default
-- Validation failures are logged and should be investigated
-- Anomaly alerts may indicate security issues
-- Audit trails provide complete operation history
+# Check what packages are missing:
+python -c "
+try:
+    import torch, optuna, ray
+    print('✓ Advanced ML libraries available')
+except ImportError as e:
+    print(f'⚠ Advanced features limited: {e}')
+"
+```
+
+### Performance and State Issues
+```bash
+# Check circuit breaker states
+curl "http://localhost:8000/metrics" | grep circuit
+
+# Monitor memory usage patterns
+curl "http://localhost:8000/performance" | grep memory
+
+# Reset state if corrupted (DANGER: loses all learning)
+rm -f rsi_continuous_state.json episodic_memory.db procedural_memory.pkl
+```
+
+### Testing Specific Components
+```python
+# Test individual systems without full orchestrator
+from src.learning.online_learning import create_classification_learner
+from src.memory.memory_manager import RSIMemoryManager
+from src.safety.circuits import CircuitBreakerManager
+
+# Each component can be tested independently
+learner = create_classification_learner()
+memory = RSIMemoryManager()
+```
+
+### Database and Storage Issues
+- SQLite databases: `rsi_system.db`, `episodic_memory.db`, `model_registry.db`
+- Memory files: `procedural_memory.pkl`, `rsi_continuous_state.json`
+- Logs in: `logs/development/` and `logs/production/`
+- Safety checkpoints in: `safety_checkpoints/`
 
 ## System Monitoring
 
@@ -240,3 +282,53 @@ Key performance metrics to monitor:
 - Audit log integrity
 
 The system is designed to be self-monitoring and self-healing, with comprehensive logging and alerting to ensure safe operation in production environments.
+
+## Key Implementation Patterns
+
+### State Management Flow
+```python
+# All state changes go through immutable pyrsistent structures
+from src.core.state import RSIStateManager, add_learning_record
+
+state_manager = RSIStateManager() 
+new_state = add_learning_record(current_state, learning_data)
+# Old state preserved, new state created atomically
+```
+
+### Safety-First Execution Pattern
+```python
+# Every operation follows: Validate → Execute → Monitor → Audit
+async def safe_operation(data):
+    # 1. Validate inputs
+    validation = await validator.validate(data)
+    if not validation.is_valid:
+        raise ValidationError(validation.errors)
+    
+    # 2. Check circuit breakers
+    async with circuit_breaker:
+        # 3. Execute with monitoring
+        result = await monitored_execution(data)
+        
+    # 4. Audit results
+    await audit_logger.log_operation(result)
+    return result
+```
+
+### Learning System Integration
+```python
+# Multiple learning systems work together through orchestrator
+from src.main import RSIOrchestrator
+
+orchestrator = RSIOrchestrator()
+# Coordinates: online_learning, meta_learning, continual_learning, RL
+# Memory: episodic, semantic, procedural, working
+# Safety: circuits, validation, monitoring, audit
+```
+
+### Common Integration Points
+- **Entry Point**: `src/main.py:RSIOrchestrator` coordinates all subsystems
+- **State**: `src/core/state.py` provides immutable state management
+- **Safety**: `src/safety/circuits.py` prevents failures, `src/validation/validators.py` ensures input integrity  
+- **Learning**: `src/learning/online_learning.py` for core ML, others for advanced capabilities
+- **Memory**: `src/memory/memory_manager.py` orchestrates hierarchical memory systems
+- **Security**: `src/security/sandbox.py` provides multi-layer code execution safety
