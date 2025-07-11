@@ -1,0 +1,24 @@
+{
+  "timestamp": 1752263207.392696,
+  "checkpoint_id": "checkpoint_1752263207292",
+  "model_state_hash": "2e86dc1a47face2f2a2f06250c35f2d5",
+  "system_metrics": {
+    "cpu_percent": 26.7,
+    "memory_percent": 50.3,
+    "timestamp": 1752263207.3926876
+  },
+  "safety_scores": {
+    "overall_safety": 0.8,
+    "resource_safety": 0.9,
+    "performance_safety": 0.85,
+    "operational_safety": 0.75
+  },
+  "operation_context": {
+    "operation_name": "rsi_improvement_2",
+    "safety_level": "medium",
+    "timestamp": 1752263207.3926938,
+    "circuit_state": "closed",
+    "failure_count": 0
+  },
+  "checkpoint_size_mb": 0.0
+}
