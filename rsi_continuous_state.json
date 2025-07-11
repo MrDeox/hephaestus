@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-07-11T19:22:52.717991+00:00",
+  "metrics": {
+    "total_cycles": 1719,
+    "successful_expansions": 0,
+    "failed_expansions": 56,
+    "total_knowledge_acquired": 1719,
+    "total_skills_learned": 1710,
+    "total_experiences": 1719,
+    "uptime_seconds": 16844.229003,
+    "memory_usage_peak": 0
+  },
+  "cycle_count": 1719,
+  "uptime_seconds": 16854.255538
+}

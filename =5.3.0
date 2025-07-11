@@ -1,0 +1,113 @@
+Collecting memory-profiler
+  Using cached memory_profiler-0.61.0-py3-none-any.whl.metadata (20 kB)
+Collecting pykeen
+  Using cached pykeen-1.11.1-py3-none-any.whl.metadata (85 kB)
+Collecting rdflib
+  Using cached rdflib-7.1.4-py3-none-any.whl.metadata (11 kB)
+Collecting owlready2
+  Using cached owlready2-0.48.tar.gz (27.3 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting eventsourcing
+  Using cached eventsourcing-9.4.6-py3-none-any.whl.metadata (10 kB)
+Collecting transitions
+  Using cached transitions-0.9.3-py2.py3-none-any.whl.metadata (97 kB)
+Collecting neo4j
+  Using cached neo4j-5.28.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting blosc
+  Downloading blosc-1.11.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (16 kB)
+Requirement already satisfied: cachetools in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (5.5.2)
+Requirement already satisfied: psutil in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from memory-profiler) (5.9.6)
+Collecting dataclasses-json (from pykeen)
+  Using cached dataclasses_json-0.6.7-py3-none-any.whl.metadata (25 kB)
+Requirement already satisfied: numpy in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (1.26.4)
+Requirement already satisfied: scipy>=1.7.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (1.16.0)
+Requirement already satisfied: click in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (8.2.1)
+Collecting click_default_group (from pykeen)
+  Downloading click_default_group-1.2.4-py2.py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: scikit-learn in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (1.7.0)
+Requirement already satisfied: torch>=2.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (2.7.1+cpu)
+Requirement already satisfied: tqdm in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (4.67.1)
+Requirement already satisfied: requests in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (2.32.4)
+Requirement already satisfied: optuna>=2.0.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (4.4.0)
+Requirement already satisfied: pandas>=1.0.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (2.3.0)
+Requirement already satisfied: tabulate in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (0.9.0)
+Collecting more_click (from pykeen)
+  Downloading more_click-0.1.2-py3-none-any.whl.metadata (4.3 kB)
+Collecting more_itertools (from pykeen)
+  Using cached more_itertools-10.7.0-py3-none-any.whl.metadata (37 kB)
+Collecting pystow>=0.4.3 (from pykeen)
+  Downloading pystow-0.7.1-py3-none-any.whl.metadata (17 kB)
+Collecting docdata>=0.0.5 (from pykeen)
+  Downloading docdata-0.0.5-py3-none-any.whl.metadata (13 kB)
+Collecting class_resolver>=0.6.0 (from pykeen)
+  Downloading class_resolver-0.6.0-py3-none-any.whl.metadata (19 kB)
+Requirement already satisfied: pyyaml in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (6.0.2)
+Collecting torch_max_mem>=0.1.4 (from pykeen)
+  Downloading torch_max_mem-0.1.4-py3-none-any.whl.metadata (12 kB)
+Collecting torch-ppr>=0.0.7 (from pykeen)
+  Downloading torch_ppr-0.0.8-py3-none-any.whl.metadata (9.3 kB)
+Requirement already satisfied: typing_extensions in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pykeen) (4.14.0)
+Requirement already satisfied: pyparsing<4,>=2.1.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from rdflib) (3.2.3)
+Requirement already satisfied: six in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from transitions) (1.17.0)
+Requirement already satisfied: pytz in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from neo4j) (2023.4)
+Requirement already satisfied: alembic>=1.5.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from optuna>=2.0.0->pykeen) (1.12.1)
+Requirement already satisfied: colorlog in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from optuna>=2.0.0->pykeen) (6.9.0)
+Requirement already satisfied: packaging>=20.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from optuna>=2.0.0->pykeen) (23.2)
+Requirement already satisfied: sqlalchemy>=1.4.2 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from optuna>=2.0.0->pykeen) (2.0.23)
+Requirement already satisfied: Mako in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from alembic>=1.5.0->optuna>=2.0.0->pykeen) (1.3.10)
+Requirement already satisfied: python-dateutil>=2.8.2 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pandas>=1.0.0->pykeen) (2.9.0.post0)
+Requirement already satisfied: tzdata>=2022.7 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from pandas>=1.0.0->pykeen) (2025.2)
+Requirement already satisfied: greenlet!=0.4.17 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from sqlalchemy>=1.4.2->optuna>=2.0.0->pykeen) (3.2.3)
+Requirement already satisfied: filelock in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from torch>=2.0->pykeen) (3.13.1)
+Requirement already satisfied: sympy>=1.13.3 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from torch>=2.0->pykeen) (1.13.3)
+Requirement already satisfied: networkx in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from torch>=2.0->pykeen) (3.3)
+Requirement already satisfied: jinja2 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from torch>=2.0->pykeen) (3.1.6)
+Requirement already satisfied: fsspec in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from torch>=2.0->pykeen) (2024.6.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=2.0->pykeen) (1.3.0)
+Collecting marshmallow<4.0.0,>=3.18.0 (from dataclasses-json->pykeen)
+  Using cached marshmallow-3.26.1-py3-none-any.whl.metadata (7.3 kB)
+Collecting typing-inspect<1,>=0.4.0 (from dataclasses-json->pykeen)
+  Using cached typing_inspect-0.9.0-py3-none-any.whl.metadata (1.5 kB)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json->pykeen) (1.1.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from jinja2->torch>=2.0->pykeen) (3.0.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from requests->pykeen) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from requests->pykeen) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from requests->pykeen) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from requests->pykeen) (2025.6.15)
+Requirement already satisfied: joblib>=1.2.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from scikit-learn->pykeen) (1.5.1)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages (from scikit-learn->pykeen) (3.6.0)
+Downloading memory_profiler-0.61.0-py3-none-any.whl (31 kB)
+Downloading pykeen-1.11.1-py3-none-any.whl (730 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 730.3/730.3 kB 5.9 MB/s eta 0:00:00
+Downloading rdflib-7.1.4-py3-none-any.whl (565 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 565.1/565.1 kB 7.4 MB/s eta 0:00:00
+Downloading eventsourcing-9.4.6-py3-none-any.whl (93 kB)
+Downloading transitions-0.9.3-py2.py3-none-any.whl (112 kB)
+Downloading neo4j-5.28.1-py3-none-any.whl (312 kB)
+Downloading blosc-1.11.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 7.4 MB/s eta 0:00:00
+Downloading class_resolver-0.6.0-py3-none-any.whl (31 kB)
+Downloading docdata-0.0.5-py3-none-any.whl (9.2 kB)
+Downloading pystow-0.7.1-py3-none-any.whl (39 kB)
+Downloading torch_max_mem-0.1.4-py3-none-any.whl (13 kB)
+Downloading torch_ppr-0.0.8-py3-none-any.whl (12 kB)
+Downloading click_default_group-1.2.4-py2.py3-none-any.whl (4.1 kB)
+Using cached dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Using cached marshmallow-3.26.1-py3-none-any.whl (50 kB)
+Using cached typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Downloading more_click-0.1.2-py3-none-any.whl (6.7 kB)
+Using cached more_itertools-10.7.0-py3-none-any.whl (65 kB)
+Building wheels for collected packages: owlready2
+  Building wheel for owlready2 (pyproject.toml): started
+  Building wheel for owlready2 (pyproject.toml): finished with status 'done'
+  Created wheel for owlready2: filename=owlready2-0.48-cp311-cp311-linux_x86_64.whl size=24736055 sha256=d56fe1966f478223ba81500a0d21ee7f48c151d74f95bddff574a9dc3a71aa42
+  Stored in directory: /home/arthur/.cache/pip/wheels/2a/4f/b2/88d834aab03077e1611b46825f45c06ac4db07b77ee45eadd5
+Successfully built owlready2
+Installing collected packages: typing-inspect, transitions, rdflib, owlready2, neo4j, more_itertools, more_click, memory-profiler, marshmallow, eventsourcing, docdata, click_default_group, class_resolver, blosc, pystow, dataclasses-json, torch_max_mem, torch-ppr, pykeen
+
+Successfully installed blosc-1.11.3 class_resolver-0.6.0 click_default_group-1.2.4 dataclasses-json-0.6.7 docdata-0.0.5 eventsourcing-9.4.6 marshmallow-3.26.1 memory-profiler-0.61.0 more_click-0.1.2 more_itertools-10.7.0 neo4j-5.28.1 owlready2-0.48 pykeen-1.11.1 pystow-0.7.1 rdflib-7.1.4 torch-ppr-0.0.8 torch_max_mem-0.1.4 transitions-0.9.3 typing-inspect-0.9.0
