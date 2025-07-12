@@ -1,0 +1,181 @@
+/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages/mlflow/utils/requirements_utils.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources  # noqa: TID251
+Avalanche not available. Using fallback implementations.
+2025-07-12 14:59:17.562 | WARNING  | src.monitoring.uncertainty_quantification:<module>:22 - TensorFlow Probability not available. Using fallback uncertainty estimation.
+2025-07-12 14:59:17.729 | WARNING  | src.hypothesis.hypothesis_validator:<module>:23 - Hypothesis testing library not available
+2025-07-12 14:59:17.730 | WARNING  | src.hypothesis.hypothesis_validator:<module>:31 - Adversarial Robustness Toolbox not available
+2025-07-12 14:59:17.730 | WARNING  | src.hypothesis.hypothesis_validator:<module>:39 - Bandit security analysis not available
+2025-07-12 14:59:17.735 | WARNING  | src.hypothesis.hypothesis_simulator:<module>:31 - Plotting libraries not available - visualization disabled
+2025-07-12 14:59:17.777 | WARNING  | src.meta_learning.gap_scanner:<module>:21 - PyOD not available, using sklearn alternatives
+INFO:     Started server process [593642]
+INFO:     Waiting for application startup.
+2025-07-12 14:59:17.812 | INFO     | src.safety.rsi_circuit_breaker:__init__:88 - RSI Safety Circuit Breaker initialized with threshold=3
+2025-07-12 14:59:17.936 | INFO     | src.core.model_versioning:__init__:191 - Model Version Manager initialized with MLflow URI: sqlite:///mlflow.db
+2025-07-12 14:59:17.945 | WARNING  | src.main:_initialize_core_components:192 - Some advanced learning systems not available: RSIMetaLearningSystem.__init__() missing 3 required positional arguments: 'config', 'state_manager', and 'validator'
+2025-07-12 14:59:17.946 | WARNING  | src.security.sandbox:__init__:290 - Docker not available: Error while fetching server API version: Not supported URL scheme http+docker
+2025-07-12 14:59:17.946 | INFO     | src.security.sandbox:__init__:516 - RSI Sandbox initialized with primary: SandboxType.RESTRICTED_PYTHON
+2025-07-12 14:59:17.946 | ERROR    | src.main:_initialize_core_components:288 - Failed to initialize some components: cannot access local variable 'BehavioralMonitor' where it is not associated with a value
+Failed to initialize vector database: [91mYou are using a deprecated configuration of Chroma.
+
+[94mIf you do not have data you wish to migrate, you only need to change how you construct
+your Chroma client. Please see the "New Clients" section of https://docs.trychroma.com/deployment/migration.
+________________________________________________________________________________________________
+
+If you do have data you wish to migrate, we have a migration tool you can use in order to
+migrate your data to the new Chroma architecture.
+Please `pip install chroma-migrate` and run `chroma-migrate` to migrate your data and then
+change how you construct your Chroma client.
+
+See https://docs.trychroma.com/deployment/migration for more information or join our discord at https://discord.gg/MMeYNTmh3x for help![0m
+Failed to load procedural memory: 'ProceduralMemory' object has no attribute 'stats'
+Redis not available: Error 111 connecting to localhost:6379. Connection refused.
+2025-07-12 14:59:20,328	INFO worker.py:1908 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+14:59:17.957 | INFO | Audit Logger initialized with directory: ./logs/production
+14:59:17.957 | INFO | Enhanced RSI Orchestrator initialized for production environment
+14:59:21.188 | INFO | Memory system does not require explicit initialization
+14:59:21.188 | INFO | ✅ Memory system initialized successfully
+14:59:21.188 | WARNING | Behavioral monitor not available, skipping monitoring startup
+14:59:21.188 | INFO | RSI system monitoring started with 100ms interval
+14:59:21.189 | INFO | Safety monitoring started
+14:59:21.189 | INFO | Enhanced RSI system started successfully with metacognitive monitoring
+14:59:21.290 | INFO | 🚀 Starting Real RSI Loop - replacing simulation with actual implementation
+14:59:21.290 | INFO | 🔄 Real RSI Cycle #1
+14:59:21.291 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+14:59:21.291 | WARNING | ⚠️ Required components not available - skipping gap scanning
+14:59:21.291 | WARNING | ⚠️ MML Controller not initialized - attempting to initialize now
+14:59:21.291 | WARNING | ⚠️ Required components not available - skipping meta-learning
+14:59:21.291 | WARNING | ⚠️ Execution Pipeline not initialized - attempting fallback approach
+14:59:21.292 | INFO | 🔄 Running fallback RSI execution...
+14:59:21.292 | INFO | 🔧 Applying fallback improvement: memory_efficiency (+3.6%)
+14:59:21.292 | INFO | ✅ Fallback RSI improvement applied: memory_efficiency
+14:59:21.292 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+14:59:21.292 | INFO | ✅ Real RSI Cycle #1 completed
+14:59:22.398 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.398642
+14:59:22.399 | INFO | Investigating inference performance degradation
+14:59:22.498 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.498340
+14:59:22.499 | INFO | Investigating inference performance degradation
+14:59:22.599 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.598941
+14:59:22.599 | INFO | Investigating inference performance degradation
+14:59:22.700 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.700593
+14:59:22.701 | INFO | Investigating inference performance degradation
+14:59:22.798 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.798633
+14:59:22.799 | INFO | Investigating inference performance degradation
+14:59:22.899 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.898835
+14:59:22.899 | INFO | Investigating inference performance degradation
+14:59:22.998 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:22.998270
+14:59:22.998 | INFO | Investigating inference performance degradation
+14:59:23.098 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.098393
+14:59:23.099 | INFO | Investigating inference performance degradation
+14:59:23.198 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.198603
+14:59:23.199 | INFO | Investigating inference performance degradation
+14:59:23.298 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.298470
+14:59:23.298 | INFO | Investigating inference performance degradation
+14:59:23.398 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.398131
+14:59:23.398 | INFO | Investigating inference performance degradation
+14:59:23.498 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.498670
+14:59:23.499 | INFO | Investigating inference performance degradation
+14:59:23.599 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.599431
+14:59:23.599 | INFO | Investigating inference performance degradation
+14:59:23.699 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.699106
+14:59:23.699 | INFO | Investigating inference performance degradation
+14:59:23.802 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.802479
+14:59:23.803 | INFO | Investigating inference performance degradation
+14:59:23.900 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.899902
+14:59:23.900 | INFO | Investigating inference performance degradation
+14:59:24.000 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:23.999867
+14:59:24.000 | INFO | Investigating inference performance degradation
+14:59:24.100 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.100614
+14:59:24.101 | INFO | Investigating inference performance degradation
+14:59:24.201 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.201441
+14:59:24.202 | INFO | Investigating inference performance degradation
+14:59:24.300 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.300551
+14:59:24.300 | INFO | Investigating inference performance degradation
+14:59:24.401 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.401356
+14:59:24.402 | INFO | Investigating inference performance degradation
+14:59:24.500 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.500280
+14:59:24.500 | INFO | Investigating inference performance degradation
+14:59:24.601 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.601174
+14:59:24.601 | INFO | Investigating inference performance degradation
+14:59:24.700 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.700792
+14:59:24.701 | INFO | Investigating inference performance degradation
+14:59:24.801 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.801667
+14:59:24.802 | INFO | Investigating inference performance degradation
+14:59:24.901 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:24.901371
+14:59:24.901 | INFO | Investigating inference performance degradation
+14:59:25.002 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.002297
+14:59:25.003 | INFO | Investigating inference performance degradation
+14:59:25.102 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.102241
+14:59:25.102 | INFO | Investigating inference performance degradation
+14:59:25.201 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.201273
+14:59:25.202 | INFO | Investigating inference performance degradation
+14:59:25.301 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.301342
+14:59:25.301 | INFO | Investigating inference performance degradation
+14:59:25.402 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.402205
+14:59:25.402 | INFO | Investigating inference performance degradation
+14:59:25.501 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.501250
+14:59:25.501 | INFO | Investigating inference performance degradation
+14:59:25.601 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.601342
+14:59:25.601 | INFO | Investigating inference performance degradation
+14:59:25.702 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.701843
+14:59:25.702 | INFO | Investigating inference performance degradation
+14:59:25.802 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.802351
+14:59:25.803 | INFO | Investigating inference performance degradation
+14:59:25.903 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:25.903414
+14:59:25.904 | INFO | Investigating inference performance degradation
+14:59:26.003 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:26.003424
+14:59:26.004 | INFO | Investigating inference performance degradation
+14:59:26.103 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:26.103401
+14:59:26.103 | INFO | Investigating inference performance degradation
+14:59:26.203 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:26.203544
+14:59:26.204 | INFO | Investigating inference performance degradation
+14:59:26.305 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 14:59:26.304864
+14:59:26.305 | INFO | Investigating inference performance degradation
+14:59:35.417 | ERROR | Error getting real RSI loop status: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+INFO:     127.0.0.1:50508 - "GET /rsi/real-status HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50518 - "GET /health HTTP/1.1" 200 OK
+15:00:18.617 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:18.617177
+15:00:18.718 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:18.718348
+15:00:18.817 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:18.817650
+15:00:18.917 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:18.917300
+15:00:21.292 | INFO | 🔄 Real RSI Cycle #2
+15:00:21.292 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:00:21.292 | INFO | ✅ Real RSI Cycle #2 completed
+15:00:23.398 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:23.397949
+15:00:23.498 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:23.498514
+15:00:23.599 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:23.599425
+INFO:     127.0.0.1:46930 - "GET /health HTTP/1.1" 200 OK
+15:00:57.608 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:00:57.608669
+15:01:21.292 | INFO | 🔄 Real RSI Cycle #3
+15:01:21.292 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:01:21.292 | INFO | ✅ Real RSI Cycle #3 completed
+INFO:     127.0.0.1:38594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49910 - "GET /health HTTP/1.1" 200 OK
+15:02:21.293 | INFO | 🔄 Real RSI Cycle #4
+15:02:21.293 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:02:21.293 | INFO | ✅ Real RSI Cycle #4 completed
+INFO:     127.0.0.1:56726 - "GET /health HTTP/1.1" 200 OK
+15:03:21.295 | INFO | 🔄 Real RSI Cycle #5
+15:03:21.295 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:03:21.295 | INFO | ✅ Real RSI Cycle #5 completed
+15:04:21.295 | INFO | 🔄 Real RSI Cycle #6
+15:04:21.295 | WARNING | ⚠️ Execution Pipeline not initialized - attempting fallback approach
+15:04:21.296 | INFO | 🔄 Running fallback RSI execution...
+15:04:21.296 | INFO | 🔧 Applying fallback improvement: memory_efficiency (+4.7%)
+15:04:21.296 | INFO | ✅ Fallback RSI improvement applied: memory_efficiency
+15:04:21.296 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:04:21.297 | INFO | ✅ Real RSI Cycle #6 completed
+15:04:37.118 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:04:37.117967
+15:04:44.911 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:04:44.911704
+15:04:45.212 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:04:45.212635
+15:05:02.033 | INFO | Anomaly detected: system_anomaly at 2025-07-12 15:05:02.032908
+15:05:21.297 | INFO | 🔄 Real RSI Cycle #7
+15:05:21.298 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:05:21.298 | INFO | ✅ Real RSI Cycle #7 completed
+15:06:21.299 | INFO | 🔄 Real RSI Cycle #8
+15:06:21.299 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+15:06:21.299 | INFO | ✅ Real RSI Cycle #8 completed
+INFO:     127.0.0.1:38052 - "GET /health HTTP/1.1" 200 OK
+15:06:33.638 | INFO | Operation 'prediction_pred_1752343593234' completed safely in 0.002s
+INFO:     127.0.0.1:38064 - "POST /predict HTTP/1.1" 200 OK

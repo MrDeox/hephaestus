@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🤖 RSI System Dashboard</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial; background: #1a1a1a; color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: #2a2a2a; padding: 20px; border-radius: 10px; border-left: 5px solid #00ff88; }
+        .stat-value { font-size: 2em; font-weight: bold; color: #00ff88; }
+        .stat-label { font-size: 0.9em; color: #ccc; margin-top: 5px; }
+        .logs { background: #000; padding: 20px; border-radius: 10px; max-height: 400px; overflow-y: auto; font-family: monospace; font-size: 12px; }
+        .log-line { margin: 2px 0; }
+        .rsi-cycle { color: #00ff88; }
+        .improvement { color: #ffaa00; }
+        .error { color: #ff4444; }
+        .status-good { color: #00ff88; }
+        .status-warning { color: #ffaa00; }
+        .refresh-btn { background: #00ff88; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 RSI System Dashboard</h1>
+            <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="cycles">-</div>
+                <div class="stat-label">🔄 RSI Cycles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="improvements">-</div>
+                <div class="stat-label">✅ Improvements Applied</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="anomalies">-</div>
+                <div class="stat-label">🔍 Anomalies Detected</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="uptime">-</div>
+                <div class="stat-label">⏱️ System Uptime</div>
+            </div>
+        </div>
+        
+        <div class="logs" id="logs">
+            Loading system logs...
+        </div>
+    </div>
+
+    <script>
+        async function updateDashboard() {
+            try {
+                // Get health status
+                const health = await fetch('/health').then(r => r.json());
+                
+                // Get system stats (you'll need to implement these endpoints)
+                const stats = await fetch('/rsi/stats').then(r => r.json()).catch(() => ({}));
+                
+                // Update stats
+                document.getElementById('cycles').textContent = stats.cycles || '-';
+                document.getElementById('improvements').textContent = stats.improvements || '-';
+                document.getElementById('anomalies').textContent = stats.anomalies || '-';
+                document.getElementById('uptime').textContent = formatUptime(health.uptime_seconds || 0);
+                
+                // Update logs (simplified)
+                const logsDiv = document.getElementById('logs');
+                logsDiv.innerHTML = `
+                    <div class="log-line status-good">System Status: ${health.status}</div>
+                    <div class="log-line">Metacognitive Awareness: ${(health.metacognitive_status?.metacognitive_awareness * 100 || 0).toFixed(1)}%</div>
+                    <div class="log-line">Learning Efficiency: ${(health.metacognitive_status?.learning_efficiency * 100 || 0).toFixed(1)}%</div>
+                    <div class="log-line">Safety Score: ${(health.metacognitive_status?.safety_score * 100 || 0).toFixed(1)}%</div>
+                    <div class="log-line">Circuit Breaker: ${health.metacognitive_status?.circuit_breaker_state}</div>
+                `;
+                
+            } catch (error) {
+                document.getElementById('logs').innerHTML = 
+                    '<div class="log-line error">Error connecting to RSI system</div>';
+            }
+        }
+        
+        function formatUptime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            return `${hours}h ${minutes}m`;
+        }
+        
+        // Update dashboard every 30 seconds
+        updateDashboard();
+        setInterval(updateDashboard, 30000);
+    </script>
+</body>
+</html>
