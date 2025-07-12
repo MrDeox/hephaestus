@@ -123,3 +123,328 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     127.0.0.1:53390 - "GET /rsi/system-status HTTP/1.1" 500 Internal Server Error
 14:16:28.514 | ERROR | Real RSI trigger failed: 'RSIOrchestrator' object has no attribute 'hypothesis_orchestrator'
 INFO:     127.0.0.1:37494 - "POST /rsi/trigger-real-improvement HTTP/1.1" 500 Internal Server Error
+14:16:29.156 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:16:29.156178
+14:16:29.259 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:16:29.259724
+14:19:25.871 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:19:25.871802
+14:19:25.972 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:19:25.972554
+14:19:26.072 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:19:26.072670
+14:19:26.173 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:19:26.173528
+14:20:35.242 | INFO | Triggering enhanced self-improvement process
+14:20:35.444 | INFO | Applying learning efficiency optimization
+14:20:35.444 | INFO | Applying accuracy improvement
+14:20:35.645 | INFO | Operation 'self_improvement' completed safely in 0.001s
+14:20:35.646 | INFO | Self-improvement completed: ['efficiency_optimization', 'accuracy_improvement']
+14:25:35.646 | INFO | Triggering enhanced self-improvement process
+14:25:35.848 | INFO | Applying learning efficiency optimization
+14:25:35.848 | INFO | Applying accuracy improvement
+14:25:36.049 | INFO | Operation 'self_improvement' completed safely in 0.001s
+14:25:36.050 | INFO | Self-improvement completed: ['efficiency_optimization', 'accuracy_improvement']
+14:30:36.050 | INFO | Triggering enhanced self-improvement process
+14:30:36.252 | INFO | Applying learning efficiency optimization
+14:30:36.252 | INFO | Applying accuracy improvement
+14:30:36.453 | INFO | Operation 'self_improvement' completed safely in 0.001s
+14:30:36.453 | INFO | Self-improvement completed: ['efficiency_optimization', 'accuracy_improvement']
+14:35:36.454 | INFO | Triggering enhanced self-improvement process
+14:35:36.656 | INFO | Applying learning efficiency optimization
+14:35:36.656 | INFO | Applying accuracy improvement
+14:35:36.857 | INFO | Operation 'self_improvement' completed safely in 0.001s
+14:35:36.857 | INFO | Self-improvement completed: ['efficiency_optimization', 'accuracy_improvement']
+14:36:42.121 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:36:42.121480
+14:36:42.221 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:36:42.221274
+14:36:42.322 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:36:42.322567
+14:36:42.426 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:36:42.426120
+14:40:36.858 | INFO | Triggering enhanced self-improvement process
+14:40:37.060 | INFO | Applying learning efficiency optimization
+14:40:37.061 | INFO | Applying accuracy improvement
+14:40:37.262 | INFO | Operation 'self_improvement' completed safely in 0.001s
+14:40:37.262 | INFO | Self-improvement completed: ['efficiency_optimization', 'accuracy_improvement']
+14:45:37.262 | INFO | Triggering enhanced self-improvement process
+14:45:37.466 | INFO | Applying learning efficiency optimization
+14:45:37.467 | INFO | Applying accuracy improvement
+14:45:37.668 | WARNING | Result failed safety validation: Performance degradation: CPU usage increased by 26.7%
+14:45:37.668 | WARNING | Initiating rollback to checkpoint: checkpoint_1752342337263
+14:45:37.668 | INFO | Restoring system state from checkpoint
+14:45:37.669 | INFO | State restoration completed: {'checkpoint_timestamp': 1752342337.365608, 'model_state_hash': '0c05db5329c781d439a17cd9796038ac', 'restoration_timestamp': 1752342337.6691673}
+14:45:37.669 | INFO | Successfully rolled back to checkpoint: checkpoint_1752342337263
+14:45:37.669 | ERROR | Failed to rollback to checkpoint checkpoint_1752342337263: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'
+14:45:37.669 | ERROR | Safety violation recorded: violation_1752342337669
+14:45:37.670 | WARNING | Safety violation notification: {'timestamp': 1752342337.670096, 'event_type': 'safety_violation', 'operation_name': 'self_improvement', 'error_message': "Rollback failed: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'", 'circuit_state': 'closed', 'failure_count': 1, 'requires_attention': False}
+14:45:37.670 | ERROR | Self-improvement failed: Rollback failed: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'
+14:50:21.574 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:21.574348
+14:50:21.575 | INFO | Reducing processing load due to CPU overload
+14:50:21.678 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:21.677896
+14:50:21.678 | INFO | Reducing processing load due to CPU overload
+14:50:21.781 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:21.781347
+14:50:21.782 | INFO | Reducing processing load due to CPU overload
+14:50:21.979 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:21.979694
+14:50:21.982 | INFO | Reducing processing load due to CPU overload
+14:50:22.081 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:22.080771
+14:50:22.083 | INFO | Reducing processing load due to CPU overload
+14:50:22.179 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:22.179407
+14:50:22.183 | INFO | Reducing processing load due to CPU overload
+14:50:23.085 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.085062
+14:50:23.085 | INFO | Reducing processing load due to CPU overload
+14:50:23.386 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.386358
+14:50:23.387 | INFO | Reducing processing load due to CPU overload
+14:50:23.488 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.487890
+14:50:23.488 | INFO | Reducing processing load due to CPU overload
+14:50:23.594 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.593942
+14:50:23.594 | INFO | Reducing processing load due to CPU overload
+14:50:23.693 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.693519
+14:50:23.694 | INFO | Reducing processing load due to CPU overload
+14:50:23.795 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:23.794726
+14:50:23.795 | INFO | Reducing processing load due to CPU overload
+14:50:28.967 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:28.967714
+14:50:28.968 | INFO | Reducing processing load due to CPU overload
+14:50:29.168 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:50:29.168273
+14:50:29.271 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:50:29.271080
+14:50:37.671 | INFO | Triggering enhanced self-improvement process
+14:50:37.872 | INFO | Applying learning efficiency optimization
+14:50:37.873 | INFO | Applying accuracy improvement
+14:50:38.074 | WARNING | Result failed safety validation: Performance degradation: CPU usage increased by 42.9%
+14:50:38.075 | WARNING | Initiating rollback to checkpoint: checkpoint_1752342637671
+14:50:38.075 | INFO | Restoring system state from checkpoint
+14:50:38.075 | INFO | State restoration completed: {'checkpoint_timestamp': 1752342637.7719424, 'model_state_hash': 'dd201143d561b1751a6139ed4c01e997', 'restoration_timestamp': 1752342638.0758739}
+14:50:38.076 | INFO | Successfully rolled back to checkpoint: checkpoint_1752342637671
+14:50:38.076 | ERROR | Failed to rollback to checkpoint checkpoint_1752342637671: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'
+14:50:38.076 | ERROR | Safety violation recorded: violation_1752342638076
+14:50:38.076 | WARNING | Safety violation notification: {'timestamp': 1752342638.0769124, 'event_type': 'safety_violation', 'operation_name': 'self_improvement', 'error_message': "Rollback failed: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'", 'circuit_state': 'closed', 'failure_count': 2, 'requires_attention': False}
+14:50:38.077 | ERROR | Self-improvement failed: Rollback failed: 'RSISafetyCircuitBreaker' object has no attribute '_record_rollback_event'
+14:50:38.080 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:38.080214
+14:50:38.080 | INFO | Reducing processing load due to CPU overload
+14:50:45.999 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:45.999060
+14:50:45.999 | INFO | Reducing processing load due to CPU overload
+14:50:46.265 | CRITICAL | Safety violation: CPU usage critically high
+14:50:46.269 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.269227
+14:50:46.271 | INFO | Reducing processing load due to CPU overload
+14:50:46.369 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.369651
+14:50:46.370 | INFO | Reducing processing load due to CPU overload
+14:50:46.473 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.473510
+14:50:46.474 | INFO | Reducing processing load due to CPU overload
+14:50:46.575 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.574888
+14:50:46.575 | INFO | Reducing processing load due to CPU overload
+14:50:46.675 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.675229
+14:50:46.676 | INFO | Reducing processing load due to CPU overload
+14:50:46.676 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:50:46.675229
+14:50:46.778 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:46.778455
+14:50:46.779 | INFO | Reducing processing load due to CPU overload
+14:50:46.779 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:50:46.778455
+14:50:47.582 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:47.582007
+14:50:47.582 | INFO | Reducing processing load due to CPU overload
+14:50:47.683 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:47.683553
+14:50:47.684 | INFO | Reducing processing load due to CPU overload
+14:50:47.786 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:47.786344
+14:50:47.787 | INFO | Reducing processing load due to CPU overload
+14:50:47.889 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:47.889137
+14:50:47.889 | INFO | Reducing processing load due to CPU overload
+14:50:47.994 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:47.994036
+14:50:47.994 | INFO | Reducing processing load due to CPU overload
+14:50:48.097 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:48.097373
+14:50:48.098 | INFO | Reducing processing load due to CPU overload
+14:50:48.194 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:50:48.194397
+14:50:48.195 | INFO | Reducing processing load due to CPU overload
+14:51:49.575 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:49.575706
+14:51:49.576 | INFO | Reducing processing load due to CPU overload
+14:51:49.680 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:49.680591
+14:51:49.681 | INFO | Reducing processing load due to CPU overload
+14:51:49.976 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:49.976147
+14:51:49.976 | INFO | Reducing processing load due to CPU overload
+14:51:50.077 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:50.077288
+14:51:50.077 | INFO | Reducing processing load due to CPU overload
+14:51:50.178 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:50.177952
+14:51:50.178 | INFO | Reducing processing load due to CPU overload
+14:51:50.883 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:50.882814
+14:51:50.883 | INFO | Reducing processing load due to CPU overload
+14:51:50.983 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:50.983231
+14:51:50.983 | INFO | Reducing processing load due to CPU overload
+14:51:51.189 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:51.189287
+14:51:51.189 | INFO | Reducing processing load due to CPU overload
+14:51:51.291 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:51.291203
+14:51:51.291 | INFO | Reducing processing load due to CPU overload
+14:51:51.390 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:51.389951
+14:51:51.390 | INFO | Reducing processing load due to CPU overload
+14:51:51.490 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:51.490732
+14:51:51.491 | INFO | Reducing processing load due to CPU overload
+14:51:52.103 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:52.103002
+14:51:52.103 | INFO | Reducing processing load due to CPU overload
+14:51:52.198 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:51:52.198158
+14:51:52.198 | INFO | Reducing processing load due to CPU overload
+14:52:31.585 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:31.585353
+14:52:31.586 | INFO | Reducing processing load due to CPU overload
+14:52:31.785 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:31.784822
+14:52:31.785 | INFO | Reducing processing load due to CPU overload
+14:52:31.887 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:31.887698
+14:52:31.888 | INFO | Reducing processing load due to CPU overload
+14:52:31.992 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:31.992698
+14:52:31.993 | INFO | Reducing processing load due to CPU overload
+14:52:32.197 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:32.197286
+14:52:32.198 | INFO | Reducing processing load due to CPU overload
+14:52:32.295 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:32.295398
+14:52:32.296 | INFO | Reducing processing load due to CPU overload
+14:52:32.396 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:32.396577
+14:52:32.397 | INFO | Reducing processing load due to CPU overload
+14:52:32.496 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:32.496588
+14:52:32.499 | INFO | Reducing processing load due to CPU overload
+14:52:33.096 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:33.096238
+14:52:33.097 | INFO | Reducing processing load due to CPU overload
+14:52:52.396 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:52.395784
+14:52:52.396 | INFO | Reducing processing load due to CPU overload
+14:52:59.887 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:59.887349
+14:52:59.888 | INFO | Reducing processing load due to CPU overload
+14:52:59.985 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:52:59.984994
+14:52:59.985 | INFO | Reducing processing load due to CPU overload
+14:53:00.189 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.189319
+14:53:00.191 | INFO | Reducing processing load due to CPU overload
+14:53:00.287 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.287648
+14:53:00.288 | INFO | Reducing processing load due to CPU overload
+14:53:00.389 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.389382
+14:53:00.390 | INFO | Reducing processing load due to CPU overload
+14:53:00.594 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.594245
+14:53:00.595 | INFO | Reducing processing load due to CPU overload
+14:53:00.692 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.692593
+14:53:00.694 | INFO | Reducing processing load due to CPU overload
+14:53:00.793 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:00.793062
+14:53:00.794 | INFO | Reducing processing load due to CPU overload
+14:53:01.594 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:01.594591
+14:53:01.595 | INFO | Reducing processing load due to CPU overload
+14:53:01.696 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:01.695976
+14:53:01.696 | INFO | Reducing processing load due to CPU overload
+14:53:01.794 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:01.794739
+14:53:01.795 | INFO | Reducing processing load due to CPU overload
+14:53:01.995 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:01.994752
+14:53:01.995 | INFO | Reducing processing load due to CPU overload
+14:53:02.095 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:02.095744
+14:53:02.096 | INFO | Reducing processing load due to CPU overload
+14:53:02.194 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:02.194036
+14:53:02.195 | INFO | Reducing processing load due to CPU overload
+14:53:02.296 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:02.295755
+14:53:02.298 | INFO | Reducing processing load due to CPU overload
+14:53:02.394 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:53:02.394447
+14:53:02.395 | INFO | Reducing processing load due to CPU overload
+14:55:10.591 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:10.590854
+*** SIGTERM received at time=1752342992 on cpu 8 ***
+PC: @     0x7c7b19329ee0  (unknown)  epoll_pwait
+    @     0x7c7b19245330  (unknown)  (unknown)
+    @     0x7c7aa669c61d  (unknown)  uv__io_poll
+[2025-07-12 14:56:32,600 E 570150 570150] logging.cc:496: *** SIGTERM received at time=1752342992 on cpu 8 ***
+[2025-07-12 14:56:32,601 E 570150 570150] logging.cc:496: PC: @     0x7c7b19329ee0  (unknown)  epoll_pwait
+[2025-07-12 14:56:32,601 E 570150 570150] logging.cc:496:     @     0x7c7b19245330  (unknown)  (unknown)
+[2025-07-12 14:56:32,601 E 570150 570150] logging.cc:496:     @     0x7c7aa669c61d  (unknown)  uv__io_poll
+ERROR:    Traceback (most recent call last):
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1512, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1505, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1379, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 557, in uvloop.loop.Loop._run
+  File "uvloop/handles/timer.pyx", line 87, in uvloop.loop.__uvtimer_callback
+  File "uvloop/cbhandles.pyx", line 255, in uvloop.loop.TimerHandle._run
+  File "uvloop/cbhandles.pyx", line 251, in uvloop.loop.TimerHandle._run
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/asyncio/futures.py", line 311, in _set_result_unless_cancelled
+    def _set_result_unless_cancelled(fut, result):
+    
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages/ray/_private/worker.py", line 1573, in sigterm_handler
+    sys.exit(signum)
+SystemExit: 15
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages/starlette/routing.py", line 686, in lifespan
+    await receive()
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/.pyenv/versions/3.11.9/lib/python3.11/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+14:55:10.591 | INFO | Reducing processing load due to CPU overload
+14:55:10.794 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:10.793849
+14:55:10.795 | INFO | Reducing processing load due to CPU overload
+14:55:10.891 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:10.891354
+14:55:10.891 | INFO | Reducing processing load due to CPU overload
+14:55:10.992 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:10.992231
+14:55:10.992 | INFO | Reducing processing load due to CPU overload
+14:55:11.702 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:11.702395
+14:55:11.703 | INFO | Reducing processing load due to CPU overload
+14:55:11.801 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:11.800933
+14:55:11.803 | INFO | Reducing processing load due to CPU overload
+14:55:11.901 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:11.901439
+14:55:11.902 | INFO | Reducing processing load due to CPU overload
+14:55:12.104 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:12.104042
+14:55:12.105 | INFO | Reducing processing load due to CPU overload
+14:55:12.205 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:12.205274
+14:55:12.205 | INFO | Reducing processing load due to CPU overload
+14:55:13.008 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:55:13.008791
+14:55:13.110 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:55:13.110067
+14:55:27.511 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:27.510832
+14:55:27.511 | INFO | Reducing processing load due to CPU overload
+14:55:27.616 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:27.616198
+14:55:27.616 | INFO | Reducing processing load due to CPU overload
+14:55:27.814 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:27.814271
+14:55:27.815 | INFO | Reducing processing load due to CPU overload
+14:55:27.916 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:27.916186
+14:55:27.916 | INFO | Reducing processing load due to CPU overload
+14:55:27.917 | INFO | Anomaly detected: system_anomaly at 2025-07-12 14:55:27.916186
+14:55:28.015 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:28.015709
+14:55:28.016 | INFO | Reducing processing load due to CPU overload
+14:55:28.116 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:28.116377
+14:55:28.117 | INFO | Reducing processing load due to CPU overload
+14:55:28.727 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:28.727272
+14:55:28.728 | INFO | Reducing processing load due to CPU overload
+14:55:28.818 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:28.818109
+14:55:28.818 | INFO | Reducing processing load due to CPU overload
+14:55:28.921 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:28.921420
+14:55:28.922 | INFO | Reducing processing load due to CPU overload
+14:55:29.086 | CRITICAL | Safety violation: CPU usage critically high
+14:55:29.091 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:29.091343
+14:55:29.092 | INFO | Reducing processing load due to CPU overload
+14:55:29.193 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:29.193230
+14:55:29.194 | INFO | Reducing processing load due to CPU overload
+14:55:29.292 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:29.292566
+14:55:29.293 | INFO | Reducing processing load due to CPU overload
+14:55:29.392 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:29.392541
+14:55:29.393 | INFO | Reducing processing load due to CPU overload
+14:55:29.492 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:29.492344
+14:55:29.493 | INFO | Reducing processing load due to CPU overload
+14:55:32.506 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:55:32.506311
+14:55:32.507 | INFO | Reducing processing load due to CPU overload
+14:55:38.077 | INFO | Triggering enhanced self-improvement process
+14:55:38.279 | ERROR | Circuit breaker OPENED after 3 failures
+14:55:38.279 | ERROR | Safety violation recorded: violation_1752342938279
+14:55:38.279 | CRITICAL | Entering safety mode due to circuit breaker opening
+14:55:38.280 | CRITICAL | System entering safety mode - restricting operations
+14:55:38.280 | INFO | Safety mode context: {'timestamp': 1752342938.280312, 'reason': 'circuit_breaker_open', 'failure_count': 3, 'last_failure_time': 1752342938.2793021}
+14:55:38.280 | WARNING | Safety violation notification: {'timestamp': 1752342938.2804782, 'event_type': 'safety_violation', 'operation_name': 'self_improvement', 'error_message': 'Recent critical safety violations - operation blocked', 'circuit_state': 'open', 'failure_count': 3, 'requires_attention': True}
+14:55:38.280 | ERROR | Self-improvement failed: Recent critical safety violations - operation blocked
+14:56:12.806 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:12.806417
+14:56:12.807 | INFO | Reducing processing load due to CPU overload
+14:56:12.907 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:12.906803
+14:56:12.907 | INFO | Reducing processing load due to CPU overload
+14:56:13.108 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:13.107768
+14:56:13.108 | INFO | Reducing processing load due to CPU overload
+14:56:13.207 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:13.207260
+14:56:13.207 | INFO | Reducing processing load due to CPU overload
+14:56:13.311 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:13.311156
+14:56:13.314 | INFO | Reducing processing load due to CPU overload
+14:56:13.408 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:13.408100
+14:56:13.409 | INFO | Reducing processing load due to CPU overload
+14:56:14.009 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.009258
+14:56:14.009 | INFO | Reducing processing load due to CPU overload
+14:56:14.113 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.113436
+14:56:14.118 | INFO | Reducing processing load due to CPU overload
+14:56:14.217 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.217307
+14:56:14.217 | INFO | Reducing processing load due to CPU overload
+14:56:14.418 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.417858
+14:56:14.421 | INFO | Reducing processing load due to CPU overload
+14:56:14.518 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.518601
+14:56:14.520 | INFO | Reducing processing load due to CPU overload
+14:56:14.618 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:14.618352
+14:56:14.619 | INFO | Reducing processing load due to CPU overload
+14:56:17.728 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 14:56:17.728099
+14:56:17.728 | INFO | Reducing processing load due to CPU overload
