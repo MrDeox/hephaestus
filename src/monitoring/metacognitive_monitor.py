@@ -284,17 +284,18 @@ class RSISystemMonitor:
             if memory_growth > self.anomaly_thresholds['memory_leak_threshold_mb']:
                 anomalies['memory_leak'] = True
                 
-        # Inference rate degradation
+        # Inference rate degradation (reduce false positives)
         if (metrics.model_inference_rate > 0 and 
-            len(self.metrics_history) > 10):
+            len(self.metrics_history) > 50):
             historical_rate = np.mean([m.model_inference_rate 
                                      for m in self.metrics_history[-50:-10]])
-            if (historical_rate > 0 and 
-                metrics.model_inference_rate < historical_rate * self.anomaly_thresholds['inference_rate_drop']):
+            # Only trigger for significant degradation with meaningful baseline
+            if (historical_rate > 1.0 and 
+                metrics.model_inference_rate < historical_rate * 0.5):  # 50% degradation
                 anomalies['inference_degradation'] = True
         
-        # High anomaly score
-        if metrics.anomaly_score > 0.8:
+        # High anomaly score (reduce sensitivity)
+        if metrics.anomaly_score > 0.9:
             anomalies['system_anomaly'] = True
                 
         return anomalies

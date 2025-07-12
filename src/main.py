@@ -241,51 +241,72 @@ class RSIOrchestrator:
                 except Exception as e:
                     logger.warning("Failed to initialize Real RSI Execution Pipeline: {}", str(e))
             
-            # Meta-Learning System (Gap Scanner + MML Controller)
-            self.gap_scanner = None
-            self.mml_controller = None
-            if META_LEARNING_AVAILABLE:
-                try:
-                    # Ensure telemetry and behavioral monitor are available
-                    if not hasattr(self, 'telemetry') or self.telemetry is None:
-                        logger.warning("Telemetry not available for Gap Scanner, using fallback")
-                        from src.monitoring.telemetry import TelemetryCollector
-                        self.telemetry = TelemetryCollector()
-                    
-                    if not hasattr(self, 'behavioral_monitor') or self.behavioral_monitor is None:
-                        logger.warning("Behavioral Monitor not available for Gap Scanner, using fallback")
-                        from src.monitoring.anomaly_detection import BehavioralMonitor
-                        self.behavioral_monitor = BehavioralMonitor()
-                    
-                    self.gap_scanner = create_gap_scanner(
-                        state_manager=self.state_manager,
-                        telemetry_collector=self.telemetry,
-                        behavioral_monitor=self.behavioral_monitor
-                    )
-                    logger.info("✅ Gap Scanner initialized successfully")
-                    
-                    # Only initialize MML Controller if execution pipeline is available
-                    if hasattr(self, 'execution_pipeline') and self.execution_pipeline is not None:
-                        self.mml_controller = create_mml_controller(
-                            gap_scanner=self.gap_scanner,
-                            execution_pipeline=self.execution_pipeline,
-                            state_manager=self.state_manager,
-                            validator=self.validator
-                        )
-                        logger.info("✅ MML Controller initialized successfully")
-                    else:
-                        logger.warning("Execution Pipeline not available - MML Controller will be initialized later")
-                        
-                    logger.info("✅ Meta-Learning System initialized (Gap Scanner + MML Controller)")
-                except Exception as e:
-                    logger.error("Failed to initialize Meta-Learning System: {}", str(e))
-                    import traceback
-                    logger.error("Traceback: {}", traceback.format_exc())
-            else:
-                logger.warning("Meta-Learning System not available - components will not be initialized")
+            # Meta-Learning System (Gap Scanner + MML Controller) - Initialize after all dependencies
+            self._initialize_meta_learning_system()
             
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
+
+    def _initialize_meta_learning_system(self):
+        """Initialize Meta-Learning System components with proper dependency management"""
+        self.gap_scanner = None
+        self.mml_controller = None
+        
+        if META_LEARNING_AVAILABLE:
+            try:
+                # Ensure telemetry and behavioral monitor are available
+                if not hasattr(self, 'telemetry') or self.telemetry is None:
+                    logger.warning("Telemetry not available for Gap Scanner, using fallback")
+                    from src.monitoring.telemetry import TelemetryCollector
+                    self.telemetry = TelemetryCollector()
+                
+                if not hasattr(self, 'behavioral_monitor') or self.behavioral_monitor is None:
+                    logger.warning("Behavioral Monitor not available for Gap Scanner, using fallback")
+                    try:
+                        from src.monitoring.anomaly_detection import BehavioralMonitor
+                        self.behavioral_monitor = BehavioralMonitor()
+                    except Exception as e:
+                        logger.warning("BehavioralMonitor initialization failed: {}, using None", str(e))
+                        self.behavioral_monitor = None
+                
+                # Initialize Gap Scanner
+                self.gap_scanner = create_gap_scanner(
+                    state_manager=self.state_manager,
+                    telemetry_collector=self.telemetry,
+                    behavioral_monitor=self.behavioral_monitor
+                )
+                logger.info("✅ Gap Scanner initialized successfully")
+                
+                # Initialize MML Controller with or without execution pipeline
+                if hasattr(self, 'execution_pipeline') and self.execution_pipeline is not None:
+                    self.mml_controller = create_mml_controller(
+                        gap_scanner=self.gap_scanner,
+                        execution_pipeline=self.execution_pipeline,
+                        state_manager=self.state_manager,
+                        validator=self.validator
+                    )
+                    logger.info("✅ MML Controller initialized successfully with Execution Pipeline")
+                else:
+                    # Initialize with minimal components
+                    self.mml_controller = create_mml_controller(
+                        gap_scanner=self.gap_scanner,
+                        execution_pipeline=None,
+                        state_manager=self.state_manager,
+                        validator=self.validator
+                    )
+                    logger.info("✅ MML Controller initialized successfully (fallback mode)")
+                    
+                logger.info("✅ Meta-Learning System initialized (Gap Scanner + MML Controller)")
+                
+            except Exception as e:
+                logger.error("Failed to initialize Meta-Learning System: {}", str(e))
+                import traceback
+                logger.error("Traceback: {}", traceback.format_exc())
+                # Set to None to prevent further errors
+                self.gap_scanner = None
+                self.mml_controller = None
+        else:
+            logger.warning("Meta-Learning System not available - components will not be initialized")
 
     def _setup_enhanced_logging(self):
         """Setup enhanced logging for metacognitive monitoring"""
@@ -901,13 +922,20 @@ class RSIOrchestrator:
             return
             
         if not hasattr(self, 'execution_pipeline') or not self.execution_pipeline:
-            logger.warning("⚠️ Execution Pipeline not initialized - attempting fallback approach")
-            # Fallback: Try to generate and apply improvements without full pipeline
+            logger.warning("⚠️ Execution Pipeline not initialized - attempting to initialize now")
             try:
-                await self._run_fallback_rsi_execution()
-                return
+                # Try to initialize execution pipeline on-demand
+                from src.execution.rsi_execution_pipeline import create_rsi_execution_pipeline
+                self.execution_pipeline = create_rsi_execution_pipeline(
+                    state_manager=self.state_manager,
+                    validator=self.validator,
+                    circuit_breaker=self.circuit_manager,
+                    hypothesis_orchestrator=getattr(self, 'hypothesis_orchestrator', None)
+                )
+                logger.info("✅ Execution Pipeline initialized on-demand")
             except Exception as e:
-                logger.error(f"❌ Fallback RSI execution failed: {e}")
+                logger.warning(f"⚠️ Failed to initialize Execution Pipeline: {e} - using fallback")
+                await self._run_fallback_rsi_execution()
                 return
         
         try:
