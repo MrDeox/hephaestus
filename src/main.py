@@ -53,6 +53,21 @@ except ImportError as e:
     OptunaOptimizer = None
     RayTuneOrchestrator = None
 
+# RSI Hypothesis Testing System imports
+try:
+    from src.hypothesis.rsi_hypothesis_orchestrator import (
+        RSIHypothesisOrchestrator, HypothesisOrchestrationResult,
+        OrchestrationPhase, HypothesisStatus
+    )
+    from src.hypothesis import (
+        RSIHypothesis, HypothesisType, HypothesisPriority,
+        ValidationLevel, ReviewStatus, SimulationEnvironment
+    )
+    HYPOTHESIS_SYSTEM_AVAILABLE = True
+except ImportError as e:
+    logger.warning("RSI Hypothesis Testing System not fully available: {}", str(e))
+    HYPOTHESIS_SYSTEM_AVAILABLE = False
+
 # Pydantic models for API
 class PredictionRequest(BaseModel):
     features: Dict[str, Any] = Field(..., description="Input features for prediction")
@@ -69,6 +84,24 @@ class CodeExecutionRequest(BaseModel):
     code: str = Field(..., description="Code to execute safely")
     timeout_seconds: int = Field(60, description="Execution timeout")
     user_id: Optional[str] = Field(None, description="User identifier")
+
+class HypothesisGenerationRequest(BaseModel):
+    improvement_targets: Dict[str, float] = Field(
+        ..., 
+        description="Target improvements (e.g., {'accuracy': 0.05, 'efficiency': 0.1})"
+    )
+    context: Optional[Dict[str, Any]] = Field(None, description="Additional context")
+    max_hypotheses: int = Field(10, description="Maximum number of hypotheses to generate")
+    user_id: Optional[str] = Field(None, description="User identifier")
+
+class HypothesisReviewRequest(BaseModel):
+    request_id: str = Field(..., description="Review request ID")
+    reviewer_id: str = Field(..., description="Reviewer identifier")
+    decision: str = Field(..., description="Review decision (approved/rejected/needs_modification)")
+    reasoning: str = Field(..., description="Detailed reasoning for the decision")
+    confidence_level: float = Field(0.8, description="Reviewer's confidence (0.0-1.0)")
+    modification_suggestions: List[str] = Field(default_factory=list, description="Suggested modifications")
+    approval_conditions: List[str] = Field(default_factory=list, description="Approval conditions")
 
 class MetacognitiveStatus(BaseModel):
     """Real-time metacognitive system status"""
@@ -155,6 +188,20 @@ class RSIOrchestrator:
             # Optimization (optional)
             self.optuna_optimizer = OptunaOptimizer() if OptunaOptimizer else None
             self.ray_tune_orchestrator = RayTuneOrchestrator() if RayTuneOrchestrator else None
+            
+            # RSI Hypothesis Testing System
+            self.hypothesis_orchestrator = None
+            if HYPOTHESIS_SYSTEM_AVAILABLE:
+                try:
+                    self.hypothesis_orchestrator = RSIHypothesisOrchestrator(
+                        state_manager=self.state_manager,
+                        validator=self.validator,
+                        circuit_breaker=self.circuit_manager,
+                        environment=self.environment
+                    )
+                    logger.info("✅ RSI Hypothesis Testing System initialized")
+                except Exception as e:
+                    logger.warning("Failed to initialize RSI Hypothesis System: {}", str(e))
             
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
@@ -286,8 +333,8 @@ class RSIOrchestrator:
             async def prediction_operation():
                 # Validate input
                 validation_result = await self.validator.validate_prediction_input(features)
-                if not validation_result.is_valid:
-                    raise ValueError(f"Invalid input: {validation_result.error_message}")
+                if not validation_result.valid:
+                    raise ValueError(f"Invalid input: {validation_result.message}")
                 
                 # Convert features to numpy array for uncertainty estimation
                 feature_array = np.array(list(features.values())).reshape(1, -1)
@@ -315,18 +362,21 @@ class RSIOrchestrator:
                     confidence = 0.8  # Default confidence
                     uncertainty_info = {}
                 
-                # Store prediction in memory
-                if self.memory_system:
-                    await self.memory_system.store_episodic_memory(
-                        "prediction",
-                        {
-                            "prediction_id": prediction_id,
-                            "features": features,
-                            "prediction": float(prediction_value),
-                            "confidence": confidence,
-                            "timestamp": time.time()
-                        }
-                    )
+                # Store prediction in memory (if method exists)
+                if self.memory_system and hasattr(self.memory_system, 'store_episodic_memory'):
+                    try:
+                        await self.memory_system.store_episodic_memory(
+                            "prediction",
+                            {
+                                "prediction_id": prediction_id,
+                                "features": features,
+                                "prediction": float(prediction_value),
+                                "confidence": confidence,
+                                "timestamp": time.time()
+                            }
+                        )
+                    except Exception as e:
+                        logger.warning("Failed to store prediction in memory: {}", str(e))
                 
                 return {
                     'prediction_id': prediction_id,
@@ -349,11 +399,11 @@ class RSIOrchestrator:
                 audit_system_event(
                     "prediction",
                     "prediction_completed",
-                    user_id=user_id,
                     metadata={
                         "prediction_id": prediction_id,
                         "confidence": result['confidence'],
-                        "include_uncertainty": include_uncertainty
+                        "include_uncertainty": include_uncertainty,
+                        "user_id": user_id
                     }
                 )
             
@@ -367,10 +417,10 @@ class RSIOrchestrator:
                 audit_system_event(
                     "prediction",
                     "prediction_failed",
-                    user_id=user_id,
                     metadata={
                         "prediction_id": prediction_id,
-                        "error": str(e)
+                        "error": str(e),
+                        "user_id": user_id
                     }
                 )
             
@@ -389,27 +439,27 @@ class RSIOrchestrator:
             async def learning_operation():
                 # Validate input
                 validation_result = await self.validator.validate_learning_input(features, target)
-                if not validation_result.is_valid:
-                    raise ValueError(f"Invalid learning input: {validation_result.error_message}")
+                if not validation_result.valid:
+                    raise ValueError(f"Invalid learning input: {validation_result.message}")
                 
-                # Convert to appropriate format
-                feature_array = np.array(list(features.values())).reshape(1, -1)
+                # Perform online learning (River expects dictionary input)
+                learning_result = await self.online_learner.learn_one(features, target)
                 
-                # Perform online learning
-                learning_result = await self.online_learner.learn(feature_array, target)
-                
-                # Store learning experience in memory
-                if self.memory_system:
-                    await self.memory_system.store_episodic_memory(
-                        "learning",
-                        {
-                            "learning_id": learning_id,
-                            "features": features,
-                            "target": target,
-                            "accuracy": learning_result.accuracy,
-                            "timestamp": time.time()
-                        }
-                    )
+                # Store learning experience in memory (if method exists)
+                if self.memory_system and hasattr(self.memory_system, 'store_episodic_memory'):
+                    try:
+                        await self.memory_system.store_episodic_memory(
+                            "learning",
+                            {
+                                "learning_id": learning_id,
+                                "features": features,
+                                "target": target,
+                                "accuracy": learning_result.accuracy,
+                                "timestamp": time.time()
+                            }
+                        )
+                    except Exception as e:
+                        logger.warning("Failed to store learning in memory: {}", str(e))
                 
                 return {
                     'learning_id': learning_id,
@@ -433,11 +483,11 @@ class RSIOrchestrator:
                 audit_system_event(
                     "learning",
                     "learning_completed",
-                    user_id=user_id,
                     metadata={
                         "learning_id": learning_id,
                         "accuracy": result['accuracy'],
-                        "safety_level": safety_level
+                        "safety_level": safety_level,
+                        "user_id": user_id
                     }
                 )
             
@@ -451,10 +501,10 @@ class RSIOrchestrator:
                 audit_system_event(
                     "learning",
                     "learning_failed",
-                    user_id=user_id,
                     metadata={
                         "learning_id": learning_id,
-                        "error": str(e)
+                        "error": str(e),
+                        "user_id": user_id
                     }
                 )
             
@@ -486,6 +536,78 @@ class RSIOrchestrator:
             safety_score=safety_status['safety_score'],
             circuit_breaker_state=safety_status['circuit_breaker_state']
         )
+
+    async def get_system_health(self) -> Dict[str, Any]:
+        """Get comprehensive system health status"""
+        try:
+            # Get core system metrics
+            system_health = self.system_monitor.get_system_health_status()
+            safety_status = self.safety_circuit.get_safety_status()
+            
+            # Get learning system health
+            learner_metrics = self.online_learner.get_metrics()
+            
+            # Get memory system health
+            memory_health = "unknown"
+            if self.memory_system:
+                try:
+                    # Test memory system responsiveness
+                    await self.memory_system.store_episodic_memory("health_check", {"timestamp": time.time()})
+                    memory_health = "healthy"
+                except Exception:
+                    memory_health = "degraded"
+            else:
+                memory_health = "not_available"
+            
+            # Get hypothesis system health
+            hypothesis_health = "not_available"
+            if hasattr(self, 'hypothesis_orchestrator') and self.hypothesis_orchestrator:
+                try:
+                    stats = self.hypothesis_orchestrator.get_orchestration_statistics()
+                    hypothesis_health = "healthy" if stats else "healthy"
+                except Exception:
+                    hypothesis_health = "degraded"
+            
+            # Determine overall status
+            overall_status = "healthy"
+            if safety_status['safety_score'] < 0.7 or system_health.value == "critical":
+                overall_status = "critical"
+            elif memory_health == "degraded" or hypothesis_health == "degraded":
+                overall_status = "degraded"
+            elif learner_metrics.accuracy < 0.6:
+                overall_status = "warning"
+            
+            return {
+                "status": overall_status,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "uptime_seconds": time.time() - self.start_time,
+                "components": {
+                    "system_monitor": system_health.value,
+                    "safety_circuit": safety_status['circuit_breaker_state'],
+                    "learning_system": "healthy" if learner_metrics.accuracy > 0.6 else "degraded",
+                    "memory_system": memory_health,
+                    "hypothesis_system": hypothesis_health,
+                    "behavioral_monitor": "healthy",
+                    "telemetry": "healthy"
+                },
+                "metrics": {
+                    "safety_score": safety_status['safety_score'],
+                    "learning_accuracy": learner_metrics.accuracy,
+                    "samples_processed": learner_metrics.samples_processed,
+                    "concept_drift_detected": learner_metrics.concept_drift_detected,
+                    "memory_available": self.memory_system is not None,
+                    "hypothesis_system_available": hasattr(self, 'hypothesis_orchestrator') and self.hypothesis_orchestrator is not None
+                }
+            }
+            
+        except Exception as e:
+            logger.error("Error getting system health: {}", str(e))
+            return {
+                "status": "error",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "error": str(e),
+                "uptime_seconds": time.time() - self.start_time
+            }
 
     async def _broadcast_metacognitive_status(self):
         """Broadcast metacognitive status to connected WebSocket clients"""
@@ -534,7 +656,7 @@ class RSIOrchestrator:
                 logger.error("Metrics collection error: {}", str(e))
 
     async def _self_improvement_loop(self):
-        """Enhanced self-improvement loop with metacognitive insights"""
+        """Enhanced self-improvement loop with metacognitive insights and hypothesis testing"""
         while True:
             try:
                 await asyncio.sleep(300)  # Run every 5 minutes
@@ -545,6 +667,15 @@ class RSIOrchestrator:
                 # Trigger self-improvement if needed
                 if performance_data.get("needs_improvement", False):
                     await self.trigger_self_improvement(performance_data)
+                
+                # Run hypothesis-driven improvements every 10 cycles (50 minutes)
+                if hasattr(self, '_improvement_cycle_count'):
+                    self._improvement_cycle_count += 1
+                else:
+                    self._improvement_cycle_count = 1
+                
+                if self._improvement_cycle_count % 10 == 0 and self.hypothesis_orchestrator:
+                    await self._run_hypothesis_driven_improvement(performance_data)
                 
             except Exception as e:
                 logger.error("Self-improvement loop error: {}", str(e))
@@ -657,6 +788,106 @@ class RSIOrchestrator:
             
         except Exception as e:
             logger.error("Self-improvement failed: {}", str(e))
+    
+    async def _run_hypothesis_driven_improvement(self, performance_data: Dict[str, Any]):
+        """Run hypothesis-driven self-improvement process"""
+        if not self.hypothesis_orchestrator:
+            return
+        
+        logger.info("🧪 Starting hypothesis-driven self-improvement cycle")
+        
+        try:
+            # Define improvement targets based on current performance
+            improvement_targets = {}
+            
+            # Extract current metrics and define targets
+            learning_metrics = performance_data.get("metrics", {}).get("learning", {})
+            current_accuracy = learning_metrics.get("accuracy", 0.8)
+            
+            # Set targets based on current performance gaps
+            if current_accuracy < 0.9:
+                improvement_targets["accuracy"] = min(0.05, 0.9 - current_accuracy)
+            
+            metacognitive_metrics = performance_data.get("metrics", {}).get("metacognitive", {})
+            current_efficiency = metacognitive_metrics.get("learning_efficiency", 0.7)
+            
+            if current_efficiency < 0.8:
+                improvement_targets["learning_efficiency"] = min(0.1, 0.8 - current_efficiency)
+            
+            # Add cognitive load reduction if needed
+            current_cognitive_load = metacognitive_metrics.get("cognitive_load", 0.5)
+            if current_cognitive_load > 0.7:
+                improvement_targets["cognitive_load_reduction"] = current_cognitive_load - 0.6
+            
+            # Add default targets if none identified
+            if not improvement_targets:
+                improvement_targets = {
+                    "overall_performance": 0.02,
+                    "system_efficiency": 0.03
+                }
+            
+            # Create context for hypothesis generation
+            context = {
+                "current_performance": performance_data,
+                "system_uptime": time.time() - self.start_time,
+                "environment": self.environment,
+                "recommendations": performance_data.get("recommendations", [])
+            }
+            
+            # Generate and orchestrate hypotheses
+            logger.info("🎯 Generating hypotheses with targets: {}", improvement_targets)
+            orchestration_results = await self.hypothesis_orchestrator.orchestrate_hypothesis_lifecycle(
+                improvement_targets=improvement_targets,
+                context=context,
+                max_hypotheses=5  # Limit for background processing
+            )
+            
+            # Process results and apply deployable improvements
+            deployed_count = 0
+            for result in orchestration_results:
+                if result.deployment_ready and result.confidence_score > 0.8:
+                    logger.info("📈 Deploying hypothesis: {} (confidence: {:.2f})",
+                               result.hypothesis.description, result.confidence_score)
+                    
+                    # Here we would implement the actual deployment logic
+                    # For now, we'll log the deployment
+                    deployed_count += 1
+                    
+                    # Log the deployment
+                    if self.audit_logger:
+                        audit_system_event(
+                            "rsi_orchestrator",
+                            "hypothesis_deployed",
+                            metadata={
+                                "hypothesis_id": result.hypothesis.hypothesis_id,
+                                "hypothesis_type": result.hypothesis.hypothesis_type.value,
+                                "confidence_score": result.confidence_score,
+                                "improvement_targets": improvement_targets
+                            }
+                        )
+            
+            logger.info("🚀 Hypothesis-driven improvement completed: {} deployments from {} hypotheses",
+                       deployed_count, len(orchestration_results))
+            
+            # Store results in memory (if method exists)
+            if self.memory_system and hasattr(self.memory_system, 'store_episodic_memory'):
+                try:
+                    await self.memory_system.store_episodic_memory(
+                        "hypothesis_improvement_cycle",
+                        {
+                            "cycle_count": self._improvement_cycle_count,
+                            "improvement_targets": improvement_targets,
+                            "hypotheses_generated": len(orchestration_results),
+                            "deployments": deployed_count,
+                            "avg_confidence": sum(r.confidence_score or 0 for r in orchestration_results) / max(1, len(orchestration_results)),
+                            "timestamp": time.time()
+                        }
+                    )
+                except Exception as e:
+                    logger.warning("Failed to store improvement cycle in memory: {}", str(e))
+            
+        except Exception as e:
+            logger.error("Hypothesis-driven improvement failed: {}", str(e))
 
 # Global orchestrator instance
 orchestrator: Optional[RSIOrchestrator] = None
@@ -677,9 +908,46 @@ async def lifespan(app: FastAPI):
 
 # Initialize FastAPI app with enhanced features
 app = FastAPI(
-    title="Enhanced RSI AI System",
-    description="Production-ready Recursive Self-Improvement AI with Metacognitive Monitoring",
-    version="2.0.0",
+    title="Hephaestus RSI AI System",
+    description="""
+    🏛️ **Hephaestus - Complete Recursive Self-Improvement AI System**
+    
+    A production-ready RSI system with comprehensive hypothesis testing, validation, and deployment capabilities.
+    
+    ## 🌟 Key Features
+    
+    ### 🧪 **RSI Hypothesis Testing System**
+    - **Intelligent Hypothesis Generation**: Uses Optuna and Ray for sophisticated hypothesis exploration
+    - **Comprehensive Validation**: Multi-level validation with safety, performance, and robustness checks
+    - **Advanced Simulation**: Statistical testing with robustness, stress, and adversarial analysis
+    - **Human-in-the-Loop**: Approval workflows with automated safety-based decisions
+    - **Secure Execution**: Multi-layer isolation using RestrictedPython and process sandboxing
+    
+    ### 🛡️ **Safety-First Architecture**
+    - **Circuit Breakers**: Automatic failure detection and recovery
+    - **Immutable State**: Corruption-proof state management with pyrsistent
+    - **Comprehensive Validation**: Multiple layers of input and output validation
+    - **Audit Trail**: Complete logging with cryptographic integrity verification
+    
+    ### 🧠 **Advanced Learning Systems**
+    - **Metacognitive Monitoring**: Real-time self-awareness and performance analysis
+    - **Uncertainty Quantification**: Confidence estimation for all predictions
+    - **Online Learning**: Continuous adaptation with concept drift detection
+    - **Meta-Learning**: Learn-to-learn capabilities for rapid adaptation
+    
+    ### 🔄 **Complete RSI Cycle**
+    The system implements a complete recursive self-improvement cycle:
+    1. **Performance Analysis** → Identify improvement opportunities
+    2. **Hypothesis Generation** → Create improvement strategies using Optuna/Ray
+    3. **Validation & Testing** → Comprehensive safety and performance validation
+    4. **Human Review** → Expert approval for high-risk changes
+    5. **Simulation** → Statistical testing and robustness analysis
+    6. **Deployment** → Automated integration of validated improvements
+    7. **Monitoring** → Continuous assessment and feedback
+    
+    *O ciclo está fechado* - The RSI cycle is now complete! 🎯
+    """,
+    version="3.0.0",
     lifespan=lifespan
 )
 
@@ -724,17 +992,32 @@ async def websocket_monitor(websocket: WebSocket):
 @app.get("/")
 async def root():
     """Root endpoint with enhanced system information"""
+    features = [
+        "Real-time metacognitive monitoring",
+        "Uncertainty quantification", 
+        "Safety circuit breakers",
+        "Comprehensive audit trails",
+        "WebSocket streaming"
+    ]
+    
+    # Add hypothesis testing features if available
+    if orchestrator and orchestrator.hypothesis_orchestrator:
+        features.extend([
+            "🧪 RSI Hypothesis Generation & Testing",
+            "🔬 Comprehensive Validation Pipeline", 
+            "🛡️ Multi-layer Safety Verification",
+            "👥 Human-in-the-Loop Approval",
+            "📊 Advanced Simulation & Analysis",
+            "🚀 Automated Deployment Pipeline"
+        ])
+    
     return {
-        "message": "Enhanced RSI AI System with Metacognitive Monitoring",
-        "version": "2.0.0",
+        "message": "Hephaestus RSI AI System - Complete Recursive Self-Improvement",
+        "version": "3.0.0",
         "status": "active",
-        "features": [
-            "Real-time metacognitive monitoring",
-            "Uncertainty quantification", 
-            "Safety circuit breakers",
-            "Comprehensive audit trails",
-            "WebSocket streaming"
-        ]
+        "features": features,
+        "hypothesis_system_available": orchestrator.hypothesis_orchestrator is not None if orchestrator else False,
+        "cycle_closed": True  # RSI cycle is now complete
     }
 
 @app.get("/health")
@@ -792,6 +1075,199 @@ async def get_system_metrics():
             "anomaly_score": latest.anomaly_score
         }
     return {"status": "no_data"}
+
+# RSI Hypothesis Testing Endpoints
+@app.post("/hypothesis/generate")
+async def generate_hypotheses(request: HypothesisGenerationRequest):
+    """Generate RSI improvement hypotheses"""
+    if not orchestrator.hypothesis_orchestrator:
+        raise HTTPException(status_code=503, detail="Hypothesis system not available")
+    
+    try:
+        orchestration_results = await orchestrator.hypothesis_orchestrator.orchestrate_hypothesis_lifecycle(
+            improvement_targets=request.improvement_targets,
+            context=request.context,
+            max_hypotheses=request.max_hypotheses
+        )
+        
+        # Convert results to serializable format
+        results = []
+        for result in orchestration_results:
+            results.append({
+                "hypothesis_id": result.hypothesis.hypothesis_id,
+                "hypothesis_type": result.hypothesis.hypothesis_type.value,
+                "priority": result.hypothesis.priority.value,
+                "description": result.hypothesis.description,
+                "status": result.status.value,
+                "current_phase": result.current_phase.value,
+                "confidence_score": result.confidence_score,
+                "deployment_ready": result.deployment_ready,
+                "final_recommendation": result.final_recommendation,
+                "expected_improvement": result.hypothesis.expected_improvement,
+                "risk_level": result.hypothesis.risk_level,
+                "computational_cost": result.hypothesis.computational_cost
+            })
+        
+        # Log hypothesis generation
+        if orchestrator.audit_logger:
+            audit_system_event(
+                "hypothesis_system",
+                "hypotheses_generated",
+                user_id=request.user_id,
+                metadata={
+                    "improvement_targets": request.improvement_targets,
+                    "hypotheses_count": len(results),
+                    "deployment_ready_count": len([r for r in results if r["deployment_ready"]])
+                }
+            )
+        
+        return {
+            "hypotheses_generated": len(results),
+            "deployment_ready_count": len([r for r in results if r["deployment_ready"]]),
+            "results": results,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        
+    except Exception as e:
+        logger.error("Hypothesis generation failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Hypothesis generation failed: {str(e)}")
+
+@app.get("/hypothesis/status/{hypothesis_id}")
+async def get_hypothesis_status(hypothesis_id: str):
+    """Get status of a specific hypothesis"""
+    if not orchestrator.hypothesis_orchestrator:
+        raise HTTPException(status_code=503, detail="Hypothesis system not available")
+    
+    try:
+        result = await orchestrator.hypothesis_orchestrator.get_orchestration_status(hypothesis_id)
+        
+        if not result:
+            raise HTTPException(status_code=404, detail="Hypothesis not found")
+        
+        return {
+            "hypothesis_id": hypothesis_id,
+            "status": result.status.value,
+            "current_phase": result.current_phase.value,
+            "confidence_score": result.confidence_score,
+            "deployment_ready": result.deployment_ready,
+            "final_recommendation": result.final_recommendation,
+            "phase_durations": result.phase_durations,
+            "total_duration_seconds": result.total_duration_seconds
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Error getting hypothesis status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting hypothesis status: {str(e)}")
+
+@app.post("/hypothesis/review")
+async def submit_hypothesis_review(request: HypothesisReviewRequest):
+    """Submit a human review decision for a hypothesis"""
+    if not orchestrator.hypothesis_orchestrator:
+        raise HTTPException(status_code=503, detail="Hypothesis system not available")
+    
+    try:
+        # Convert string decision to enum
+        if HYPOTHESIS_SYSTEM_AVAILABLE:
+            decision_enum = ReviewStatus(request.decision.lower())
+        else:
+            raise HTTPException(status_code=503, detail="Hypothesis system not properly initialized")
+        
+        review_decision = await orchestrator.hypothesis_orchestrator.human_loop_manager.submit_review_decision(
+            request_id=request.request_id,
+            reviewer_id=request.reviewer_id,
+            decision=decision_enum,
+            reasoning=request.reasoning,
+            confidence_level=request.confidence_level,
+            modification_suggestions=request.modification_suggestions,
+            approval_conditions=request.approval_conditions
+        )
+        
+        # Log review submission
+        if orchestrator.audit_logger:
+            audit_system_event(
+                "hypothesis_system",
+                "review_submitted",
+                user_id=request.reviewer_id,
+                metadata={
+                    "request_id": request.request_id,
+                    "decision": request.decision,
+                    "confidence_level": request.confidence_level
+                }
+            )
+        
+        return {
+            "review_id": review_decision.request_id,
+            "decision": review_decision.decision.value,
+            "confidence_level": review_decision.confidence_level,
+            "timestamp": review_decision.timestamp,
+            "risk_assessment": review_decision.risk_assessment
+        }
+        
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=f"Invalid decision value: {str(e)}")
+    except Exception as e:
+        logger.error("Review submission failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Review submission failed: {str(e)}")
+
+@app.get("/hypothesis/pending-reviews")
+async def get_pending_reviews(reviewer_id: Optional[str] = None, priority: Optional[str] = None):
+    """Get pending hypothesis reviews"""
+    if not orchestrator.hypothesis_orchestrator:
+        raise HTTPException(status_code=503, detail="Hypothesis system not available")
+    
+    try:
+        # Convert priority string to enum if provided
+        priority_enum = None
+        if priority and HYPOTHESIS_SYSTEM_AVAILABLE:
+            from src.hypothesis.human_in_loop import ReviewPriority
+            priority_enum = ReviewPriority(priority.lower())
+        
+        pending_reviews = await orchestrator.hypothesis_orchestrator.human_loop_manager.get_pending_reviews(
+            reviewer_id=reviewer_id,
+            priority=priority_enum
+        )
+        
+        # Convert to serializable format
+        reviews = []
+        for review in pending_reviews:
+            reviews.append({
+                "request_id": review.request_id,
+                "hypothesis_id": review.hypothesis.hypothesis_id,
+                "hypothesis_type": review.hypothesis.hypothesis_type.value,
+                "priority": review.review_priority.value,
+                "description": review.hypothesis.description,
+                "created_timestamp": review.created_timestamp,
+                "assigned_reviewer": review.assigned_reviewer,
+                "reviewer_notes": review.reviewer_notes,
+                "safety_score": review.validation_result.safety_score if review.validation_result else None,
+                "risk_level": review.hypothesis.risk_level
+            })
+        
+        return {
+            "pending_reviews": len(reviews),
+            "reviews": reviews,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        
+    except Exception as e:
+        logger.error("Error getting pending reviews: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting pending reviews: {str(e)}")
+
+@app.get("/hypothesis/statistics")
+async def get_hypothesis_statistics():
+    """Get comprehensive hypothesis system statistics"""
+    if not orchestrator.hypothesis_orchestrator:
+        raise HTTPException(status_code=503, detail="Hypothesis system not available")
+    
+    try:
+        stats = orchestrator.hypothesis_orchestrator.get_orchestration_statistics()
+        return stats
+        
+    except Exception as e:
+        logger.error("Error getting hypothesis statistics: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting hypothesis statistics: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run(

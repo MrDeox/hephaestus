@@ -583,6 +583,10 @@ class RSIOnlineLearner:
             logger.error(f"Failed to load model: {e}")
             raise
 
+    def get_metrics(self) -> LearningMetrics:
+        """Get current learning metrics for system health monitoring."""
+        return self.current_metrics
+
 
 class OnlineLearningOrchestrator:
     """

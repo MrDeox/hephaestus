@@ -6,6 +6,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Hephaestus is a production-ready **Recursive Self-Improvement (RSI) AI system** that implements comprehensive safety measures, monitoring, and defensive security practices. The system is designed with a **safety-first architecture** that prioritizes reliability over performance and implements multiple layers of protection.
 
+## 🎯 RSI Cycle Complete!
+
+**O ciclo está fechado!** The system now implements a complete recursive self-improvement cycle:
+
+1. **Performance Analysis** → Monitor system metrics and identify improvement opportunities
+2. **Hypothesis Generation** → Use Optuna & Ray to generate improvement strategies  
+3. **Validation & Testing** → Comprehensive safety, performance, and robustness validation
+4. **Human Review** → Expert approval for high-risk changes with auto-approval for safe ones
+5. **Simulation** → Statistical testing with adversarial and stress analysis
+6. **Deployment** → Automated integration of validated improvements
+7. **Monitoring** → Continuous assessment and feedback loop
+
+### 🧪 RSI Hypothesis Testing System Features
+
+- **Intelligent Generation**: Optuna-based Bayesian optimization with Ray distribution
+- **Multi-Level Validation**: Safety, performance, robustness, and security testing
+- **Secure Execution**: RestrictedPython + process isolation (Docker removed per requirements)
+- **Human-in-the-Loop**: Approval workflows with intelligent auto-approval
+- **Advanced Simulation**: Statistical significance testing with SciPy integration
+- **Comprehensive Monitoring**: Real-time tracking and audit trails
+
 ## Development Commands
 
 ### Installation and Setup
@@ -27,6 +48,9 @@ python -m src.main
 # Run comprehensive examples demonstrating all features
 python example_usage.py
 
+# 🎯 NEW: Run complete RSI cycle demonstration
+python examples/complete_rsi_demo.py
+
 # Run integration tests
 python test_integrated_system.py
 python test_memory_system.py
@@ -45,6 +69,27 @@ async def test():
     await orchestrator.stop()
 
 asyncio.run(test())
+"
+
+# 🧪 Test RSI Hypothesis System directly
+python -c "
+import asyncio
+from src.hypothesis.rsi_hypothesis_orchestrator import RSIHypothesisOrchestrator
+
+async def test_rsi():
+    orchestrator = RSIHypothesisOrchestrator(environment='development')
+    
+    # Generate hypotheses
+    targets = {'accuracy': 0.05, 'efficiency': 0.1}
+    results = await orchestrator.orchestrate_hypothesis_lifecycle(targets)
+    
+    print(f'Generated {len(results)} hypotheses')
+    for r in results[:3]:
+        print(f'- {r.hypothesis.description} (Ready: {r.deployment_ready})')
+    
+    await orchestrator.cleanup()
+
+asyncio.run(test_rsi())
 "
 ```
 

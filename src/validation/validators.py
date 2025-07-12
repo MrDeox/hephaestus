@@ -233,6 +233,99 @@ class RSIValidator:
             )
             self.validation_history.append(result)
             return result
+
+    async def validate_prediction_input(self, features: Dict[str, Any]) -> ValidationResult:
+        """Validate prediction input features."""
+        try:
+            errors = {}
+            
+            # Basic validation
+            if not features:
+                errors["features"] = ["Features cannot be empty"]
+            
+            # Validate feature types and ranges
+            for key, value in features.items():
+                if not isinstance(key, str):
+                    errors[key] = ["Feature name must be string"]
+                    continue
+                
+                if not isinstance(value, (int, float, str, bool, list)):
+                    errors[key] = ["Feature value must be basic type"]
+                    continue
+                
+                # Check for numeric features
+                if isinstance(value, (int, float)):
+                    if np.isnan(value) or np.isinf(value):
+                        errors[key] = ["Feature contains NaN or Inf values"]
+                    elif abs(value) > 1e6:  # Safety check
+                        errors[key] = ["Feature value extremely large"]
+            
+            result = ValidationResult(
+                valid=len(errors) == 0,
+                validation_type=ValidationType.SAFETY,
+                severity=ValidationSeverity.ERROR if errors else ValidationSeverity.INFO,
+                message=f"Prediction input validation {'passed' if not errors else 'failed'}",
+                field_errors=errors,
+                metadata={"feature_count": len(features)}
+            )
+            
+            self.validation_history.append(result)
+            return result
+            
+        except Exception as e:
+            result = ValidationResult(
+                valid=False,
+                validation_type=ValidationType.SAFETY,
+                severity=ValidationSeverity.CRITICAL,
+                message=f"Prediction input validation error: {str(e)}",
+                metadata={"exception": str(e)}
+            )
+            self.validation_history.append(result)
+            return result
+
+    async def validate_learning_input(self, features: Dict[str, Any], target: Any) -> ValidationResult:
+        """Validate learning input features and target."""
+        try:
+            errors = {}
+            
+            # Validate features using prediction validation
+            feature_result = await self.validate_prediction_input(features)
+            if not feature_result.valid:
+                errors.update(feature_result.field_errors)
+            
+            # Validate target
+            if target is None:
+                errors["target"] = ["Target cannot be None"]
+            elif isinstance(target, (int, float)):
+                if np.isnan(target) or np.isinf(target):
+                    errors["target"] = ["Target contains NaN or Inf values"]
+                elif abs(target) > 1e6:  # Safety check
+                    errors["target"] = ["Target value extremely large"]
+            elif not isinstance(target, (int, float, str, bool, list)):
+                errors["target"] = ["Target must be basic type"]
+            
+            result = ValidationResult(
+                valid=len(errors) == 0,
+                validation_type=ValidationType.SAFETY,
+                severity=ValidationSeverity.ERROR if errors else ValidationSeverity.INFO,
+                message=f"Learning input validation {'passed' if not errors else 'failed'}",
+                field_errors=errors,
+                metadata={"feature_count": len(features), "target_type": type(target).__name__}
+            )
+            
+            self.validation_history.append(result)
+            return result
+            
+        except Exception as e:
+            result = ValidationResult(
+                valid=False,
+                validation_type=ValidationType.SAFETY,
+                severity=ValidationSeverity.CRITICAL,
+                message=f"Learning input validation error: {str(e)}",
+                metadata={"exception": str(e)}
+            )
+            self.validation_history.append(result)
+            return result
     
     def validate_learning_config(
         self, 
