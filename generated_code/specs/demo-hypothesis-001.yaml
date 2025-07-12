@@ -1,0 +1,12 @@
+coverage_threshold: 0.9
+cpu_limit: 1.0
+dependencies:
+- numpy
+- scikit-learn
+hypothesis_id: demo-hypothesis-001
+memory_limit: 512
+objective: Implementar feature scaling otimizado para melhorar accuracy
+security_level: high
+target_metrics:
+  accuracy: 0.05
+timeout: 300

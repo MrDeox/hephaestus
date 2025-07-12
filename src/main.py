@@ -68,6 +68,17 @@ except ImportError as e:
     logger.warning("RSI Hypothesis Testing System not fully available: {}", str(e))
     HYPOTHESIS_SYSTEM_AVAILABLE = False
 
+# Real RSI Execution System imports
+try:
+    from src.execution import (
+        RSIExecutionPipeline, create_rsi_execution_pipeline,
+        RealCodeGenerator, CanaryDeploymentOrchestrator
+    )
+    REAL_EXECUTION_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Real RSI Execution System not fully available: {}", str(e))
+    REAL_EXECUTION_AVAILABLE = False
+
 # Pydantic models for API
 class PredictionRequest(BaseModel):
     features: Dict[str, Any] = Field(..., description="Input features for prediction")
@@ -202,6 +213,22 @@ class RSIOrchestrator:
                     logger.info("✅ RSI Hypothesis Testing System initialized")
                 except Exception as e:
                     logger.warning("Failed to initialize RSI Hypothesis System: {}", str(e))
+            
+            # Real RSI Execution Pipeline
+            self.execution_pipeline = None
+            self.deployment_orchestrator = None
+            if REAL_EXECUTION_AVAILABLE:
+                try:
+                    self.execution_pipeline = create_rsi_execution_pipeline(
+                        state_manager=self.state_manager,
+                        validator=self.validator,
+                        circuit_breaker=self.circuit_manager,
+                        hypothesis_orchestrator=self.hypothesis_orchestrator
+                    )
+                    self.deployment_orchestrator = self.execution_pipeline.deployment_orchestrator
+                    logger.info("✅ Real RSI Execution Pipeline initialized")
+                except Exception as e:
+                    logger.warning("Failed to initialize Real RSI Execution Pipeline: {}", str(e))
             
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
@@ -1268,6 +1295,210 @@ async def get_hypothesis_statistics():
     except Exception as e:
         logger.error("Error getting hypothesis statistics: {}", str(e))
         raise HTTPException(status_code=500, detail=f"Error getting hypothesis statistics: {str(e)}")
+
+# ================================
+# REAL RSI EXECUTION ENDPOINTS
+# ================================
+
+@app.post("/rsi/execute")
+async def execute_hypothesis_real(hypothesis: Dict[str, Any]):
+    """Execute a hypothesis through the complete real RSI pipeline"""
+    if not REAL_EXECUTION_AVAILABLE:
+        raise HTTPException(status_code=503, detail="Real RSI execution system not available")
+    
+    if not orchestrator.execution_pipeline:
+        raise HTTPException(status_code=503, detail="Execution pipeline not initialized")
+    
+    try:
+        # Execute through complete pipeline
+        result = await orchestrator.execution_pipeline.execute_hypothesis(hypothesis)
+        
+        # Log execution
+        await audit_system_event(
+            "rsi_execution",
+            f"Pipeline executed: {result.pipeline_id}",
+            metadata={
+                'hypothesis_id': result.hypothesis_id,
+                'status': result.status.value,
+                'success': result.success
+            }
+        )
+        
+        return {
+            "pipeline_id": result.pipeline_id,
+            "hypothesis_id": result.hypothesis_id,
+            "status": result.status.value,
+            "success": result.success,
+            "duration_seconds": result.duration_seconds,
+            "performance_improvement": result.performance_improvement,
+            "error_messages": result.error_messages,
+            "execution_metrics": result.execution_metrics
+        }
+        
+    except Exception as e:
+        logger.error("Real RSI execution failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Execution failed: {str(e)}")
+
+@app.get("/rsi/execution/{pipeline_id}")
+async def get_execution_status(pipeline_id: str):
+    """Get status of a specific RSI execution pipeline"""
+    if not REAL_EXECUTION_AVAILABLE or not orchestrator.execution_pipeline:
+        raise HTTPException(status_code=503, detail="Real RSI execution system not available")
+    
+    try:
+        status = await orchestrator.execution_pipeline.get_execution_status(pipeline_id)
+        
+        if not status:
+            raise HTTPException(status_code=404, detail="Pipeline not found")
+        
+        return status
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Error getting execution status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting status: {str(e)}")
+
+@app.get("/rsi/executions")
+async def list_executions():
+    """List all RSI execution pipelines"""
+    if not REAL_EXECUTION_AVAILABLE or not orchestrator.execution_pipeline:
+        raise HTTPException(status_code=503, detail="Real RSI execution system not available")
+    
+    try:
+        executions = await orchestrator.execution_pipeline.list_executions()
+        success_rate = await orchestrator.execution_pipeline.get_success_rate()
+        
+        return {
+            "executions": executions,
+            "success_rate": success_rate,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        
+    except Exception as e:
+        logger.error("Error listing executions: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error listing executions: {str(e)}")
+
+@app.get("/rsi/deployments")
+async def list_deployments():
+    """List all canary deployments"""
+    if not REAL_EXECUTION_AVAILABLE or not orchestrator.deployment_orchestrator:
+        raise HTTPException(status_code=503, detail="Deployment system not available")
+    
+    try:
+        deployments = await orchestrator.deployment_orchestrator.list_deployments()
+        
+        return {
+            "deployments": deployments,
+            "total_deployments": len(deployments),
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        
+    except Exception as e:
+        logger.error("Error listing deployments: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error listing deployments: {str(e)}")
+
+@app.get("/rsi/deployment/{deployment_id}")
+async def get_deployment_status(deployment_id: str):
+    """Get status of a specific canary deployment"""
+    if not REAL_EXECUTION_AVAILABLE or not orchestrator.deployment_orchestrator:
+        raise HTTPException(status_code=503, detail="Deployment system not available")
+    
+    try:
+        status = await orchestrator.deployment_orchestrator.get_deployment_status(deployment_id)
+        
+        if not status:
+            raise HTTPException(status_code=404, detail="Deployment not found")
+        
+        return status
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Error getting deployment status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting deployment status: {str(e)}")
+
+@app.post("/rsi/trigger-real-improvement")
+async def trigger_real_improvement(improvement_targets: Dict[str, float] = None):
+    """Trigger a complete real RSI improvement cycle"""
+    if not REAL_EXECUTION_AVAILABLE:
+        raise HTTPException(status_code=503, detail="Real RSI execution system not available")
+    
+    try:
+        # Generate hypothesis first
+        if not orchestrator.hypothesis_orchestrator:
+            raise HTTPException(status_code=503, detail="Hypothesis system not available")
+        
+        # Use provided targets or defaults
+        targets = improvement_targets or {"accuracy": 0.05, "latency": -0.1, "throughput": 0.15}
+        
+        # Generate hypothesis
+        hypothesis_result = await orchestrator.hypothesis_orchestrator.orchestrate_hypothesis_generation(
+            improvement_targets=targets,
+            context={"source": "real_rsi_trigger", "automated": True},
+            max_hypotheses=5
+        )
+        
+        if not hypothesis_result.success or not hypothesis_result.hypotheses:
+            raise HTTPException(status_code=500, detail="Failed to generate hypotheses")
+        
+        # Take the best hypothesis
+        best_hypothesis = hypothesis_result.hypotheses[0]
+        
+        # Execute through real RSI pipeline
+        execution_result = await orchestrator.execution_pipeline.execute_hypothesis(
+            best_hypothesis.__dict__
+        )
+        
+        return {
+            "triggered": True,
+            "hypothesis_generation": {
+                "success": hypothesis_result.success,
+                "hypotheses_generated": len(hypothesis_result.hypotheses),
+                "selected_hypothesis": best_hypothesis.hypothesis_id
+            },
+            "execution": {
+                "pipeline_id": execution_result.pipeline_id,
+                "status": execution_result.status.value,
+                "success": execution_result.success,
+                "performance_improvement": execution_result.performance_improvement
+            },
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Real RSI trigger failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Real RSI trigger failed: {str(e)}")
+
+@app.get("/rsi/system-status")
+async def get_real_rsi_status():
+    """Get comprehensive status of the real RSI system"""
+    try:
+        status = {
+            "real_execution_available": REAL_EXECUTION_AVAILABLE,
+            "hypothesis_system_available": HYPOTHESIS_SYSTEM_AVAILABLE,
+            "components": {
+                "execution_pipeline": orchestrator.execution_pipeline is not None,
+                "deployment_orchestrator": orchestrator.deployment_orchestrator is not None,
+                "code_generator": hasattr(orchestrator, 'code_generator'),
+            }
+        }
+        
+        if REAL_EXECUTION_AVAILABLE and orchestrator.execution_pipeline:
+            success_rate = await orchestrator.execution_pipeline.get_success_rate()
+            status["success_rate"] = success_rate
+        
+        if REAL_EXECUTION_AVAILABLE and orchestrator.deployment_orchestrator:
+            deployments = await orchestrator.deployment_orchestrator.list_deployments()
+            status["deployments_count"] = len(deployments)
+        
+        return status
+        
+    except Exception as e:
+        logger.error("Error getting real RSI status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting status: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run(
