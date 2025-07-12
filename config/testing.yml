@@ -1,0 +1,75 @@
+environment: testing
+debug: true
+log_level: WARNING  # Reduce noise in tests
+
+database:
+  url: "sqlite:///:memory:"  # In-memory for tests
+  mlflow_uri: "sqlite:///:memory:"
+  echo: false
+
+redis:
+  host: "localhost"
+  port: 6379
+  db: 15  # Use dedicated test DB
+
+security:
+  security_level: low  # Relaxed for testing
+  sandbox_timeout: 10
+  sandbox_memory_limit: 64MB
+  allowed_imports:
+    - math
+    - statistics
+    - random
+    - datetime
+    - json
+    - re
+    - collections
+    - itertools
+    - functools
+    - operator
+    - numpy
+    - pandas
+    - sklearn
+    - scipy
+    - pytest
+    - unittest
+    - mock
+
+learning:
+  online_learning_enabled: true
+  meta_learning_enabled: false  # Disabled for faster tests
+  continual_learning_enabled: false
+  rl_enabled: false
+  default_learning_rate: 0.1
+  batch_size: 8
+  meta_learning_interval: 10
+
+monitoring:
+  telemetry_enabled: false  # Disabled for tests
+  otel_enabled: false
+  anomaly_detection_enabled: false
+  health_check_interval: 5
+
+safety:
+  circuit_breaker_enabled: false  # Disabled for tests
+  rsi_safety_enabled: false
+  strict_validation: false
+
+api:
+  host: "127.0.0.1"
+  port: 8001  # Different port for tests
+  workers: 1
+  timeout: 10
+  cors_enabled: true
+  rate_limiting_enabled: false
+
+features:
+  enable_real_rsi: false  # Use mocked RSI for tests
+  enable_meta_learning: false
+  enable_hypothesis_testing: false
+  enable_distributed_learning: false
+  enable_gpu_acceleration: false
+  enable_real_code_generation: false
+  enable_human_in_loop: false
+  enable_auto_rollback: false
+  enable_canary_deployment: false

@@ -1,0 +1,83 @@
+environment: production
+debug: false
+log_level: INFO
+
+database:
+  url: "postgresql://hephaestus:${DB_PASSWORD}@${DB_HOST}:5432/hephaestus"
+  mlflow_uri: "postgresql://hephaestus:${DB_PASSWORD}@${DB_HOST}:5432/mlflow"
+  pool_size: 20
+  max_overflow: 40
+  echo: false
+
+redis:
+  host: "${REDIS_HOST}"
+  port: 6379
+  password: "${REDIS_PASSWORD}"
+  max_connections: 100
+
+security:
+  security_level: maximum
+  sandbox_timeout: 300
+  sandbox_memory_limit: 256MB
+  encryption_key: "${ENCRYPTION_KEY}"
+  enable_auth: true
+  jwt_secret: "${JWT_SECRET}"
+  allowed_imports:
+    - math
+    - statistics
+    - random
+    - datetime
+    - json
+    - re
+    - collections
+    - itertools
+    - functools
+    - operator
+    - numpy
+    - pandas
+    - sklearn
+    - scipy
+
+learning:
+  online_learning_enabled: true
+  meta_learning_enabled: true
+  continual_learning_enabled: true
+  rl_enabled: false  # Disabled for production safety
+  default_learning_rate: 0.001
+  batch_size: 64
+  max_model_versions: 500
+
+monitoring:
+  telemetry_enabled: true
+  telemetry_interval: 60
+  otel_enabled: true
+  otel_endpoint: "${OTEL_ENDPOINT}"
+  anomaly_detection_enabled: true
+  anomaly_sensitivity: 0.9
+  metrics_retention_days: 90
+
+safety:
+  circuit_breaker_enabled: true
+  circuit_failure_threshold: 5
+  rsi_safety_enabled: true
+  max_rsi_cycles_per_hour: 12
+  strict_validation: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  cors_enabled: false
+  rate_limiting_enabled: true
+  rate_limit_requests_per_minute: 100
+
+features:
+  enable_real_rsi: true
+  enable_meta_learning: true
+  enable_hypothesis_testing: false  # Disabled for production
+  enable_distributed_learning: true
+  enable_gpu_acceleration: true
+  enable_real_code_generation: false  # Disabled for safety
+  enable_human_in_loop: true
+  enable_auto_rollback: true
+  enable_canary_deployment: true

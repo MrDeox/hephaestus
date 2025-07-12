@@ -63,3 +63,107 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 19:36:12.591 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 19:36:12.591184
 19:36:12.591 | INFO | Investigating inference performance degradation
 INFO:     127.0.0.1:39388 - "GET /health HTTP/1.1" 200 OK
+19:37:07.576 | INFO | 🔄 Real RSI Cycle #2
+19:37:07.576 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:37:07.576 | INFO | ✅ Real RSI Cycle #2 completed
+19:38:07.576 | INFO | 🔄 Real RSI Cycle #3
+19:38:07.576 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:38:07.577 | INFO | ✅ Real RSI Cycle #3 completed
+19:39:07.577 | INFO | 🔄 Real RSI Cycle #4
+19:39:07.577 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:39:07.577 | INFO | ✅ Real RSI Cycle #4 completed
+19:40:07.577 | INFO | 🔄 Real RSI Cycle #5
+19:40:07.577 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:40:07.577 | INFO | ✅ Real RSI Cycle #5 completed
+19:41:07.578 | INFO | 🔄 Real RSI Cycle #6
+19:41:07.578 | INFO | ⚙️ Executing Real RSI with Code Generation...
+19:41:07.578 | INFO | 🚀 Iniciando pipeline RSI: be541b2a-29fb-4122-be6b-1a02775d6726
+19:41:07.579 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+19:41:07.579 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+19:41:07.580 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+19:41:07.580 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:41:07.580 | INFO | ✅ Real RSI Cycle #6 completed
+19:42:07.582 | INFO | 🔄 Real RSI Cycle #7
+19:42:07.582 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:42:07.582 | INFO | ✅ Real RSI Cycle #7 completed
+19:43:07.582 | INFO | 🔄 Real RSI Cycle #8
+19:43:07.583 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:43:07.583 | INFO | ✅ Real RSI Cycle #8 completed
+19:44:07.584 | INFO | 🔄 Real RSI Cycle #9
+19:44:07.584 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:44:07.584 | INFO | ✅ Real RSI Cycle #9 completed
+19:45:07.584 | INFO | 🔄 Real RSI Cycle #10
+19:45:07.584 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:45:07.585 | INFO | ✅ Real RSI Cycle #10 completed
+19:46:07.585 | INFO | 🔄 Real RSI Cycle #11
+19:46:07.585 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+19:46:07.585 | WARNING | ⚠️ Required components not available - skipping gap scanning
+19:46:07.586 | INFO | ⚙️ Executing Real RSI with Code Generation...
+19:46:07.586 | INFO | 🚀 Iniciando pipeline RSI: 1d231cd6-824f-4fa9-8e0f-44e1ccd82bbd
+19:46:07.586 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+19:46:07.586 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+19:46:07.587 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+19:46:07.587 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:46:07.587 | INFO | ✅ Real RSI Cycle #11 completed
+19:47:07.587 | INFO | 🔄 Real RSI Cycle #12
+19:47:07.587 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:47:07.587 | INFO | ✅ Real RSI Cycle #12 completed
+19:48:07.588 | INFO | 🔄 Real RSI Cycle #13
+19:48:07.588 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:48:07.589 | INFO | ✅ Real RSI Cycle #13 completed
+19:49:07.589 | INFO | 🔄 Real RSI Cycle #14
+19:49:07.589 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:49:07.589 | INFO | ✅ Real RSI Cycle #14 completed
+19:50:07.589 | INFO | 🔄 Real RSI Cycle #15
+19:50:07.589 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:50:07.590 | INFO | ✅ Real RSI Cycle #15 completed
+19:51:07.590 | INFO | 🔄 Real RSI Cycle #16
+19:51:07.591 | INFO | ⚙️ Executing Real RSI with Code Generation...
+19:51:07.591 | INFO | 🚀 Iniciando pipeline RSI: c14d9c00-4ee9-490d-9a67-1343be2a5559
+19:51:07.591 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+19:51:07.592 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+19:51:07.592 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+19:51:07.592 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:51:07.593 | INFO | ✅ Real RSI Cycle #16 completed
+19:52:07.593 | INFO | 🔄 Real RSI Cycle #17
+19:52:07.594 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:52:07.594 | INFO | ✅ Real RSI Cycle #17 completed
+19:53:07.594 | INFO | 🔄 Real RSI Cycle #18
+19:53:07.595 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:53:07.595 | INFO | ✅ Real RSI Cycle #18 completed
+19:54:07.595 | INFO | 🔄 Real RSI Cycle #19
+19:54:07.596 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:54:07.596 | INFO | ✅ Real RSI Cycle #19 completed
+19:55:07.597 | INFO | 🔄 Real RSI Cycle #20
+19:55:07.597 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:55:07.597 | INFO | ✅ Real RSI Cycle #20 completed
+19:56:07.598 | INFO | 🔄 Real RSI Cycle #21
+19:56:07.598 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+19:56:07.599 | WARNING | ⚠️ Required components not available - skipping gap scanning
+19:56:07.599 | INFO | ⚙️ Executing Real RSI with Code Generation...
+19:56:07.599 | INFO | 🚀 Iniciando pipeline RSI: 81cd4a66-a84b-46b4-a958-5f4e03bc57c8
+19:56:07.599 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+19:56:07.600 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+19:56:07.600 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+19:56:07.600 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:56:07.600 | INFO | ✅ Real RSI Cycle #21 completed
+19:57:07.600 | INFO | 🔄 Real RSI Cycle #22
+19:57:07.601 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:57:07.601 | INFO | ✅ Real RSI Cycle #22 completed
+19:58:07.601 | INFO | 🔄 Real RSI Cycle #23
+19:58:07.601 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:58:07.602 | INFO | ✅ Real RSI Cycle #23 completed
+19:59:07.603 | INFO | 🔄 Real RSI Cycle #24
+19:59:07.603 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+19:59:07.603 | INFO | ✅ Real RSI Cycle #24 completed
+20:00:07.603 | INFO | 🔄 Real RSI Cycle #25
+20:00:07.604 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:00:07.604 | INFO | ✅ Real RSI Cycle #25 completed
+20:01:07.604 | INFO | 🔄 Real RSI Cycle #26
+20:01:07.604 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:01:07.604 | INFO | 🚀 Iniciando pipeline RSI: 85047e5d-7b96-4cf4-bb96-0438f679d622
+20:01:07.605 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:01:07.605 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:01:07.605 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:01:07.606 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:01:07.606 | INFO | ✅ Real RSI Cycle #26 completed

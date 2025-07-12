@@ -1,0 +1,75 @@
+environment: development
+debug: true
+log_level: DEBUG
+
+database:
+  url: "sqlite:///data/hephaestus_dev.db"
+  mlflow_uri: "sqlite:///data/mlflow_dev.db"
+  echo: true
+
+redis:
+  host: "localhost"
+  port: 6379
+  db: 1  # Use different DB for dev
+
+security:
+  security_level: medium
+  sandbox_timeout: 60
+  allowed_imports:
+    - math
+    - statistics
+    - random
+    - datetime
+    - json
+    - re
+    - collections
+    - itertools
+    - functools
+    - operator
+    - numpy
+    - pandas
+    - sklearn
+    - scipy
+    - matplotlib
+    - seaborn
+    - plotly
+
+learning:
+  online_learning_enabled: true
+  meta_learning_enabled: true
+  continual_learning_enabled: true
+  rl_enabled: false
+  default_learning_rate: 0.01
+  batch_size: 16
+
+monitoring:
+  telemetry_enabled: true
+  telemetry_interval: 30
+  otel_enabled: false
+  anomaly_detection_enabled: true
+  anomaly_sensitivity: 0.6
+
+safety:
+  circuit_breaker_enabled: true
+  circuit_failure_threshold: 3
+  rsi_safety_enabled: true
+  max_rsi_cycles_per_hour: 60
+  strict_validation: false
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  workers: 1
+  cors_enabled: true
+  rate_limiting_enabled: false
+
+features:
+  enable_real_rsi: true
+  enable_meta_learning: true
+  enable_hypothesis_testing: true
+  enable_distributed_learning: false
+  enable_gpu_acceleration: false
+  enable_real_code_generation: false
+  enable_human_in_loop: true
+  enable_auto_rollback: true
+  enable_canary_deployment: false
