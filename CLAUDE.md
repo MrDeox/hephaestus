@@ -1,10 +1,16 @@
-# CLAUDE.md
+# CLAUDE.md - Core Development Rules
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 🚨 CRITICAL RULES (READ FIRST)
+
+1. **Development must follow TDD (Test-Driven Development) methodology**
+2. **All implementation must strictly follow steps outlined in memory-bank/activeContext.md**
+3. **Our primary tech stack is Python 3.11, FastAPI, SQLite, River ML, PyTorch - Do not introduce other libraries unless specified in plan**
+4. **Always read memory-bank/ folder first to understand current project state**
+5. **Commit progress frequently with descriptive messages**
 
 ## Overview
 
-Hephaestus is a production-ready **Recursive Self-Improvement (RSI) AI system** that implements comprehensive safety measures, monitoring, and defensive security practices. The system is designed with a **safety-first architecture** that prioritizes reliability over performance and implements multiple layers of protection.
+Hephaestus is a production-ready **Recursive Self-Improvement (RSI) AI system** that autonomously generates revenue using self-improvement capabilities. The system implements comprehensive safety measures, monitoring, and defensive security practices with a **safety-first architecture**.
 
 ## 🎯 RSI Cycle Complete!
 
