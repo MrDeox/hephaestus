@@ -9,15 +9,9 @@ import sys
 import argparse
 import subprocess
 import time
+import toml
 from pathlib import Path
 from typing import List, Optional
-
-try:
-    import toml
-except ImportError:
-    print("Toml package not found, installing...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "toml"])
-    import toml
 
 
 def get_pytest_addopts() -> List[str]:

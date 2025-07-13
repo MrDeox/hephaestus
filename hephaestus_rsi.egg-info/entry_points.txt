@@ -1,0 +1,4 @@
+[console_scripts]
+hephaestus = src.main:main
+hephaestus-monitor = scripts.monitor:main
+hephaestus-test = tests.run_tests:main

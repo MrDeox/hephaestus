@@ -167,3 +167,618 @@ INFO:     127.0.0.1:39388 - "GET /health HTTP/1.1" 200 OK
 20:01:07.605 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
 20:01:07.606 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
 20:01:07.606 | INFO | ✅ Real RSI Cycle #26 completed
+20:02:07.606 | INFO | 🔄 Real RSI Cycle #27
+20:02:07.606 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:02:07.607 | INFO | ✅ Real RSI Cycle #27 completed
+20:03:07.607 | INFO | 🔄 Real RSI Cycle #28
+20:03:07.607 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:03:07.608 | INFO | ✅ Real RSI Cycle #28 completed
+20:04:07.608 | INFO | 🔄 Real RSI Cycle #29
+20:04:07.609 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:04:07.609 | INFO | ✅ Real RSI Cycle #29 completed
+20:05:07.610 | INFO | 🔄 Real RSI Cycle #30
+20:05:07.610 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:05:07.610 | INFO | ✅ Real RSI Cycle #30 completed
+20:06:07.611 | INFO | 🔄 Real RSI Cycle #31
+20:06:07.611 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:06:07.611 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:06:07.611 | WARNING | ⚠️ MML Controller not initialized - attempting to initialize now
+20:06:07.611 | WARNING | ⚠️ Required components not available - skipping meta-learning
+20:06:07.612 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:06:07.612 | INFO | 🚀 Iniciando pipeline RSI: 826b0e43-8e22-425a-8f8c-07ebb022a8a5
+20:06:07.612 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:06:07.612 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:06:07.613 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:06:07.613 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:06:07.613 | INFO | ✅ Real RSI Cycle #31 completed
+20:07:07.613 | INFO | 🔄 Real RSI Cycle #32
+20:07:07.613 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:07:07.613 | INFO | ✅ Real RSI Cycle #32 completed
+20:08:07.614 | INFO | 🔄 Real RSI Cycle #33
+20:08:07.614 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:08:07.614 | INFO | ✅ Real RSI Cycle #33 completed
+20:09:07.614 | INFO | 🔄 Real RSI Cycle #34
+20:09:07.614 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:09:07.614 | INFO | ✅ Real RSI Cycle #34 completed
+20:10:07.614 | INFO | 🔄 Real RSI Cycle #35
+20:10:07.614 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:10:07.615 | INFO | ✅ Real RSI Cycle #35 completed
+20:11:07.615 | INFO | 🔄 Real RSI Cycle #36
+20:11:07.616 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:11:07.616 | INFO | 🚀 Iniciando pipeline RSI: 7ff3453d-6122-4d53-ae52-c892c25d2776
+20:11:07.616 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:11:07.616 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:11:07.617 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:11:07.617 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:11:07.617 | INFO | ✅ Real RSI Cycle #36 completed
+20:12:07.617 | INFO | 🔄 Real RSI Cycle #37
+20:12:07.617 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:12:07.618 | INFO | ✅ Real RSI Cycle #37 completed
+20:13:07.619 | INFO | 🔄 Real RSI Cycle #38
+20:13:07.619 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:13:07.619 | INFO | ✅ Real RSI Cycle #38 completed
+20:14:07.620 | INFO | 🔄 Real RSI Cycle #39
+20:14:07.620 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:14:07.620 | INFO | ✅ Real RSI Cycle #39 completed
+20:15:07.620 | INFO | 🔄 Real RSI Cycle #40
+20:15:07.620 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:15:07.620 | INFO | ✅ Real RSI Cycle #40 completed
+20:16:07.621 | INFO | 🔄 Real RSI Cycle #41
+20:16:07.621 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:16:07.621 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:16:07.621 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:16:07.621 | INFO | 🚀 Iniciando pipeline RSI: 57ebfc7d-9227-4444-b5a4-59e2ddbb9d6d
+20:16:07.622 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:16:07.622 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:16:07.622 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:16:07.622 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:16:07.623 | INFO | ✅ Real RSI Cycle #41 completed
+20:17:07.624 | INFO | 🔄 Real RSI Cycle #42
+20:17:07.624 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:17:07.624 | INFO | ✅ Real RSI Cycle #42 completed
+20:18:07.625 | INFO | 🔄 Real RSI Cycle #43
+20:18:07.625 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:18:07.625 | INFO | ✅ Real RSI Cycle #43 completed
+20:19:07.625 | INFO | 🔄 Real RSI Cycle #44
+20:19:07.625 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:19:07.626 | INFO | ✅ Real RSI Cycle #44 completed
+20:20:07.626 | INFO | 🔄 Real RSI Cycle #45
+20:20:07.627 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:20:07.627 | INFO | ✅ Real RSI Cycle #45 completed
+20:21:07.627 | INFO | 🔄 Real RSI Cycle #46
+20:21:07.627 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:21:07.628 | INFO | 🚀 Iniciando pipeline RSI: 57329d7f-f904-4859-91c6-ea8d8549c83e
+20:21:07.628 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:21:07.628 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:21:07.629 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:21:07.629 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:21:07.629 | INFO | ✅ Real RSI Cycle #46 completed
+20:22:07.629 | INFO | 🔄 Real RSI Cycle #47
+20:22:07.629 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:22:07.630 | INFO | ✅ Real RSI Cycle #47 completed
+20:23:07.630 | INFO | 🔄 Real RSI Cycle #48
+20:23:07.630 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:23:07.630 | INFO | ✅ Real RSI Cycle #48 completed
+20:24:07.630 | INFO | 🔄 Real RSI Cycle #49
+20:24:07.630 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:24:07.631 | INFO | ✅ Real RSI Cycle #49 completed
+20:25:07.631 | INFO | 🔄 Real RSI Cycle #50
+20:25:07.631 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:25:07.632 | INFO | ✅ Real RSI Cycle #50 completed
+20:26:07.632 | INFO | 🔄 Real RSI Cycle #51
+20:26:07.633 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:26:07.633 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:26:07.633 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:26:07.633 | INFO | 🚀 Iniciando pipeline RSI: 0117180e-c643-4f94-bf94-0c4e1ed37c59
+20:26:07.634 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:26:07.634 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:26:07.634 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:26:07.634 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:26:07.635 | INFO | ✅ Real RSI Cycle #51 completed
+20:27:07.635 | INFO | 🔄 Real RSI Cycle #52
+20:27:07.635 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:27:07.635 | INFO | ✅ Real RSI Cycle #52 completed
+20:28:07.636 | INFO | 🔄 Real RSI Cycle #53
+20:28:07.637 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:28:07.637 | INFO | ✅ Real RSI Cycle #53 completed
+20:29:07.637 | INFO | 🔄 Real RSI Cycle #54
+20:29:07.637 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:29:07.637 | INFO | ✅ Real RSI Cycle #54 completed
+20:30:07.638 | INFO | 🔄 Real RSI Cycle #55
+20:30:07.638 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:30:07.639 | INFO | ✅ Real RSI Cycle #55 completed
+20:31:07.639 | INFO | 🔄 Real RSI Cycle #56
+20:31:07.639 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:31:07.640 | INFO | 🚀 Iniciando pipeline RSI: eedb3221-30f1-403f-b087-93d6b9c40297
+20:31:07.640 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:31:07.640 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:31:07.641 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:31:07.641 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:31:07.641 | INFO | ✅ Real RSI Cycle #56 completed
+20:32:07.641 | INFO | 🔄 Real RSI Cycle #57
+20:32:07.642 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:32:07.642 | INFO | ✅ Real RSI Cycle #57 completed
+20:33:07.643 | INFO | 🔄 Real RSI Cycle #58
+20:33:07.643 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:33:07.643 | INFO | ✅ Real RSI Cycle #58 completed
+20:34:07.643 | INFO | 🔄 Real RSI Cycle #59
+20:34:07.644 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:34:07.644 | INFO | ✅ Real RSI Cycle #59 completed
+20:35:07.645 | INFO | 🔄 Real RSI Cycle #60
+20:35:07.645 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:35:07.645 | INFO | ✅ Real RSI Cycle #60 completed
+20:36:07.646 | INFO | 🔄 Real RSI Cycle #61
+20:36:07.646 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:36:07.646 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:36:07.646 | WARNING | ⚠️ MML Controller not initialized - attempting to initialize now
+20:36:07.647 | WARNING | ⚠️ Required components not available - skipping meta-learning
+20:36:07.647 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:36:07.647 | INFO | 🚀 Iniciando pipeline RSI: 08e4fa22-ae49-4fb0-a130-4b22afc69dc0
+20:36:07.647 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:36:07.647 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:36:07.648 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:36:07.648 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:36:07.648 | INFO | ✅ Real RSI Cycle #61 completed
+20:37:07.648 | INFO | 🔄 Real RSI Cycle #62
+20:37:07.649 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:37:07.649 | INFO | ✅ Real RSI Cycle #62 completed
+20:38:07.649 | INFO | 🔄 Real RSI Cycle #63
+20:38:07.650 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:38:07.650 | INFO | ✅ Real RSI Cycle #63 completed
+20:39:07.650 | INFO | 🔄 Real RSI Cycle #64
+20:39:07.651 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:39:07.651 | INFO | ✅ Real RSI Cycle #64 completed
+20:40:07.651 | INFO | 🔄 Real RSI Cycle #65
+20:40:07.651 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:40:07.651 | INFO | ✅ Real RSI Cycle #65 completed
+20:41:07.651 | INFO | 🔄 Real RSI Cycle #66
+20:41:07.652 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:41:07.652 | INFO | 🚀 Iniciando pipeline RSI: 95c0f2b6-8ac8-455d-8e43-937ef8dda49a
+20:41:07.652 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:41:07.652 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:41:07.653 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:41:07.653 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:41:07.653 | INFO | ✅ Real RSI Cycle #66 completed
+20:42:07.653 | INFO | 🔄 Real RSI Cycle #67
+20:42:07.653 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:42:07.653 | INFO | ✅ Real RSI Cycle #67 completed
+20:43:07.653 | INFO | 🔄 Real RSI Cycle #68
+20:43:07.653 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:43:07.654 | INFO | ✅ Real RSI Cycle #68 completed
+20:44:07.654 | INFO | 🔄 Real RSI Cycle #69
+20:44:07.655 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:44:07.655 | INFO | ✅ Real RSI Cycle #69 completed
+20:45:07.655 | INFO | 🔄 Real RSI Cycle #70
+20:45:07.656 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:45:07.656 | INFO | ✅ Real RSI Cycle #70 completed
+20:46:07.656 | INFO | 🔄 Real RSI Cycle #71
+20:46:07.656 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:46:07.656 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:46:07.657 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:46:07.657 | INFO | 🚀 Iniciando pipeline RSI: f87d578b-c14d-470f-b8c0-b0b3fdfe3915
+20:46:07.657 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:46:07.658 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:46:07.658 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:46:07.658 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:46:07.658 | INFO | ✅ Real RSI Cycle #71 completed
+20:47:07.658 | INFO | 🔄 Real RSI Cycle #72
+20:47:07.658 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:47:07.659 | INFO | ✅ Real RSI Cycle #72 completed
+20:48:07.659 | INFO | 🔄 Real RSI Cycle #73
+20:48:07.660 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:48:07.660 | INFO | ✅ Real RSI Cycle #73 completed
+20:49:07.660 | INFO | 🔄 Real RSI Cycle #74
+20:49:07.661 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:49:07.661 | INFO | ✅ Real RSI Cycle #74 completed
+20:50:07.661 | INFO | 🔄 Real RSI Cycle #75
+20:50:07.661 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:50:07.661 | INFO | ✅ Real RSI Cycle #75 completed
+20:51:07.661 | INFO | 🔄 Real RSI Cycle #76
+20:51:07.661 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:51:07.661 | INFO | 🚀 Iniciando pipeline RSI: 126765eb-e20d-41ed-8529-253a641651df
+20:51:07.662 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:51:07.662 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:51:07.662 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:51:07.663 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:51:07.663 | INFO | ✅ Real RSI Cycle #76 completed
+20:52:07.663 | INFO | 🔄 Real RSI Cycle #77
+20:52:07.663 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:52:07.664 | INFO | ✅ Real RSI Cycle #77 completed
+20:53:07.664 | INFO | 🔄 Real RSI Cycle #78
+20:53:07.665 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:53:07.665 | INFO | ✅ Real RSI Cycle #78 completed
+20:54:07.665 | INFO | 🔄 Real RSI Cycle #79
+20:54:07.665 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:54:07.666 | INFO | ✅ Real RSI Cycle #79 completed
+20:55:07.667 | INFO | 🔄 Real RSI Cycle #80
+20:55:07.667 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:55:07.667 | INFO | ✅ Real RSI Cycle #80 completed
+20:56:07.667 | INFO | 🔄 Real RSI Cycle #81
+20:56:07.667 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+20:56:07.668 | WARNING | ⚠️ Required components not available - skipping gap scanning
+20:56:07.668 | INFO | ⚙️ Executing Real RSI with Code Generation...
+20:56:07.668 | INFO | 🚀 Iniciando pipeline RSI: baaca617-c560-48dc-9399-80298841bd95
+20:56:07.668 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+20:56:07.668 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+20:56:07.669 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+20:56:07.669 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:56:07.669 | INFO | ✅ Real RSI Cycle #81 completed
+20:57:07.669 | INFO | 🔄 Real RSI Cycle #82
+20:57:07.669 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:57:07.669 | INFO | ✅ Real RSI Cycle #82 completed
+20:58:07.670 | INFO | 🔄 Real RSI Cycle #83
+20:58:07.671 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:58:07.671 | INFO | ✅ Real RSI Cycle #83 completed
+20:59:07.671 | INFO | 🔄 Real RSI Cycle #84
+20:59:07.672 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+20:59:07.672 | INFO | ✅ Real RSI Cycle #84 completed
+21:00:07.738 | INFO | 🔄 Real RSI Cycle #85
+21:00:07.738 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:00:07.738 | INFO | ✅ Real RSI Cycle #85 completed
+21:01:07.739 | INFO | 🔄 Real RSI Cycle #86
+21:01:07.740 | INFO | ⚙️ Executing Real RSI with Code Generation...
+21:01:07.740 | INFO | 🚀 Iniciando pipeline RSI: 4f152340-aab8-4da4-b5a5-967e83ca302e
+21:01:07.740 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+21:01:07.740 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+21:01:07.741 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+21:01:07.741 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:01:07.741 | INFO | ✅ Real RSI Cycle #86 completed
+21:02:07.741 | INFO | 🔄 Real RSI Cycle #87
+21:02:07.742 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:02:07.742 | INFO | ✅ Real RSI Cycle #87 completed
+21:03:07.742 | INFO | 🔄 Real RSI Cycle #88
+21:03:07.742 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:03:07.742 | INFO | ✅ Real RSI Cycle #88 completed
+21:04:07.743 | INFO | 🔄 Real RSI Cycle #89
+21:04:07.743 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:04:07.744 | INFO | ✅ Real RSI Cycle #89 completed
+21:05:07.744 | INFO | 🔄 Real RSI Cycle #90
+21:05:07.745 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:05:07.745 | INFO | ✅ Real RSI Cycle #90 completed
+21:06:07.745 | INFO | 🔄 Real RSI Cycle #91
+21:06:07.745 | WARNING | ⚠️ Gap Scanner not initialized - attempting to initialize now
+21:06:07.746 | WARNING | ⚠️ Required components not available - skipping gap scanning
+21:06:07.746 | WARNING | ⚠️ MML Controller not initialized - attempting to initialize now
+21:06:07.746 | WARNING | ⚠️ Required components not available - skipping meta-learning
+21:06:07.746 | INFO | ⚙️ Executing Real RSI with Code Generation...
+21:06:07.747 | INFO | 🚀 Iniciando pipeline RSI: 8b8978f1-4fc6-4a9f-9727-3ce38539bdb5
+21:06:07.747 | ERROR | ❌ Erro no pipeline RSI: object NoneType can't be used in 'await' expression
+21:06:07.747 | ERROR | ❌ Pipeline falhou: Erro: object NoneType can't be used in 'await' expression
+21:06:07.748 | ERROR | ❌ Error in real RSI execution: object NoneType can't be used in 'await' expression
+21:06:07.748 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:06:07.748 | INFO | ✅ Real RSI Cycle #91 completed
+21:07:07.748 | INFO | 🔄 Real RSI Cycle #92
+21:07:07.748 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:07:07.748 | INFO | ✅ Real RSI Cycle #92 completed
+21:08:07.748 | INFO | 🔄 Real RSI Cycle #93
+21:08:07.749 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:08:07.749 | INFO | ✅ Real RSI Cycle #93 completed
+21:09:07.749 | INFO | 🔄 Real RSI Cycle #94
+21:09:07.749 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:09:07.750 | INFO | ✅ Real RSI Cycle #94 completed
+21:09:45.091 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:09:45.090843
+21:09:45.094 | INFO | Reducing processing load due to CPU overload
+21:09:45.291 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:09:45.291619
+21:09:45.292 | INFO | Reducing processing load due to CPU overload
+21:09:47.908 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:09:47.907901
+21:09:47.908 | INFO | Reducing processing load due to CPU overload
+21:09:48.008 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:09:48.008342
+21:09:48.009 | INFO | Reducing processing load due to CPU overload
+21:09:48.612 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:09:48.612272
+21:09:48.612 | INFO | Reducing processing load due to CPU overload
+21:10:04.085 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:04.085422
+21:10:04.086 | INFO | Reducing processing load due to CPU overload
+21:10:04.296 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:04.296166
+21:10:04.299 | INFO | Reducing processing load due to CPU overload
+21:10:04.397 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:04.397617
+21:10:04.398 | INFO | Reducing processing load due to CPU overload
+21:10:04.499 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:04.498796
+21:10:04.499 | INFO | Reducing processing load due to CPU overload
+21:10:04.907 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:04.906816
+21:10:04.907 | INFO | Reducing processing load due to CPU overload
+21:10:05.516 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:05.516211
+21:10:05.517 | INFO | Reducing processing load due to CPU overload
+High memory pressure detected, triggering cleanup
+21:10:05.712 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:05.711914
+21:10:05.714 | INFO | Reducing processing load due to CPU overload
+21:10:05.813 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:05.812804
+21:10:05.814 | INFO | Reducing processing load due to CPU overload
+21:10:05.913 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:05.913515
+21:10:05.914 | INFO | Reducing processing load due to CPU overload
+21:10:06.120 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:06.120002
+21:10:06.121 | INFO | Reducing processing load due to CPU overload
+21:10:06.217 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:06.217725
+21:10:06.219 | INFO | Reducing processing load due to CPU overload
+21:10:06.317 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:06.317756
+21:10:06.318 | INFO | Reducing processing load due to CPU overload
+21:10:08.469 | INFO | 🔄 Real RSI Cycle #95
+21:10:08.470 | ERROR | ❌ Error monitoring real RSI health: 'RSIOrchestrator' object has no attribute 'gap_scanner'
+21:10:08.470 | INFO | ✅ Real RSI Cycle #95 completed
+21:10:08.471 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.471421
+21:10:08.472 | INFO | Triggering memory cleanup due to memory pressure
+21:10:08.570 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.570184
+21:10:08.570 | INFO | Triggering memory cleanup due to memory pressure
+21:10:08.670 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.670643
+21:10:08.671 | INFO | Triggering memory cleanup due to memory pressure
+21:10:08.771 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.771581
+21:10:08.772 | INFO | Triggering memory cleanup due to memory pressure
+21:10:08.871 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.871638
+21:10:08.872 | INFO | Triggering memory cleanup due to memory pressure
+21:10:08.971 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:08.971294
+21:10:08.971 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.071 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.070864
+21:10:09.071 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.171 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.171389
+21:10:09.171 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.272 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.271879
+21:10:09.272 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.372 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.372425
+21:10:09.372 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.373 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:09.372425
+21:10:09.888 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.888630
+21:10:09.889 | INFO | Triggering memory cleanup due to memory pressure
+21:10:09.889 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:09.888630
+21:10:09.895 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:09.895298
+21:10:09.896 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.008 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.008044
+21:10:10.008 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.120 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:10.119753
+21:10:10.120 | INFO | Reducing processing load due to CPU overload
+21:10:10.126 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.119753
+21:10:10.127 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.208 | CRITICAL | Anomaly detected: cpu_overload at 2025-07-12 21:10:10.208371
+21:10:10.209 | INFO | Reducing processing load due to CPU overload
+21:10:10.209 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.208371
+21:10:10.209 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.210 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.208371
+21:10:10.308 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.308346
+21:10:10.308 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.309 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.308346
+21:10:10.408 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.408220
+21:10:10.408 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.408 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.408220
+21:10:10.509 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.508940
+21:10:10.509 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.509 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.508940
+21:10:10.609 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.608948
+21:10:10.609 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.609 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.608948
+21:10:10.708 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.708312
+21:10:10.708 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.708 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.708312
+21:10:10.808 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.808444
+21:10:10.808 | INFO | Triggering memory cleanup due to memory pressure
+21:10:10.809 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:10.808444
+21:10:10.909 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:10.908923
+21:10:10.909 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.009 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.009002
+21:10:11.009 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.009 | INFO | Anomaly detected: system_anomaly at 2025-07-12 21:10:11.009002
+21:10:11.108 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.108268
+21:10:11.108 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.208 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.207939
+21:10:11.208 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.308 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.308562
+21:10:11.309 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.409 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.409364
+21:10:11.409 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.509 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.509437
+21:10:11.509 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.608 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.607993
+21:10:11.608 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.708 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.708758
+21:10:11.709 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.809 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.809168
+21:10:11.809 | INFO | Triggering memory cleanup due to memory pressure
+21:10:11.909 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:11.908915
+21:10:11.909 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.010 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.010026
+21:10:12.010 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.109 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.109824
+21:10:12.110 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.210 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.210521
+21:10:12.211 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.310 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.310541
+21:10:12.311 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.410 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.410304
+21:10:12.410 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.593 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.593598
+21:10:12.594 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.694 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.694130
+21:10:12.694 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.794 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.794610
+21:10:12.795 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.895 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.895095
+21:10:12.895 | INFO | Triggering memory cleanup due to memory pressure
+21:10:12.996 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:12.995876
+21:10:12.996 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.095 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.095647
+21:10:13.096 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.195 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.195246
+21:10:13.195 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.296 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.296123
+21:10:13.296 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.396 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.395802
+21:10:13.396 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.496 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.496159
+21:10:13.496 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.596 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.595907
+21:10:13.596 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.779 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.779151
+21:10:13.779 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.879 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.879578
+21:10:13.880 | INFO | Triggering memory cleanup due to memory pressure
+21:10:13.980 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:13.980610
+21:10:13.981 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.081 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.080860
+21:10:14.081 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.181 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.181264
+21:10:14.181 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.281 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.281118
+21:10:14.281 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.380 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.380281
+21:10:14.380 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.480 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.479985
+21:10:14.480 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.579 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.579669
+21:10:14.580 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.682 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.682124
+21:10:14.682 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.781 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.781152
+21:10:14.781 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.881 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.881677
+21:10:14.882 | INFO | Triggering memory cleanup due to memory pressure
+21:10:14.982 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:14.982226
+21:10:14.982 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.083 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.083105
+21:10:15.083 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.182 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.182809
+21:10:15.183 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.283 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.283548
+21:10:15.284 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.383 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.383107
+21:10:15.383 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.484 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.483870
+21:10:15.484 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.584 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.583848
+21:10:15.584 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.683 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.683469
+21:10:15.683 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.783 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.782968
+21:10:15.988 | INFO | Triggering memory cleanup due to memory pressure
+21:10:15.991 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:15.990892
+21:10:15.991 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.090 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.090533
+21:10:16.090 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.191 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.191053
+21:10:16.191 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.291 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.291745
+21:10:16.292 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.391 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.391640
+21:10:16.591 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.593 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.592867
+21:10:16.593 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.692 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.692437
+21:10:16.692 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.793 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.792984
+21:10:16.793 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.893 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.893636
+21:10:16.894 | INFO | Triggering memory cleanup due to memory pressure
+21:10:16.993 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:16.993242
+21:10:16.993 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.094 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.094177
+21:10:17.094 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.194 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.194103
+21:10:17.383 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.385 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.385090
+21:10:17.385 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.484 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.484789
+21:10:17.485 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.585 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.585222
+21:10:17.585 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.686 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.685825
+21:10:17.686 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.786 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.785834
+21:10:17.786 | INFO | Triggering memory cleanup due to memory pressure
+21:10:17.885 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:17.885671
+21:10:18.120 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.122 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.122385
+21:10:18.122 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.222 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.222371
+21:10:18.222 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.322 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.321905
+21:10:18.322 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.422 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.422525
+21:10:18.422 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.523 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.523103
+21:10:18.790 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.791 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.791463
+21:10:18.791 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.891 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.891186
+21:10:18.891 | INFO | Triggering memory cleanup due to memory pressure
+21:10:18.990 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:18.990669
+21:10:19.752 | INFO | Triggering memory cleanup due to memory pressure
+21:10:19.754 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:19.754065
+21:10:19.754 | INFO | Triggering memory cleanup due to memory pressure
+21:10:19.853 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:19.853741
+21:10:19.854 | INFO | Triggering memory cleanup due to memory pressure
+21:10:19.954 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:19.954343
+21:10:19.954 | INFO | Triggering memory cleanup due to memory pressure
+21:10:20.055 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:20.054843
+21:10:20.370 | INFO | Triggering memory cleanup due to memory pressure
+21:10:20.371 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:20.371645
+21:10:20.372 | INFO | Triggering memory cleanup due to memory pressure
+21:10:20.471 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:20.471017
+21:10:20.471 | INFO | Triggering memory cleanup due to memory pressure
+21:10:20.571 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:20.571492
+21:10:21.025 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.026 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.026487
+21:10:21.026 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.126 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.125999
+21:10:21.126 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.126 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:21.125999
+21:10:21.620 | INFO | Investigating inference performance degradation
+21:10:21.621 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.621750
+21:10:21.622 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.622 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:21.621750
+21:10:21.622 | INFO | Investigating inference performance degradation
+21:10:21.721 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.721654
+21:10:21.722 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.822 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.822360
+21:10:21.822 | INFO | Triggering memory cleanup due to memory pressure
+21:10:21.922 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:21.921853
+21:10:21.922 | INFO | Triggering memory cleanup due to memory pressure
+21:10:22.022 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:22.022372
+21:10:22.022 | INFO | Triggering memory cleanup due to memory pressure
+21:10:22.123 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:22.122852
+21:10:23.344 | INFO | Triggering memory cleanup due to memory pressure
+21:10:23.345 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:23.345839
+21:10:23.346 | INFO | Triggering memory cleanup due to memory pressure
+21:10:23.445 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:23.445293
+21:10:23.445 | INFO | Triggering memory cleanup due to memory pressure
+21:10:23.445 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:23.445293
+21:10:27.889 | INFO | Investigating inference performance degradation
+21:10:27.990 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:27.990881
+21:10:27.991 | INFO | Triggering memory cleanup due to memory pressure
+21:10:27.991 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:27.990881
+21:10:30.190 | INFO | Investigating inference performance degradation
+21:10:30.192 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:30.192282
+21:10:30.192 | INFO | Triggering memory cleanup due to memory pressure
+21:10:30.192 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:30.192282
+21:10:30.193 | INFO | Investigating inference performance degradation
+21:10:30.292 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:30.292153
+21:10:30.292 | INFO | Triggering memory cleanup due to memory pressure
+21:10:30.292 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:30.292153
+21:10:30.293 | INFO | Investigating inference performance degradation
+21:10:30.392 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:30.392068
+21:10:30.392 | INFO | Triggering memory cleanup due to memory pressure
+21:10:30.392 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:30.392068
+21:10:32.567 | INFO | Investigating inference performance degradation
+21:10:32.568 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:32.568433
+21:10:32.568 | INFO | Triggering memory cleanup due to memory pressure
+21:10:32.568 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:32.568433
+21:10:32.569 | INFO | Investigating inference performance degradation
+21:10:32.668 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:32.668210
+21:10:32.668 | INFO | Triggering memory cleanup due to memory pressure
+21:10:32.668 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:32.668210
+21:10:33.389 | INFO | Investigating inference performance degradation
+21:10:33.391 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:33.391093
+21:10:33.391 | INFO | Triggering memory cleanup due to memory pressure
+21:10:33.391 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:33.391093
+21:10:34.176 | INFO | Investigating inference performance degradation
+21:10:34.177 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:34.177641
+21:10:34.178 | INFO | Triggering memory cleanup due to memory pressure
+21:10:34.178 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:34.177641
+21:10:34.178 | INFO | Investigating inference performance degradation
+21:10:34.277 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:34.277834
+21:10:34.278 | INFO | Triggering memory cleanup due to memory pressure
+21:10:34.278 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:34.277834
+21:10:34.278 | INFO | Investigating inference performance degradation
+21:10:34.378 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:34.377905
+21:10:34.378 | INFO | Triggering memory cleanup due to memory pressure
+21:10:34.378 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:34.377905
+21:10:34.378 | INFO | Investigating inference performance degradation
+21:10:34.478 | CRITICAL | Anomaly detected: memory_pressure at 2025-07-12 21:10:34.478492
+21:10:34.479 | INFO | Triggering memory cleanup due to memory pressure
+21:10:34.479 | WARNING | Anomaly detected: inference_degradation at 2025-07-12 21:10:34.478492
+21:10:34.479 | INFO | Investigating inference performance degradation
