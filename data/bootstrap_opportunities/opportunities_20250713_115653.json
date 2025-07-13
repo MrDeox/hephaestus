@@ -1,0 +1,423 @@
+{
+  "timestamp": "2025-07-13T11:56:53.761079",
+  "total_opportunities": 12,
+  "scan_history": [
+    {
+      "timestamp": "2025-07-13T11:56:53.761073",
+      "duration_seconds": 8.416175842285156e-05,
+      "opportunities_found": 12,
+      "total_opportunities": 12,
+      "top_category": "automation_scripts"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "automation_-4084334372047365697",
+      "category": "automation_scripts",
+      "title": "Web Scraping as a Service",
+      "description": "Offer data extraction services using free scraping tools",
+      "estimated_revenue_potential": 900,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 7,
+      "difficulty": "medium",
+      "priority_score": 0.8016666666666666,
+      "feasibility_score": 0.8733333333333333,
+      "required_skills": [
+        "Python/JavaScript",
+        "web scraping",
+        "APIs"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "automation platforms"
+      ],
+      "implementation_steps": [
+        "Identify automation pain points",
+        "Build MVP automation script",
+        "Create user-friendly interface",
+        "Test with beta customers",
+        "Scale and add premium features"
+      ],
+      "target_audience": [
+        "small businesses",
+        "marketers",
+        "entrepreneurs"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761031"
+    },
+    {
+      "id": "automation_3536868644095491221",
+      "category": "automation_scripts",
+      "title": "Email Marketing Automation",
+      "description": "Automated email campaigns using free tier services",
+      "estimated_revenue_potential": 700,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 10,
+      "difficulty": "easy",
+      "priority_score": 0.7716666666666668,
+      "feasibility_score": 0.8533333333333333,
+      "required_skills": [
+        "Python/JavaScript",
+        "web scraping",
+        "APIs"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "automation platforms"
+      ],
+      "implementation_steps": [
+        "Identify automation pain points",
+        "Build MVP automation script",
+        "Create user-friendly interface",
+        "Test with beta customers",
+        "Scale and add premium features"
+      ],
+      "target_audience": [
+        "small businesses",
+        "marketers",
+        "entrepreneurs"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761035"
+    },
+    {
+      "id": "api_-3944561325764676525",
+      "category": "free_api_services",
+      "title": "Stock Market Data Aggregator",
+      "description": "Real-time stock data from free APIs with alerts",
+      "estimated_revenue_potential": 750,
+      "confidence_score": 0.6,
+      "time_to_first_dollar": 12,
+      "difficulty": "medium",
+      "priority_score": 0.7075,
+      "feasibility_score": 0.84,
+      "required_skills": [
+        "API integration",
+        "web development",
+        "data processing"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "API platforms"
+      ],
+      "implementation_steps": [
+        "Research and test free APIs",
+        "Design aggregation architecture",
+        "Build API wrapper service",
+        "Create user interface",
+        "Implement freemium model"
+      ],
+      "target_audience": [
+        "small businesses",
+        "developers",
+        "traders"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761017"
+    },
+    {
+      "id": "automation_-1566722895405426974",
+      "category": "automation_scripts",
+      "title": "Social Media Automation Bot",
+      "description": "Automated posting, engagement, and analytics for small businesses",
+      "estimated_revenue_potential": 600,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 14,
+      "difficulty": "medium",
+      "priority_score": 0.7033333333333335,
+      "feasibility_score": 0.8266666666666667,
+      "required_skills": [
+        "Python/JavaScript",
+        "web scraping",
+        "APIs"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "automation platforms"
+      ],
+      "implementation_steps": [
+        "Identify automation pain points",
+        "Build MVP automation script",
+        "Create user-friendly interface",
+        "Test with beta customers",
+        "Scale and add premium features"
+      ],
+      "target_audience": [
+        "small businesses",
+        "marketers",
+        "entrepreneurs"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761033"
+    },
+    {
+      "id": "github_884698840363094571",
+      "category": "github_tools",
+      "title": "Open Source SaaS Templates",
+      "description": "Create boilerplate templates for popular SaaS patterns",
+      "estimated_revenue_potential": 800,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 21,
+      "difficulty": "hard",
+      "priority_score": 0.7000000000000001,
+      "feasibility_score": 0.78,
+      "required_skills": [
+        "programming",
+        "git",
+        "documentation"
+      ],
+      "required_platforms": [
+        "GitHub",
+        "package_managers"
+      ],
+      "implementation_steps": [
+        "Research popular SaaS architectures",
+        "Create comprehensive boilerplate",
+        "Add documentation and examples",
+        "Offer paid customization services",
+        "Build community around template"
+      ],
+      "target_audience": [
+        "developers",
+        "DevOps engineers",
+        "startups"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761006"
+    },
+    {
+      "id": "content_-6269702694161858758",
+      "category": "content_creation",
+      "title": "AI-Generated Technical Blog",
+      "description": "Create high-quality tech content using AI, monetize with ads/sponsors",
+      "estimated_revenue_potential": 1200,
+      "confidence_score": 0.5,
+      "time_to_first_dollar": 30,
+      "difficulty": "easy",
+      "priority_score": 0.6900000000000001,
+      "feasibility_score": 0.72,
+      "required_skills": [
+        "content writing",
+        "SEO",
+        "marketing"
+      ],
+      "required_platforms": [
+        "Free blogging platforms",
+        "social media"
+      ],
+      "implementation_steps": [
+        "Choose content niche and platform",
+        "Set up automated content pipeline",
+        "Create publishing schedule",
+        "Build audience engagement",
+        "Monetize through ads/sponsorship"
+      ],
+      "target_audience": [
+        "professionals",
+        "students",
+        "developers"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761022"
+    },
+    {
+      "id": "github_2295180451848538815",
+      "category": "github_tools",
+      "title": "Developer CLI Tools",
+      "description": "Build command-line tools for common developer tasks",
+      "estimated_revenue_potential": 300,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 7,
+      "difficulty": "easy",
+      "priority_score": 0.6816666666666668,
+      "feasibility_score": 0.8733333333333333,
+      "required_skills": [
+        "programming",
+        "git",
+        "documentation"
+      ],
+      "required_platforms": [
+        "GitHub",
+        "package_managers"
+      ],
+      "implementation_steps": [
+        "Identify repetitive dev tasks",
+        "Create Python/Node CLI tool",
+        "Publish to package managers",
+        "Add premium features or support",
+        "Monetize through donations/sponsorship"
+      ],
+      "target_audience": [
+        "developers",
+        "DevOps engineers",
+        "startups"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761003"
+    },
+    {
+      "id": "github_-4975011570557128165",
+      "category": "github_tools",
+      "title": "GitHub Action Marketplace Tools",
+      "description": "Create useful GitHub Actions for CI/CD, testing, deployment",
+      "estimated_revenue_potential": 500,
+      "confidence_score": 0.7,
+      "time_to_first_dollar": 14,
+      "difficulty": "medium",
+      "priority_score": 0.6783333333333333,
+      "feasibility_score": 0.8266666666666667,
+      "required_skills": [
+        "programming",
+        "git",
+        "documentation"
+      ],
+      "required_platforms": [
+        "GitHub",
+        "package_managers"
+      ],
+      "implementation_steps": [
+        "Identify common CI/CD pain points",
+        "Create GitHub Action solution",
+        "Publish to marketplace",
+        "Add premium features",
+        "Market through dev communities"
+      ],
+      "target_audience": [
+        "developers",
+        "DevOps engineers",
+        "startups"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.760997"
+    },
+    {
+      "id": "content_2738381719370257482",
+      "category": "content_creation",
+      "title": "Newsletter Automation",
+      "description": "Curated industry newsletter with automated content aggregation",
+      "estimated_revenue_potential": 800,
+      "confidence_score": 0.5,
+      "time_to_first_dollar": 21,
+      "difficulty": "easy",
+      "priority_score": 0.67,
+      "feasibility_score": 0.78,
+      "required_skills": [
+        "content writing",
+        "SEO",
+        "marketing"
+      ],
+      "required_platforms": [
+        "Free blogging platforms",
+        "social media"
+      ],
+      "implementation_steps": [
+        "Choose content niche and platform",
+        "Set up automated content pipeline",
+        "Create publishing schedule",
+        "Build audience engagement",
+        "Monetize through ads/sponsorship"
+      ],
+      "target_audience": [
+        "professionals",
+        "students",
+        "developers"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761027"
+    },
+    {
+      "id": "api_7086435827345327788",
+      "category": "free_api_services",
+      "title": "Social Media Analytics Dashboard",
+      "description": "Free analytics for small businesses using platform APIs",
+      "estimated_revenue_potential": 600,
+      "confidence_score": 0.6,
+      "time_to_first_dollar": 14,
+      "difficulty": "medium",
+      "priority_score": 0.6633333333333333,
+      "feasibility_score": 0.8266666666666667,
+      "required_skills": [
+        "API integration",
+        "web development",
+        "data processing"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "API platforms"
+      ],
+      "implementation_steps": [
+        "Research and test free APIs",
+        "Design aggregation architecture",
+        "Build API wrapper service",
+        "Create user interface",
+        "Implement freemium model"
+      ],
+      "target_audience": [
+        "small businesses",
+        "developers",
+        "traders"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761015"
+    },
+    {
+      "id": "api_-6815441140134578025",
+      "category": "free_api_services",
+      "title": "Weather Data Aggregation API",
+      "description": "Combine multiple free weather APIs into unified service",
+      "estimated_revenue_potential": 400,
+      "confidence_score": 0.6,
+      "time_to_first_dollar": 10,
+      "difficulty": "medium",
+      "priority_score": 0.6266666666666667,
+      "feasibility_score": 0.8533333333333333,
+      "required_skills": [
+        "API integration",
+        "web development",
+        "data processing"
+      ],
+      "required_platforms": [
+        "Free hosting",
+        "API platforms"
+      ],
+      "implementation_steps": [
+        "Research and test free APIs",
+        "Design aggregation architecture",
+        "Build API wrapper service",
+        "Create user interface",
+        "Implement freemium model"
+      ],
+      "target_audience": [
+        "small businesses",
+        "developers",
+        "traders"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761012"
+    },
+    {
+      "id": "content_-3069189300714795910",
+      "category": "content_creation",
+      "title": "YouTube Automation Channel",
+      "description": "Automated video creation for educational/tech content",
+      "estimated_revenue_potential": 2000,
+      "confidence_score": 0.5,
+      "time_to_first_dollar": 45,
+      "difficulty": "medium",
+      "priority_score": 0.61,
+      "feasibility_score": 0.72,
+      "required_skills": [
+        "content writing",
+        "SEO",
+        "marketing"
+      ],
+      "required_platforms": [
+        "Free blogging platforms",
+        "social media"
+      ],
+      "implementation_steps": [
+        "Choose content niche and platform",
+        "Set up automated content pipeline",
+        "Create publishing schedule",
+        "Build audience engagement",
+        "Monetize through ads/sponsorship"
+      ],
+      "target_audience": [
+        "professionals",
+        "students",
+        "developers"
+      ],
+      "discovered_at": "2025-07-13T11:56:53.761025"
+    }
+  ]
+}

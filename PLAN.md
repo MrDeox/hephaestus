@@ -19,8 +19,14 @@
 
 ## Phase 0: Bootstrap from Zero Capital 🌱
 
-### [ ] Task 0.1: Zero-Cost Opportunity Scanner
+### [ ] Task 0.1: Zero-Cost Opportunity Scanner ✅
 **Prompt:** "In `src/bootstrap/zero_cost_scanner.py`, create ZeroCostOpportunityScanner that identifies revenue opportunities requiring no upfront investment: free platform services, content creation, API wrappers, data analysis, automation scripts for existing platforms."
+
+### [ ] Task 0.1b: Real Market Validation
+**Prompt:** "In `src/bootstrap/market_validator.py`, create MarketValidator that researches REAL demand for web scraping services by checking: Upwork/Fiverr pricing, competitor analysis, actual job postings, Reddit/Discord communities asking for scraping help. Validate if our pricing is realistic."
+
+### [ ] Task 0.1c: Zero-Cost Marketing Strategy  
+**Prompt:** "In `src/bootstrap/marketing_engine.py`, create MarketingEngine that implements zero-cost customer acquisition: Reddit automation (helpful scraping solutions), GitHub tool promotion, Discord/Slack community engagement, SEO content creation, free tool offerings that convert to paid."
 
 ### [ ] Task 0.2: Free Platform Revenue Strategies
 **Prompt:** "In `src/bootstrap/free_platforms.py`, implement FreePlatformManager that targets zero-cost revenue streams: GitHub automated tools, free tier cloud services, social media automation, content aggregation, data visualization services."
