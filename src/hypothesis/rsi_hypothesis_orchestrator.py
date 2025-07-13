@@ -146,7 +146,7 @@ class RSIHypothesisOrchestrator:
         
         # Validator
         self.hypothesis_validator = RSIHypothesisValidator(
-            validator=self.validator,
+            base_validator=self.validator,
             circuit_breaker=self.circuit_breaker
         )
         

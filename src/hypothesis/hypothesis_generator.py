@@ -145,9 +145,9 @@ class RSIHypothesisGenerator:
         pruner = None
         if self.config.pruner_enabled:
             pruner = SuccessiveHalvingPruner(
-                min_trials=5,
                 min_resource=1,
-                reduction_factor=4
+                reduction_factor=4,
+                min_early_stopping_rate=0
             )
         
         self.study = optuna.create_study(

@@ -79,6 +79,16 @@ except ImportError as e:
     logger.warning("Real RSI Execution System not fully available: {}", str(e))
     REAL_EXECUTION_AVAILABLE = False
 
+# Autonomous Revenue Generation imports
+try:
+    from src.objectives.revenue_generation import (
+        AutonomousRevenueGenerator, get_revenue_generator
+    )
+    REVENUE_GENERATION_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Revenue Generation System not available: {}", str(e))
+    REVENUE_GENERATION_AVAILABLE = False
+
 # Meta-Learning System imports
 try:
     from src.meta_learning import (
@@ -244,6 +254,9 @@ class RSIOrchestrator:
             # Meta-Learning System (Gap Scanner + MML Controller) - Initialize after all dependencies
             self._initialize_meta_learning_system()
             
+            # Autonomous Revenue Generation System
+            self._initialize_revenue_generation_system()
+            
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
 
@@ -308,6 +321,30 @@ class RSIOrchestrator:
         else:
             logger.warning("Meta-Learning System not available - components will not be initialized")
 
+    def _initialize_revenue_generation_system(self):
+        """Initialize Autonomous Revenue Generation System"""
+        self.revenue_generator = None
+        
+        if REVENUE_GENERATION_AVAILABLE:
+            try:
+                self.revenue_generator = get_revenue_generator()
+                logger.info("✅ Autonomous Revenue Generation System initialized")
+                
+            except Exception as e:
+                logger.error("Failed to initialize Revenue Generation System: {}", str(e))
+                self.revenue_generator = None
+        else:
+            logger.warning("Revenue Generation System not available")
+
+    async def _start_revenue_generation_background(self):
+        """Start revenue generation in background task"""
+        try:
+            if self.revenue_generator:
+                logger.info("🚀 Starting Autonomous Revenue Generation...")
+                asyncio.create_task(self.revenue_generator.start_autonomous_revenue_generation())
+        except Exception as e:
+            logger.error("Failed to start revenue generation: {}", str(e))
+
     def _setup_enhanced_logging(self):
         """Setup enhanced logging for metacognitive monitoring"""
         try:
@@ -348,6 +385,10 @@ class RSIOrchestrator:
             asyncio.create_task(self._metrics_collection_loop())
             asyncio.create_task(self._real_rsi_loop())
             asyncio.create_task(self._metacognitive_monitoring_loop())
+            
+            # Start revenue generation if available
+            if hasattr(self, 'revenue_generator') and self.revenue_generator:
+                asyncio.create_task(self._start_revenue_generation_background())
             
             # Log system startup
             if self.audit_logger:
@@ -1874,6 +1915,128 @@ async def get_real_rsi_status():
     except Exception as e:
         logger.error("Error getting real RSI status: {}", str(e))
         raise HTTPException(status_code=500, detail=f"Error getting status: {str(e)}")
+
+
+@app.get("/revenue/status")
+async def get_revenue_status():
+    """Get autonomous revenue generation status"""
+    try:
+        if not REVENUE_GENERATION_AVAILABLE or not orchestrator.revenue_generator:
+            return {
+                "available": False,
+                "message": "Revenue Generation System not available"
+            }
+        
+        report = await orchestrator.revenue_generator.get_revenue_report()
+        return {
+            "available": True,
+            "status": "active",
+            **report
+        }
+        
+    except Exception as e:
+        logger.error("Error getting revenue status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting revenue status: {str(e)}")
+
+
+@app.post("/revenue/start")
+async def start_revenue_generation():
+    """Manually start revenue generation (if not already running)"""
+    try:
+        if not REVENUE_GENERATION_AVAILABLE or not orchestrator.revenue_generator:
+            raise HTTPException(status_code=404, detail="Revenue Generation System not available")
+        
+        # Start revenue generation task
+        asyncio.create_task(orchestrator.revenue_generator.start_autonomous_revenue_generation())
+        
+        return {
+            "message": "Revenue generation started",
+            "status": "initiated"
+        }
+        
+    except Exception as e:
+        logger.error("Error starting revenue generation: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error starting revenue generation: {str(e)}")
+
+
+@app.get("/revenue/opportunities")
+async def get_revenue_opportunities():
+    """Get current revenue opportunities identified by the system"""
+    try:
+        if not REVENUE_GENERATION_AVAILABLE or not orchestrator.revenue_generator:
+            raise HTTPException(status_code=404, detail="Revenue Generation System not available")
+        
+        opportunities = orchestrator.revenue_generator.identified_opportunities
+        
+        return {
+            "total_opportunities": len(opportunities),
+            "opportunities": [
+                {
+                    "strategy": opp.strategy.value,
+                    "description": opp.description,
+                    "estimated_revenue": opp.estimated_revenue_potential,
+                    "implementation_complexity": opp.implementation_complexity,
+                    "time_to_market": opp.time_to_market,
+                    "confidence_score": opp.confidence_score,
+                    "risk_level": opp.risk_level,
+                    "target_audience": opp.target_audience,
+                    "created_at": opp.created_at.isoformat()
+                }
+                for opp in opportunities[:10]  # Top 10 opportunities
+            ]
+        }
+        
+    except Exception as e:
+        logger.error("Error getting revenue opportunities: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting opportunities: {str(e)}")
+
+
+@app.get("/revenue/projects")
+async def get_revenue_projects():
+    """Get current revenue projects and their status"""
+    try:
+        if not REVENUE_GENERATION_AVAILABLE or not orchestrator.revenue_generator:
+            raise HTTPException(status_code=404, detail="Revenue Generation System not available")
+        
+        active_projects = orchestrator.revenue_generator.active_projects
+        completed_projects = orchestrator.revenue_generator.completed_projects
+        
+        return {
+            "active_projects": len(active_projects),
+            "completed_projects": len(completed_projects),
+            "total_revenue_generated": orchestrator.revenue_generator.total_revenue_generated,
+            "projects": {
+                "active": [
+                    {
+                        "project_id": project.project_id,
+                        "strategy": project.opportunity.strategy.value,
+                        "description": project.opportunity.description,
+                        "status": project.status,
+                        "current_revenue": project.current_revenue,
+                        "started_at": project.started_at.isoformat(),
+                        "milestones_completed": len([m for m in project.milestones if m["status"] == "completed"]),
+                        "total_milestones": len(project.milestones)
+                    }
+                    for project in active_projects
+                ],
+                "completed": [
+                    {
+                        "project_id": project.project_id,
+                        "strategy": project.opportunity.strategy.value,
+                        "description": project.opportunity.description,
+                        "revenue_generated": project.current_revenue,
+                        "roi": project.roi,
+                        "completed_at": project.updated_at.isoformat()
+                    }
+                    for project in completed_projects[-5:]  # Last 5 completed
+                ]
+            }
+        }
+        
+    except Exception as e:
+        logger.error("Error getting revenue projects: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting projects: {str(e)}")
+
 
 if __name__ == "__main__":
     uvicorn.run(

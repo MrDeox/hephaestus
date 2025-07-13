@@ -143,13 +143,14 @@ class RSISafetyVerifier:
         
         # Docker client
         self.docker_client = None
-        if DOCKER_AVAILABLE:
+        self.docker_available = DOCKER_AVAILABLE
+        if self.docker_available:
             try:
                 self.docker_client = docker.from_env()
                 logger.info("Docker client initialized successfully")
             except Exception as e:
                 logger.warning("Failed to initialize Docker client: {}", str(e))
-                DOCKER_AVAILABLE = False
+                self.docker_available = False
         
         # Execution tracking
         self.active_executions: Dict[str, ExecutionResult] = {}
@@ -278,7 +279,7 @@ class RSISafetyVerifier:
                                 context: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         """Execute hypothesis in secure Docker container"""
         
-        if not DOCKER_AVAILABLE or not self.docker_client:
+        if not self.docker_available or not self.docker_client:
             raise RuntimeError("Docker not available for secure execution")
         
         # Create temporary directory for code and results
@@ -798,7 +799,7 @@ if __name__ == "__main__":
                 if r.execution_time_ms is not None
             ]) if self.execution_history else 0.0,
             'isolation_capabilities': {
-                'docker_available': DOCKER_AVAILABLE,
+                'docker_available': self.docker_available,
                 'restricted_python_available': RESTRICTED_PYTHON_AVAILABLE,
                 'default_isolation_level': self.default_constraints.isolation_level.value
             },

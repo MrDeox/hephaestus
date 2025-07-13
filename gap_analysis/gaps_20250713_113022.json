@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-07-13T14:30:22.032443+00:00",
+  "total_gaps": 1,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 0,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 0,
+    "knowledge": 0,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "perf_latency_1752417021",
+      "gap_type": "performance",
+      "severity": "high",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 2100.72ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 2100.716612173806,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 2100.716612173806,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-13T14:30:21.931024+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-13T14:30:21.931026+00:00",
+      "impact_score": 8.402866448695224,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}
