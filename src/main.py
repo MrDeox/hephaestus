@@ -89,6 +89,18 @@ except ImportError as e:
     logger.warning("Revenue Generation System not available: {}", str(e))
     REVENUE_GENERATION_AVAILABLE = False
 
+# Email Automation and Marketing imports
+try:
+    from src.services.email_automation import (
+        create_email_automation_service, create_email_service_manager
+    )
+    from src.bootstrap.marketing_engine import create_marketing_engine
+    from src.automation.web_agent import create_web_automation_agent
+    EMAIL_MARKETING_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Email Marketing System not available: {}", str(e))
+    EMAIL_MARKETING_AVAILABLE = False
+
 # Meta-Learning System imports
 try:
     from src.meta_learning import (
@@ -257,6 +269,9 @@ class RSIOrchestrator:
             # Autonomous Revenue Generation System
             self._initialize_revenue_generation_system()
             
+            # Email Marketing and Web Automation System
+            self._initialize_email_marketing_system()
+            
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
 
@@ -335,6 +350,60 @@ class RSIOrchestrator:
                 self.revenue_generator = None
         else:
             logger.warning("Revenue Generation System not available")
+    
+    def _initialize_email_marketing_system(self):
+        """Initialize Email Marketing and Web Automation System"""
+        self.email_service = None
+        self.email_manager = None
+        self.marketing_engine = None
+        self.web_agent = None
+        
+        if EMAIL_MARKETING_AVAILABLE:
+            try:
+                # Initialize email automation service
+                self.email_service = create_email_automation_service()
+                self.email_manager = create_email_service_manager()
+                
+                # Initialize marketing engine
+                self.marketing_engine = create_marketing_engine()
+                
+                # Initialize web automation agent
+                self.web_agent = create_web_automation_agent()
+                
+                logger.info("✅ Email Marketing and Web Automation System initialized")
+                
+                # Integrate with RSI system for self-improvement
+                self._integrate_marketing_with_rsi()
+                
+            except Exception as e:
+                logger.error("Failed to initialize Email Marketing System: {}", str(e))
+                self.email_service = None
+                self.email_manager = None
+                self.marketing_engine = None
+                self.web_agent = None
+        else:
+            logger.warning("Email Marketing System not available")
+    
+    def _integrate_marketing_with_rsi(self):
+        """Integrate marketing system with RSI for continuous improvement"""
+        try:
+            # Add marketing performance monitoring to RSI state
+            if hasattr(self, 'state_manager') and self.marketing_engine:
+                # Marketing performance becomes part of RSI learning data
+                marketing_metrics = {
+                    'total_campaigns': len(self.marketing_engine.active_campaigns),
+                    'conversion_rate': 0.0,  # Will be updated with real data
+                    'revenue_impact': 0.0,
+                    'customer_acquisition_cost': 0.0
+                }
+                
+                # Add to RSI state for learning
+                self.state_manager.add_performance_metric('marketing_performance', marketing_metrics)
+                
+            logger.info("🔗 Marketing system integrated with RSI for self-improvement")
+            
+        except Exception as e:
+            logger.warning("Failed to integrate marketing with RSI: {}", str(e))
 
     async def _start_revenue_generation_background(self):
         """Start revenue generation in background task"""
@@ -1303,6 +1372,305 @@ class RSIOrchestrator:
         except Exception as e:
             logger.error("Hypothesis-driven improvement failed: {}", str(e))
 
+    # Email Marketing and Web Automation Integration Methods
+    async def execute_marketing_campaign(self, campaign_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute marketing campaign using web automation with RSI integration"""
+        if not self.marketing_engine or not self.web_agent:
+            raise ValueError("Marketing system not available")
+        
+        logger.info("🚀 RSI executing marketing campaign: {}", campaign_data.get('name', 'Unnamed'))
+        
+        try:
+            # Create marketing campaign
+            campaign = await self.marketing_engine.create_campaign(
+                name=campaign_data['name'],
+                channel=campaign_data['channel'],
+                content_type=campaign_data['content_type'],
+                target_audience=campaign_data['target_audience'],
+                value_proposition=campaign_data['value_proposition']
+            )
+            
+            # Execute campaign using web automation
+            campaign_execution = await self.marketing_engine.execute_campaign(campaign.campaign_id)
+            
+            # Web automation for actual posting
+            web_automation_results = await self.web_agent.execute_marketing_campaign(campaign_data)
+            
+            # Update RSI state with marketing performance
+            marketing_metrics = {
+                'campaign_id': campaign.campaign_id,
+                'estimated_reach': campaign.estimated_reach,
+                'actual_reach': web_automation_results.get('total_estimated_reach', 0),
+                'conversion_rate': 0.02,  # Will be updated with real data
+                'cost': 0.0,  # Zero-cost marketing
+                'roi': float('inf')
+            }
+            
+            # Store in RSI memory for learning
+            if self.memory_system:
+                await self.memory_system.store_episodic_memory(
+                    "marketing_campaign",
+                    marketing_metrics
+                )
+            
+            # Trigger RSI learning from marketing data
+            await self._learn_from_marketing_performance(marketing_metrics)
+            
+            result = {
+                'campaign_id': campaign.campaign_id,
+                'marketing_execution': campaign_execution,
+                'web_automation': web_automation_results,
+                'rsi_learning_applied': True,
+                'metrics': marketing_metrics
+            }
+            
+            logger.info("✅ RSI marketing campaign completed with learning integration")
+            return result
+            
+        except Exception as e:
+            logger.error("RSI marketing campaign failed: {}", str(e))
+            raise
+
+    async def autonomous_revenue_generation(self, target_amount: float = 700.0) -> Dict[str, Any]:
+        """Autonomous revenue generation using integrated RSI system"""
+        logger.info("💰 Starting autonomous revenue generation (target: ${})", target_amount)
+        
+        try:
+            # Use revenue generator for opportunity detection
+            if self.revenue_generator:
+                revenue_opportunities = await self.revenue_generator.analyze_revenue_opportunities()
+            else:
+                revenue_opportunities = []
+            
+            # Use email service for customer conversion
+            if self.email_service:
+                customer_metrics = self.email_service.get_customer_metrics()
+                conversion_potential = customer_metrics.get('total_revenue', 0)
+            else:
+                conversion_potential = 0
+            
+            # Use marketing engine for lead generation
+            if self.marketing_engine:
+                marketing_performance = self.marketing_engine.get_overall_performance()
+                lead_generation_rate = marketing_performance.get('total_leads', 0)
+            else:
+                lead_generation_rate = 0
+            
+            # RSI analyzes and optimizes the approach
+            optimization_strategy = await self._optimize_revenue_strategy({
+                'opportunities': revenue_opportunities,
+                'conversion_potential': conversion_potential,
+                'lead_generation': lead_generation_rate,
+                'target': target_amount
+            })
+            
+            # Execute optimized strategy
+            results = await self._execute_revenue_strategy(optimization_strategy)
+            
+            # Learn from results to improve future strategies
+            await self._learn_from_revenue_results(results)
+            
+            logger.info("💰 Autonomous revenue generation completed: ${:.2f} projected", 
+                       results.get('projected_revenue', 0))
+            
+            return results
+            
+        except Exception as e:
+            logger.error("Autonomous revenue generation failed: {}", str(e))
+            raise
+
+    async def _learn_from_marketing_performance(self, metrics: Dict[str, Any]):
+        """RSI learns from marketing performance to improve future campaigns"""
+        try:
+            # Convert marketing metrics to learning features
+            features = {
+                'reach_ratio': metrics.get('actual_reach', 0) / max(metrics.get('estimated_reach', 1), 1),
+                'conversion_rate': metrics.get('conversion_rate', 0),
+                'cost_efficiency': 1.0 if metrics.get('cost', 0) == 0 else 0.5,  # Zero-cost is highly efficient
+                'campaign_type_success': 1.0  # Will be updated with real performance
+            }
+            
+            # Target is overall campaign success (0-1 scale)
+            target = min(1.0, metrics.get('conversion_rate', 0) * 50)  # Scale conversion rate
+            
+            # Learn from this marketing experience
+            learning_result = await self.learn(features, target, user_id="marketing_system")
+            
+            logger.info("🧠 RSI learned from marketing performance: accuracy={:.3f}", 
+                       learning_result.get('accuracy', 0))
+            
+        except Exception as e:
+            logger.warning("Failed to learn from marketing performance: {}", str(e))
+
+    async def _optimize_revenue_strategy(self, strategy_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Use RSI to optimize revenue generation strategy"""
+        try:
+            # Use current RSI state to predict optimal strategy
+            features = {
+                'opportunity_count': len(strategy_data.get('opportunities', [])),
+                'conversion_potential': strategy_data.get('conversion_potential', 0),
+                'lead_generation_rate': strategy_data.get('lead_generation', 0),
+                'target_amount': strategy_data.get('target', 700)
+            }
+            
+            # Get RSI prediction for optimization
+            prediction_result = await self.predict(features, user_id="revenue_optimizer")
+            confidence = prediction_result.get('confidence', 0.5)
+            
+            # Generate optimized strategy based on RSI insights
+            optimized_strategy = {
+                'focus_email_automation': confidence > 0.7,
+                'increase_marketing_frequency': confidence > 0.6,
+                'target_premium_customers': confidence > 0.8,
+                'expand_to_new_channels': confidence < 0.4,
+                'predicted_success_rate': confidence,
+                'rsi_recommendation': prediction_result.get('prediction', 0.5)
+            }
+            
+            logger.info("🎯 RSI optimized revenue strategy: confidence={:.3f}", confidence)
+            return optimized_strategy
+            
+        except Exception as e:
+            logger.warning("Failed to optimize revenue strategy: {}", str(e))
+            return {'default_strategy': True}
+
+    async def _execute_revenue_strategy(self, strategy: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute the RSI-optimized revenue strategy"""
+        results = {
+            'projected_revenue': 0.0,
+            'campaigns_launched': 0,
+            'customers_acquired': 0,
+            'strategy_effectiveness': 0.0
+        }
+        
+        try:
+            # Execute email automation focused strategy
+            if strategy.get('focus_email_automation') and self.email_service:
+                email_results = await self._execute_email_revenue_strategy()
+                results['projected_revenue'] += email_results.get('revenue', 0)
+                results['customers_acquired'] += email_results.get('customers', 0)
+            
+            # Execute marketing campaigns
+            if strategy.get('increase_marketing_frequency') and self.marketing_engine:
+                marketing_results = await self._execute_marketing_revenue_strategy()
+                results['campaigns_launched'] += marketing_results.get('campaigns', 0)
+                results['projected_revenue'] += marketing_results.get('revenue', 0)
+            
+            # Calculate strategy effectiveness
+            target = 700.0
+            results['strategy_effectiveness'] = min(1.0, results['projected_revenue'] / target)
+            
+            return results
+            
+        except Exception as e:
+            logger.error("Failed to execute revenue strategy: {}", str(e))
+            return results
+
+    async def _execute_email_revenue_strategy(self) -> Dict[str, Any]:
+        """Execute email-focused revenue strategy"""
+        try:
+            # Create high-converting email campaigns
+            campaigns = []
+            total_revenue = 0.0
+            total_customers = 0
+            
+            # Create welcome series for conversions
+            welcome_campaign = self.email_service.create_campaign(
+                name="High-Converting Welcome Series",
+                customer_email="revenue@system.com",
+                pricing_tier="basic",
+                template_id="welcome_template",
+                recipient_list=[f"prospect{i}@target.com" for i in range(200)]
+            )
+            campaigns.append(welcome_campaign)
+            
+            # Estimate revenue from campaigns
+            for campaign in campaigns:
+                estimated_customers = len(campaign.recipient_list) * 0.05  # 5% conversion
+                estimated_revenue = estimated_customers * 25  # $25 avg per customer
+                total_revenue += estimated_revenue
+                total_customers += estimated_customers
+            
+            return {
+                'revenue': total_revenue,
+                'customers': total_customers,
+                'campaigns': campaigns
+            }
+            
+        except Exception as e:
+            logger.error("Email revenue strategy failed: {}", str(e))
+            return {'revenue': 0, 'customers': 0}
+
+    async def _execute_marketing_revenue_strategy(self) -> Dict[str, Any]:
+        """Execute marketing-focused revenue strategy"""
+        try:
+            # Launch multiple marketing campaigns
+            campaign_data = [
+                {
+                    'name': 'Reddit Growth Campaign',
+                    'channel': 'reddit',
+                    'content_type': 'helpful_tutorial',
+                    'target_audience': 'small business owners',
+                    'value_proposition': 'Free email automation'
+                },
+                {
+                    'name': 'GitHub Developer Outreach',
+                    'channel': 'github',
+                    'content_type': 'free_tool',
+                    'target_audience': 'developers',
+                    'value_proposition': 'Open source email templates'
+                }
+            ]
+            
+            total_revenue = 0.0
+            campaigns_launched = 0
+            
+            for campaign_config in campaign_data:
+                try:
+                    campaign = await self.marketing_engine.create_campaign(**campaign_config)
+                    await self.marketing_engine.execute_campaign(campaign.campaign_id)
+                    
+                    # Estimate revenue from campaign
+                    estimated_customers = campaign.estimated_conversions
+                    estimated_revenue = estimated_customers * 25  # $25 per customer
+                    total_revenue += estimated_revenue
+                    campaigns_launched += 1
+                    
+                except Exception as e:
+                    logger.warning("Campaign failed: {}", str(e))
+            
+            return {
+                'revenue': total_revenue,
+                'campaigns': campaigns_launched
+            }
+            
+        except Exception as e:
+            logger.error("Marketing revenue strategy failed: {}", str(e))
+            return {'revenue': 0, 'campaigns': 0}
+
+    async def _learn_from_revenue_results(self, results: Dict[str, Any]):
+        """RSI learns from revenue generation results"""
+        try:
+            # Convert results to learning features
+            features = {
+                'projected_revenue': results.get('projected_revenue', 0) / 1000,  # Scale
+                'campaigns_launched': results.get('campaigns_launched', 0) / 10,  # Scale
+                'customers_acquired': results.get('customers_acquired', 0) / 100,  # Scale
+                'strategy_effectiveness': results.get('strategy_effectiveness', 0)
+            }
+            
+            # Target is success rate (1.0 = fully achieved target)
+            target = results.get('strategy_effectiveness', 0)
+            
+            # Learn from revenue generation experience
+            learning_result = await self.learn(features, target, user_id="revenue_system")
+            
+            logger.info("💰 RSI learned from revenue results: accuracy={:.3f}", 
+                       learning_result.get('accuracy', 0))
+            
+        except Exception as e:
+            logger.warning("Failed to learn from revenue results: {}", str(e))
+
 # Global orchestrator instance
 orchestrator: Optional[RSIOrchestrator] = None
 
@@ -1989,6 +2357,182 @@ async def get_revenue_opportunities():
     except Exception as e:
         logger.error("Error getting revenue opportunities: {}", str(e))
         raise HTTPException(status_code=500, detail=f"Error getting opportunities: {str(e)}")
+
+
+# Email Marketing and Web Automation Endpoints
+@app.post("/marketing/campaign")
+async def execute_marketing_campaign(campaign_data: Dict[str, Any]):
+    """Execute marketing campaign with RSI integration"""
+    try:
+        if not EMAIL_MARKETING_AVAILABLE:
+            raise HTTPException(status_code=404, detail="Email Marketing System not available")
+        
+        result = await orchestrator.execute_marketing_campaign(campaign_data)
+        
+        return {
+            "status": "success",
+            "campaign_id": result['campaign_id'],
+            "marketing_execution": result['marketing_execution'],
+            "web_automation": result['web_automation'],
+            "rsi_learning_applied": result['rsi_learning_applied'],
+            "metrics": result['metrics']
+        }
+        
+    except Exception as e:
+        logger.error("Marketing campaign execution failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Campaign execution failed: {str(e)}")
+
+
+@app.post("/revenue/autonomous")
+async def autonomous_revenue_generation(target_amount: float = 700.0):
+    """Start autonomous revenue generation using integrated RSI system"""
+    try:
+        if not EMAIL_MARKETING_AVAILABLE:
+            raise HTTPException(status_code=404, detail="Email Marketing System not available")
+        
+        result = await orchestrator.autonomous_revenue_generation(target_amount)
+        
+        return {
+            "status": "completed",
+            "target_amount": target_amount,
+            "projected_revenue": result['projected_revenue'],
+            "campaigns_launched": result['campaigns_launched'],
+            "customers_acquired": result['customers_acquired'],
+            "strategy_effectiveness": result['strategy_effectiveness'],
+            "achievement_percentage": (result['projected_revenue'] / target_amount) * 100
+        }
+        
+    except Exception as e:
+        logger.error("Autonomous revenue generation failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Revenue generation failed: {str(e)}")
+
+
+@app.get("/marketing/performance")
+async def get_marketing_performance():
+    """Get marketing system performance metrics"""
+    try:
+        if not EMAIL_MARKETING_AVAILABLE or not orchestrator.marketing_engine:
+            raise HTTPException(status_code=404, detail="Marketing Engine not available")
+        
+        performance = orchestrator.marketing_engine.get_overall_performance()
+        
+        return {
+            "total_campaigns": performance['total_campaigns'],
+            "active_campaigns": performance['active_campaigns'],
+            "total_leads": performance['total_leads'],
+            "total_conversions": performance['total_conversions'],
+            "total_reach": performance['total_reach'],
+            "overall_conversion_rate": performance['overall_conversion_rate'],
+            "channel_performance": performance['channel_performance'],
+            "content_pieces": performance['content_pieces'],
+            "lead_sources": performance['lead_sources']
+        }
+        
+    except Exception as e:
+        logger.error("Error getting marketing performance: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting performance: {str(e)}")
+
+
+@app.get("/email/service/metrics")
+async def get_email_service_metrics():
+    """Get email automation service metrics"""
+    try:
+        if not EMAIL_MARKETING_AVAILABLE or not orchestrator.email_service:
+            raise HTTPException(status_code=404, detail="Email Service not available")
+        
+        metrics = orchestrator.email_service.get_customer_metrics()
+        
+        return {
+            "total_revenue": metrics['total_revenue'],
+            "total_customers": metrics['total_customers'],
+            "active_campaigns": metrics['active_campaigns'],
+            "emails_sent_today": metrics['emails_sent_today'],
+            "conversion_rate": metrics.get('conversion_rate', 0),
+            "customer_lifetime_value": metrics.get('customer_lifetime_value', 0)
+        }
+        
+    except Exception as e:
+        logger.error("Error getting email service metrics: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting email metrics: {str(e)}")
+
+
+@app.post("/web/automation/deploy")
+async def deploy_email_service():
+    """Deploy email automation service using web automation"""
+    try:
+        if not EMAIL_MARKETING_AVAILABLE or not orchestrator.web_agent:
+            raise HTTPException(status_code=404, detail="Web Automation not available")
+        
+        deployment_result = await orchestrator.web_agent.deploy_email_service({
+            "name": "Hephaestus Email Automation",
+            "description": "AI-powered email automation service"
+        })
+        
+        return {
+            "status": "completed",
+            "deployment_attempts": deployment_result['deployment_attempts'],
+            "successful_deployments": deployment_result['successful_deployments'],
+            "results": deployment_result['results']
+        }
+        
+    except Exception as e:
+        logger.error("Email service deployment failed: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Deployment failed: {str(e)}")
+
+
+@app.get("/rsi/integrated/status")
+async def get_integrated_rsi_status():
+    """Get status of integrated RSI system with all capabilities"""
+    try:
+        # Core RSI components
+        core_status = {
+            "state_manager": orchestrator.state_manager is not None,
+            "online_learner": orchestrator.online_learner is not None,
+            "validator": orchestrator.validator is not None,
+            "memory_system": orchestrator.memory_system is not None
+        }
+        
+        # Advanced RSI components
+        advanced_status = {
+            "hypothesis_orchestrator": orchestrator.hypothesis_orchestrator is not None,
+            "execution_pipeline": orchestrator.execution_pipeline is not None,
+            "gap_scanner": orchestrator.gap_scanner is not None,
+            "mml_controller": orchestrator.mml_controller is not None
+        }
+        
+        # Revenue generation components
+        revenue_status = {
+            "revenue_generator": orchestrator.revenue_generator is not None,
+            "email_service": orchestrator.email_service is not None,
+            "marketing_engine": orchestrator.marketing_engine is not None,
+            "web_agent": orchestrator.web_agent is not None
+        }
+        
+        # Overall system health
+        total_components = len(core_status) + len(advanced_status) + len(revenue_status)
+        active_components = sum(core_status.values()) + sum(advanced_status.values()) + sum(revenue_status.values())
+        system_health = (active_components / total_components) * 100
+        
+        return {
+            "system_health_percentage": system_health,
+            "total_components": total_components,
+            "active_components": active_components,
+            "core_rsi": core_status,
+            "advanced_rsi": advanced_status,
+            "revenue_generation": revenue_status,
+            "integration_complete": system_health >= 80,
+            "agi_capabilities": {
+                "autonomous_learning": core_status["online_learner"] and core_status["memory_system"],
+                "self_improvement": advanced_status["hypothesis_orchestrator"] and advanced_status["execution_pipeline"],
+                "revenue_generation": all(revenue_status.values()),
+                "web_automation": revenue_status["web_agent"],
+                "continuous_evolution": system_health >= 90
+            }
+        }
+        
+    except Exception as e:
+        logger.error("Error getting integrated RSI status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Error getting status: {str(e)}")
 
 
 @app.get("/revenue/projects")
