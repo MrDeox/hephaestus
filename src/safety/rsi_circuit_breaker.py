@@ -84,6 +84,7 @@ class RSISafetyCircuitBreaker:
         self.monitoring_active = False
         self.safety_monitor_task = None
         self.executor = ThreadPoolExecutor(max_workers=2)
+        self.rollback_events = []  # Track rollback events
         
         logger.info("RSI Safety Circuit Breaker initialized with threshold={}", failure_threshold)
     
@@ -645,6 +646,21 @@ class RSISafetyCircuitBreaker:
         }
         
         logger.info("State restoration completed: {}", restoration_info)
+    
+    async def _record_rollback_event(self, checkpoint: SafetyCheckpoint):
+        """Record rollback event for audit trail"""
+        rollback_event = {
+            'timestamp': time.time(),
+            'checkpoint_id': checkpoint.checkpoint_id,
+            'rollback_reason': getattr(checkpoint, 'rollback_reason', 'Safety violation'),
+            'system_state': 'restored'
+        }
+        
+        # Record in audit trail
+        logger.info("Rollback event recorded: {}", rollback_event)
+        
+        # Store rollback event
+        self.rollback_events.append(rollback_event)
     
     async def _cleanup_checkpoint(self, checkpoint: SafetyCheckpoint):
         """Clean up old checkpoint files"""

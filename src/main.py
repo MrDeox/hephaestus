@@ -226,7 +226,7 @@ class RSIOrchestrator:
             self.behavioral_monitor = BehavioralMonitor()
             self.telemetry = TelemetryCollector()
             
-            # Memory system
+            # Memory system - initialize to None first to ensure attribute exists
             self.memory_system = None
             
             # Optimization (optional)
@@ -268,9 +268,6 @@ class RSIOrchestrator:
             
             # Autonomous Revenue Generation System
             self._initialize_revenue_generation_system()
-            
-            # Email Marketing and Web Automation System
-            self._initialize_email_marketing_system()
             
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
@@ -432,6 +429,9 @@ class RSIOrchestrator:
             # Initialize memory system
             await self._initialize_memory_system()
             
+            # Initialize Email Marketing and Web Automation System (after memory is ready)
+            self._initialize_email_marketing_system()
+            
             # Start core monitoring
             if hasattr(self, 'behavioral_monitor') and self.behavioral_monitor:
                 self.behavioral_monitor.start_monitoring()
@@ -501,21 +501,33 @@ class RSIOrchestrator:
     async def _initialize_memory_system(self):
         """Initialize memory system"""
         try:
-            from src.memory.memory_hierarchy import RSIMemoryHierarchy, RSIMemoryConfig
-            
-            config = RSIMemoryConfig()
-            self.memory_system = RSIMemoryHierarchy(config)
-            
-            # Check if initialize method exists
-            if hasattr(self.memory_system, 'initialize'):
-                await self.memory_system.initialize()
-            else:
-                logger.info("Memory system does not require explicit initialization")
-            
-            logger.info("✅ Memory system initialized successfully")
+            # First try RSI Memory Manager (our integrated system)
+            from src.memory.memory_manager import create_rsi_memory_manager
+            self.memory_system = create_rsi_memory_manager()
+            logger.info("✅ RSI Memory Manager initialized")
+            return
         except Exception as e:
-            logger.warning("Memory system initialization failed: {}", str(e))
-            self.memory_system = None
+            logger.warning("Failed to initialize RSI Memory Manager: {}", str(e))
+        
+        # Fallback to Memory Hierarchy
+        if self.memory_system is None:
+            try:
+                from src.memory.memory_hierarchy import RSIMemoryHierarchy, RSIMemoryConfig
+                
+                config = RSIMemoryConfig()
+                self.memory_system = RSIMemoryHierarchy(config)
+                
+                # Check if initialize method exists
+                if hasattr(self.memory_system, 'initialize'):
+                    await self.memory_system.initialize()
+                else:
+                    logger.info("Memory system does not require explicit initialization")
+                
+                logger.info("✅ Memory system initialized successfully")
+            except Exception as e:
+                logger.warning("Memory system initialization failed: {}", str(e))
+                # Ensure memory_system is at least set to something to avoid AttributeError
+                self.memory_system = None
 
     async def _metacognitive_monitoring_loop(self):
         """Enhanced metacognitive monitoring loop"""
@@ -1178,10 +1190,11 @@ class RSIOrchestrator:
             # Get learning metrics
             learner_metrics = self.online_learner.get_metrics()
             performance_data["metrics"]["learning"] = {
-                "accuracy": learner_metrics.accuracy,
-                "samples_processed": learner_metrics.samples_processed,
-                "adaptation_speed": learner_metrics.adaptation_speed
+                "accuracy": getattr(learner_metrics, 'accuracy', 0.0),
+                "samples_processed": getattr(learner_metrics, 'samples_processed', 0),
+                "adaptation_speed": getattr(learner_metrics, 'adaptation_speed', 0.0)
             }
+            performance_data["accuracy"] = performance_data["metrics"]["learning"]["accuracy"]
             
             # Add metacognitive insights
             if self.metacognitive_assessment.assessment_history:
@@ -1203,12 +1216,13 @@ class RSIOrchestrator:
                     performance_data["recommendations"].append("Reduce cognitive load")
             
             # Check accuracy threshold
-            if learner_metrics.accuracy < 0.8:
+            accuracy = performance_data["metrics"]["learning"]["accuracy"]
+            if accuracy < 0.8:
                 performance_data["needs_improvement"] = True
                 performance_data["recommendations"].append("Improve model accuracy")
             
             # Check for concept drift
-            if learner_metrics.concept_drift_detected:
+            if getattr(learner_metrics, 'concept_drift_detected', False):
                 performance_data["needs_improvement"] = True
                 performance_data["recommendations"].append("Adapt to concept drift")
                 

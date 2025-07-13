@@ -571,6 +571,91 @@ class RSIMemoryManager:
             
             return stats
     
+    async def store_episodic_memory(self, event_type: str, event_data: Dict[str, Any]) -> bool:
+        """Store episodic memory event."""
+        try:
+            # Create episodic memory entry
+            memory_entry = {
+                'event_type': event_type,
+                'event_data': event_data,
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'memory_id': f"episodic_{datetime.now(timezone.utc).timestamp()}"
+            }
+            
+            # Allocate memory for episodic storage
+            allocation_id = await self.allocate_memory(
+                memory_type='episodic',
+                size=len(pickle.dumps(memory_entry)),
+                data=memory_entry
+            )
+            
+            if allocation_id:
+                logger.debug(f"Stored episodic memory: {event_type}")
+                return True
+            else:
+                logger.warning(f"Failed to store episodic memory: {event_type}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Failed to store episodic memory: {e}")
+            return False
+    
+    async def store_semantic_memory(self, concept: str, knowledge_data: Dict[str, Any]) -> bool:
+        """Store semantic memory concept."""
+        try:
+            memory_entry = {
+                'concept': concept,
+                'knowledge_data': knowledge_data,
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'memory_id': f"semantic_{datetime.now(timezone.utc).timestamp()}"
+            }
+            
+            allocation_id = await self.allocate_memory(
+                memory_type='semantic',
+                size=len(pickle.dumps(memory_entry)),
+                data=memory_entry
+            )
+            
+            return allocation_id is not None
+            
+        except Exception as e:
+            logger.error(f"Failed to store semantic memory: {e}")
+            return False
+    
+    async def store_procedural_memory(self, procedure: str, procedure_data: Dict[str, Any]) -> bool:
+        """Store procedural memory."""
+        try:
+            memory_entry = {
+                'procedure': procedure,
+                'procedure_data': procedure_data,
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'memory_id': f"procedural_{datetime.now(timezone.utc).timestamp()}"
+            }
+            
+            allocation_id = await self.allocate_memory(
+                memory_type='procedural',
+                size=len(pickle.dumps(memory_entry)),
+                data=memory_entry
+            )
+            
+            return allocation_id is not None
+            
+        except Exception as e:
+            logger.error(f"Failed to store procedural memory: {e}")
+            return False
+    
+    async def retrieve_episodic_memories(self, event_type: Optional[str] = None, limit: int = 10) -> List[Dict[str, Any]]:
+        """Retrieve episodic memories."""
+        try:
+            # This is a simplified implementation
+            # In a full implementation, we would search through stored memories
+            logger.debug(f"Retrieving episodic memories for type: {event_type}")
+            return []  # Return empty for now
+            
+        except Exception as e:
+            logger.error(f"Failed to retrieve episodic memories: {e}")
+            return []
+
     async def shutdown(self):
         """Shutdown memory manager."""
         try:
@@ -589,3 +674,9 @@ class RSIMemoryManager:
             
         except Exception as e:
             logger.error(f"Failed to shutdown memory manager: {e}")
+
+
+# Create factory function for easy instantiation
+def create_rsi_memory_manager() -> RSIMemoryManager:
+    """Create RSI Memory Manager instance."""
+    return RSIMemoryManager()

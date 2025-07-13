@@ -1045,6 +1045,52 @@ class EmailServiceManager:
             })
         
         return optimizations
+    
+    def get_customer_metrics(self) -> Dict[str, Any]:
+        """Get comprehensive customer and service metrics."""
+        
+        # Calculate total customers from campaigns
+        total_customers = len(set(
+            campaign.customer_email 
+            for campaign in list(self.active_campaigns.values()) + self.completed_campaigns
+        ))
+        
+        # Calculate active campaigns
+        active_campaigns_count = len(self.active_campaigns)
+        
+        # Calculate total emails sent from all campaigns
+        total_emails_sent = sum(
+            getattr(campaign, 'emails_sent', len(campaign.recipient_list))
+            for campaign in list(self.active_campaigns.values()) + self.completed_campaigns
+        )
+        
+        # Calculate conversion rate based on completed campaigns
+        total_recipients = sum(
+            len(campaign.recipient_list) 
+            for campaign in self.completed_campaigns
+        )
+        
+        # Estimate conversion rate (this would be real data in production)
+        estimated_conversions = total_recipients * 0.05  # 5% conversion rate
+        conversion_rate = estimated_conversions / max(total_recipients, 1)
+        
+        # Calculate CLV (simplified estimation)
+        average_revenue_per_customer = 25.0  # From pricing tiers
+        average_customer_lifetime_months = 12
+        customer_lifetime_value = average_revenue_per_customer * average_customer_lifetime_months
+        
+        return {
+            'total_revenue': self.total_revenue,
+            'total_customers': total_customers,
+            'active_campaigns': active_campaigns_count,
+            'emails_sent_today': self.emails_sent_today,
+            'conversion_rate': conversion_rate,
+            'customer_lifetime_value': customer_lifetime_value,
+            'total_emails_sent': total_emails_sent,
+            'completed_campaigns': len(self.completed_campaigns),
+            'revenue_per_customer': average_revenue_per_customer,
+            'estimated_conversions': estimated_conversions
+        }
 
 
 # Factory functions
