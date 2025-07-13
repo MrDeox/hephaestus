@@ -18,6 +18,22 @@ from datetime import datetime, timezone, timedelta
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
+
+
+class SecurityLevel(Enum):
+    """Security levels for sandbox execution."""
+    MINIMAL = "minimal"
+    STANDARD = "standard" 
+    MEDIUM = "medium"
+    HIGH = "high"
+    MAXIMUM = "maximum"
+
+
+class SandboxType(Enum):
+    """Types of sandbox implementations."""
+    RESTRICTED_PYTHON = "restricted_python"
+    SUBPROCESS = "subprocess"
+    DOCKER = "docker"
 import json
 import hashlib
 import uuid

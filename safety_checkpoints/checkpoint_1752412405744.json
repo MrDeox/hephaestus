@@ -1,0 +1,24 @@
+{
+  "timestamp": 1752412405.844571,
+  "checkpoint_id": "checkpoint_1752412405744",
+  "model_state_hash": "637e1ee5ddef719213b551ea1addac9a",
+  "system_metrics": {
+    "cpu_percent": 21.8,
+    "memory_percent": 55.2,
+    "timestamp": 1752412405.8445632
+  },
+  "safety_scores": {
+    "overall_safety": 0.8,
+    "resource_safety": 0.9,
+    "performance_safety": 0.85,
+    "operational_safety": 0.75
+  },
+  "operation_context": {
+    "operation_name": "learning_learn_1752412405744",
+    "safety_level": "medium",
+    "timestamp": 1752412405.8445692,
+    "circuit_state": "closed",
+    "failure_count": 1
+  },
+  "checkpoint_size_mb": 0.0
+}

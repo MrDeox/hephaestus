@@ -72,8 +72,8 @@ class RSIState(BaseModel):
 class RSIStateManager(Generic[T]):
     """Thread-safe state manager with immutable guarantees."""
     
-    def __init__(self, initial_state: RSIState):
-        self._current_state = initial_state
+    def __init__(self, initial_state: Optional[RSIState] = None):
+        self._current_state = initial_state or create_initial_state()
         self._transition_history: PVector[StateTransition] = pvector()
         self._state_snapshots: PMap[str, RSIState] = pmap()
         
@@ -235,3 +235,26 @@ def update_safety_status(safety_updates: Dict[str, Any]) -> Callable[[RSIState],
             }
         )
     return transition
+
+
+def create_initial_state() -> RSIState:
+    """Create initial RSI state with default values."""
+    return RSIState(
+        configuration=pmap({
+            'system_id': 'rsi_system_default',
+            'environment': 'development'
+        }),
+        model_weights=pmap({}),
+        learning_history=pvector([]),
+        performance_metrics=pmap({
+            'accuracy': 0.0,
+            'efficiency': 0.0,
+            'safety_score': 1.0
+        }),
+        safety_status=pmap({
+            'circuit_breakers_open': 0,
+            'anomalies_detected': 0,
+            'last_safety_check': datetime.now(timezone.utc).isoformat()
+        }),
+        version=1
+    )

@@ -477,7 +477,7 @@ class TestStateEdgeCases:
         """Test state with special characters and Unicode."""
         special_data = {
             "unicode": "🚀🤖🔬",
-            "special_chars": "!@#$%^&*()_+-={}[]|\\:;\"'<>?,./"",
+            "special_chars": "!@#$%^&*()_+-={}[]|\\:;\"'<>?,./",
             "empty_string": "",
             "whitespace": "   \t\n   "
         }

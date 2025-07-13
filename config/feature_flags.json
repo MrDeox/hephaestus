@@ -1,0 +1,184 @@
+{
+  "features": {
+    "enhanced_learning": {
+      "strategy": "percentage",
+      "enabled": true,
+      "description": "Enhanced meta-learning capabilities with advanced algorithms",
+      "percentage": 50.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.95,
+      "failure_threshold": 0.05,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "learning",
+        "performance"
+      ]
+    },
+    "threat_detection": {
+      "strategy": "boolean",
+      "enabled": true,
+      "description": "Advanced threat detection and prevention system",
+      "percentage": 0.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.95,
+      "failure_threshold": 0.05,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "security",
+        "monitoring"
+      ]
+    },
+    "canary_deployment": {
+      "strategy": "canary",
+      "enabled": false,
+      "description": "Canary deployment system for gradual rollouts",
+      "percentage": 0.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 5.0,
+      "success_threshold": 0.95,
+      "failure_threshold": 0.05,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "deployment",
+        "rollout"
+      ]
+    },
+    "performance_optimization": {
+      "strategy": "a_b_test",
+      "enabled": true,
+      "description": "Performance optimization A/B test with different algorithms",
+      "percentage": 0.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {
+        "control": "baseline_algorithm",
+        "treatment": "optimized_algorithm"
+      },
+      "variant_weights": {
+        "control": 0.5,
+        "treatment": 0.5
+      },
+      "canary_percentage": 0.0,
+      "success_threshold": 0.95,
+      "failure_threshold": 0.05,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "performance",
+        "optimization",
+        "ab_test"
+      ]
+    },
+    "advanced_sandbox": {
+      "strategy": "percentage",
+      "enabled": true,
+      "description": "Enhanced sandbox with container isolation",
+      "percentage": 25.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.98,
+      "failure_threshold": 0.02,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "security",
+        "sandbox",
+        "isolation"
+      ]
+    },
+    "real_time_monitoring": {
+      "strategy": "time_window",
+      "enabled": true,
+      "description": "Real-time system monitoring and alerting",
+      "percentage": 0.0,
+      "user_list": [],
+      "start_time": "2023-12-01T09:00:00",
+      "end_time": "2023-12-31T23:59:59",
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.99,
+      "failure_threshold": 0.01,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "monitoring",
+        "alerting",
+        "realtime"
+      ]
+    },
+    "admin_features": {
+      "strategy": "user_list",
+      "enabled": true,
+      "description": "Advanced administrative features for system operators",
+      "percentage": 0.0,
+      "user_list": [
+        "admin",
+        "operator",
+        "sysadmin"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.99,
+      "failure_threshold": 0.01,
+      "created_at": "2023-12-01T10:00:00",
+      "updated_at": "2023-12-01T10:00:00",
+      "created_by": "system",
+      "tags": [
+        "admin",
+        "management",
+        "operators"
+      ]
+    },
+    "test_advanced_learning": {
+      "strategy": "percentage",
+      "enabled": true,
+      "description": "",
+      "percentage": 75.0,
+      "user_list": [],
+      "start_time": null,
+      "end_time": null,
+      "variants": {},
+      "variant_weights": {},
+      "canary_percentage": 0.0,
+      "success_threshold": 0.95,
+      "failure_threshold": 0.05,
+      "created_at": "2025-07-13T10:01:02.690579",
+      "updated_at": "2025-07-13T10:01:02.690579",
+      "created_by": "system",
+      "tags": []
+    }
+  },
+  "updated_at": "2025-07-13T10:01:02.690602"
+}

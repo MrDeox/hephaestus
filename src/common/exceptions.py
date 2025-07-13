@@ -592,6 +592,18 @@ class ExceptionHandler:
         raise exception
 
 
+# Deployment Exceptions
+
+class DeploymentError(HephaestusError):
+    """Deployment related errors."""
+    pass
+
+
+class FeatureFlagError(HephaestusError):
+    """Feature flag related errors."""
+    pass
+
+
 def create_error_context(
     operation: str,
     component: Optional[str] = None,

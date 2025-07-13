@@ -13,6 +13,13 @@ from pathlib import Path
 import hashlib
 import json
 
+
+class ValidationLevel(Enum):
+    """Validation strictness levels."""
+    PERMISSIVE = "permissive"
+    STANDARD = "standard"
+    STRICT = "strict"
+
 from pydantic import BaseModel, Field, field_validator, ValidationError
 from pydantic import Field
 from cerberus import Validator
