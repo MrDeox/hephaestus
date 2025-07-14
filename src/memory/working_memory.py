@@ -129,7 +129,7 @@ class WorkingMemory:
     def _generate_id(self, content: Dict[str, Any]) -> str:
         """Generate unique ID for content."""
         content_str = json.dumps(content, sort_keys=True, default=str)
-        return hashlib.md5(content_str.encode()).hexdigest()
+        return hashlib.sha256(content_str.encode()).hexdigest()
     
     def _make_room(self, needed: int = 1):
         """Make room in working memory by evicting items."""

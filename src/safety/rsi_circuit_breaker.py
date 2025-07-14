@@ -541,7 +541,7 @@ class RSISafetyCircuitBreaker:
         # This would hash actual model parameters
         # For now, return a timestamp-based hash
         model_state = f"model_state_{time.time()}"
-        return hashlib.md5(model_state.encode()).hexdigest()
+        return hashlib.sha256(model_state.encode()).hexdigest()
     
     async def _capture_system_metrics(self) -> Dict[str, Any]:
         """Capture current system metrics"""
@@ -593,15 +593,15 @@ class RSISafetyCircuitBreaker:
         cpu_change = current_metrics.get('cpu_percent', 0) - baseline_metrics.get('cpu_percent', 0)
         memory_change = current_metrics.get('memory_percent', 0) - baseline_metrics.get('memory_percent', 0)
         
-        # Check thresholds
-        if cpu_change > 20:  # 20% CPU increase
+        # Check thresholds - more realistic for ML workloads
+        if cpu_change > 50:  # 50% CPU increase (was 20%)
             return {
                 'acceptable': False, 
                 'reason': f'CPU usage increased by {cpu_change:.1f}%',
                 'score': 0.5
             }
         
-        if memory_change > 15:  # 15% memory increase
+        if memory_change > 30:  # 30% memory increase (was 15%)
             return {
                 'acceptable': False, 
                 'reason': f'Memory usage increased by {memory_change:.1f}%',

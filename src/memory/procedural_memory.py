@@ -146,7 +146,7 @@ class ProceduralMemory:
             'skill_type': skill_data.get('skill_type', ''),
             'parameters': skill_data.get('parameters', {})
         }, sort_keys=True)
-        return hashlib.md5(skill_str.encode()).hexdigest()
+        return hashlib.sha256(skill_str.encode()).hexdigest()
     
     async def store_skill(self, skill_data: Dict[str, Any]) -> str:
         """

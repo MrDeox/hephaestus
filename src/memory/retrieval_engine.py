@@ -125,7 +125,7 @@ class RetrievalEngine:
         """Generate embedding for text (placeholder implementation)."""
         # This would use a real embedding model in production
         import hashlib
-        hash_value = hashlib.md5(text.encode()).hexdigest()
+        hash_value = hashlib.sha256(text.encode()).hexdigest()
         
         # Convert hash to embedding
         embedding = np.array([
@@ -150,7 +150,7 @@ class RetrievalEngine:
         import json
         import hashlib
         query_str = json.dumps(query, sort_keys=True, default=str)
-        return hashlib.md5(query_str.encode()).hexdigest()
+        return hashlib.sha256(query_str.encode()).hexdigest()
     
     def _is_cache_valid(self, cache_entry: Dict[str, Any]) -> bool:
         """Check if cache entry is still valid."""

@@ -147,10 +147,13 @@ class RSISafetyVerifier:
         if self.docker_available:
             try:
                 self.docker_client = docker.from_env()
+                # Test if Docker daemon is actually running
+                self.docker_client.ping()
                 logger.info("Docker client initialized successfully")
             except Exception as e:
-                logger.warning("Failed to initialize Docker client: {}", str(e))
+                logger.warning("Docker daemon not available or not running - using RestrictedPython fallback")
                 self.docker_available = False
+                self.docker_client = None
         
         # Execution tracking
         self.active_executions: Dict[str, ExecutionResult] = {}

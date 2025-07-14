@@ -178,6 +178,33 @@ class RSIStateManager(Generic[T]):
     def get_state_at_hash(self, state_hash: str) -> Optional[RSIState]:
         """Get a specific state by hash without modifying current state."""
         return self._state_snapshots.get(state_hash)
+    
+    def add_performance_metric(self, metric_name: str, metric_data: Any) -> RSIState:
+        """
+        Add a performance metric to the current state.
+        
+        Args:
+            metric_name: Name of the performance metric
+            metric_data: Data associated with the metric
+            
+        Returns:
+            New state with the added performance metric
+        """
+        def add_metric_transition(state: RSIState) -> RSIState:
+            new_metrics = state.performance_metrics.set(metric_name, metric_data)
+            return state.model_copy(
+                update={
+                    'performance_metrics': new_metrics,
+                    'last_modified': datetime.now(timezone.utc),
+                    'version': state.version + 1
+                }
+            )
+        
+        return self.transition(
+            add_metric_transition,
+            "ADD_PERFORMANCE_METRIC",
+            metadata={'metric_name': metric_name, 'metric_type': type(metric_data).__name__}
+        )
 
 
 # Factory functions for common state transitions
@@ -251,6 +278,25 @@ def create_initial_state() -> RSIState:
             'efficiency': 0.0,
             'safety_score': 1.0
         }),
+        safety_status=pmap({
+            'circuit_breakers_open': 0,
+            'anomalies_detected': 0,
+            'last_safety_check': datetime.now(timezone.utc).isoformat()
+        }),
+        version=1
+    )
+
+
+def create_state_with_metrics(metrics: Dict[str, Any]) -> RSIState:
+    """Create RSI state with specified performance metrics."""
+    return RSIState(
+        configuration=pmap({
+            'system_id': 'rsi_system_with_metrics',
+            'environment': 'development'
+        }),
+        model_weights=pmap({}),
+        learning_history=pvector([]),
+        performance_metrics=pmap(metrics),
         safety_status=pmap({
             'circuit_breakers_open': 0,
             'anomalies_detected': 0,

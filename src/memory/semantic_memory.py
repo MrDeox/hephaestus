@@ -110,7 +110,7 @@ class SemanticMemory:
     def _generate_concept_id(self, concept: Dict[str, Any]) -> str:
         """Generate unique ID for a concept."""
         concept_str = json.dumps(concept, sort_keys=True, default=str)
-        return hashlib.md5(concept_str.encode()).hexdigest()
+        return hashlib.sha256(concept_str.encode()).hexdigest()
     
     def _extract_concept_text(self, concept: Dict[str, Any]) -> str:
         """Extract text representation of concept for embedding."""
@@ -127,7 +127,7 @@ class SemanticMemory:
         """Generate embedding for text (placeholder implementation)."""
         # This would use a real embedding model in production
         # For now, use a simple hash-based approach
-        hash_value = hashlib.md5(text.encode()).hexdigest()
+        hash_value = hashlib.sha256(text.encode()).hexdigest()
         
         # Convert hash to embedding
         embedding = np.array([

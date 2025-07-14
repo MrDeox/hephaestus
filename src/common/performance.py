@@ -610,7 +610,7 @@ def cache_result(cache_key_func: Optional[Callable] = None, ttl: Optional[int] =
             if cache_key_func:
                 key = cache_key_func(*args, **kwargs)
             else:
-                key = hashlib.md5(
+                key = hashlib.sha256(
                     json.dumps([args, kwargs], sort_keys=True, default=str).encode()
                 ).hexdigest()
             
@@ -666,7 +666,7 @@ def async_cache_result(cache_key_func: Optional[Callable] = None, ttl: Optional[
             if cache_key_func:
                 key = await cache_key_func(*args, **kwargs) if asyncio.iscoroutinefunction(cache_key_func) else cache_key_func(*args, **kwargs)
             else:
-                key = hashlib.md5(
+                key = hashlib.sha256(
                     json.dumps([args, kwargs], sort_keys=True, default=str).encode()
                 ).hexdigest()
             

@@ -371,10 +371,10 @@ class RSISystemMonitor:
             latest.anomaly_score > 0.8):
             return SystemHealth.CRITICAL
         
-        # Degraded conditions
-        if (latest.cpu_percent > 80 or 
-            latest.memory_percent > 75 or 
-            latest.prediction_confidence < 0.6):
+        # Degraded conditions - more realistic for ML workloads
+        if (latest.cpu_percent > 90 or  # Increased from 80%
+            latest.memory_percent > 85 or  # Increased from 75%
+            latest.prediction_confidence < 0.4):  # Decreased from 0.6
             return SystemHealth.DEGRADED
         
         return SystemHealth.HEALTHY

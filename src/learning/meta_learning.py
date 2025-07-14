@@ -125,9 +125,39 @@ class MAML:
     
     def adapt(self, loss):
         """Adapt the model using the given loss."""
-        # In Higher, adaptation is handled differently
-        # This is a simplified version
-        pass
+        import torch
+        
+        # Compute gradients for adaptation
+        if hasattr(loss, 'backward'):
+            # PyTorch tensor loss
+            grad = torch.autograd.grad(
+                loss, 
+                self.model.parameters(),
+                create_graph=not self.first_order,
+                allow_unused=self.allow_unused
+            )
+            
+            # Apply MAML adaptation update
+            adapted_params = []
+            for param, g in zip(self.model.parameters(), grad):
+                if g is not None:
+                    adapted_param = param - self.lr * g
+                    adapted_params.append(adapted_param)
+                else:
+                    adapted_params.append(param)
+            
+            # Create adapted model with new parameters
+            adapted_model = type(self.model)(**self.model._get_config()) if hasattr(self.model, '_get_config') else self.model
+            
+            # Update parameters
+            with torch.no_grad():
+                for param, adapted_param in zip(adapted_model.parameters(), adapted_params):
+                    param.copy_(adapted_param)
+            
+            return adapted_model
+        else:
+            # Fallback for non-tensor losses
+            return self.model
     
     def parameters(self):
         """Return model parameters."""
@@ -160,9 +190,50 @@ class ProtoNet:
         """Create a functional clone for adaptation."""
         return self
     
-    def adapt(self, loss):
+    def adapt(self, support_data, support_labels):
         """Adapt using prototypical learning."""
-        pass
+        import torch
+        import torch.nn.functional as F
+        
+        # Get embeddings for support set
+        with torch.no_grad():
+            support_embeddings = self.model(support_data)
+        
+        # Compute prototypes (class centroids)
+        unique_labels = torch.unique(support_labels)
+        prototypes = []
+        
+        for label in unique_labels:
+            mask = support_labels == label
+            class_embeddings = support_embeddings[mask]
+            prototype = class_embeddings.mean(dim=0)
+            prototypes.append(prototype)
+        
+        self.prototypes = torch.stack(prototypes)
+        self.class_labels = unique_labels
+        
+        return self
+    
+    def predict_proba(self, query_data):
+        """Predict probabilities using prototypes."""
+        import torch
+        import torch.nn.functional as F
+        
+        if not hasattr(self, 'prototypes'):
+            raise ValueError("Model not adapted yet. Call adapt() first.")
+        
+        # Get query embeddings
+        with torch.no_grad():
+            query_embeddings = self.model(query_data)
+        
+        # Compute distances to prototypes
+        distances = torch.cdist(query_embeddings.unsqueeze(0), self.prototypes.unsqueeze(0)).squeeze(0)
+        
+        # Convert distances to probabilities (negative distances)
+        logits = -distances
+        probabilities = F.softmax(logits, dim=1)
+        
+        return probabilities
     
     def parameters(self):
         """Return model parameters."""
@@ -199,7 +270,49 @@ class MetaSGD:
     
     def adapt(self, loss):
         """Adapt using Meta-SGD."""
-        pass
+        import torch
+        
+        # Initialize learnable learning rates if not exists
+        if not hasattr(self, 'alpha_params'):
+            self.alpha_params = {}
+            for name, param in self.model.named_parameters():
+                self.alpha_params[name] = torch.full_like(param, self.lr, requires_grad=True)
+        
+        # Compute gradients for adaptation
+        if hasattr(loss, 'backward'):
+            # PyTorch tensor loss
+            grad = torch.autograd.grad(
+                loss, 
+                self.model.parameters(),
+                create_graph=not self.first_order,
+                allow_unused=True
+            )
+            
+            # Apply Meta-SGD adaptation update with learnable learning rates
+            adapted_params = []
+            param_names = [name for name, _ in self.model.named_parameters()]
+            
+            for (name, param), g in zip(self.model.named_parameters(), grad):
+                if g is not None:
+                    # Use learnable learning rate for this parameter
+                    alpha = self.alpha_params[name]
+                    adapted_param = param - alpha * g
+                    adapted_params.append(adapted_param)
+                else:
+                    adapted_params.append(param)
+            
+            # Create adapted model with new parameters
+            adapted_model = type(self.model)(**self.model._get_config()) if hasattr(self.model, '_get_config') else self.model
+            
+            # Update parameters
+            with torch.no_grad():
+                for param, adapted_param in zip(adapted_model.parameters(), adapted_params):
+                    param.copy_(adapted_param)
+            
+            return adapted_model
+        else:
+            # Fallback for non-tensor losses
+            return self.model
     
     def parameters(self):
         """Return model parameters."""

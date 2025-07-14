@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-07-14T02:20:24.470526+00:00",
+  "total_gaps": 2,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 1,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 0,
+    "knowledge": 0,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "perf_latency_1752459624",
+      "gap_type": "performance",
+      "severity": "high",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 2548.45ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 2548.449466736053,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 2548.449466736053,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-14T02:20:24.368823+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T02:20:24.368824+00:00",
+      "impact_score": 10.193797866944212,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "func_features_1752459624",
+      "gap_type": "functionality",
+      "severity": "medium",
+      "title": "Missing Key Features",
+      "description": "Detected 2 missing features that could improve performance",
+      "evidence": {
+        "missing_features": [
+          "temporal_features",
+          "interaction_history"
+        ]
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T02:20:24.368950+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T02:20:24.368951+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "feature_engineering"
+      ],
+      "potential_solutions": [
+        "Implement missing features",
+        "Feature importance analysis",
+        "Automated feature generation"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}

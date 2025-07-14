@@ -338,7 +338,13 @@ class AdvancedExperimentTracker:
             
             # Add to DVC if available
             if 'dvc' in self.active_trackers:
-                os.system(f"dvc add {dest_path}")
+                try:
+                    import subprocess
+                    subprocess.run(['dvc', 'add', str(dest_path)], check=True, capture_output=True)
+                except subprocess.CalledProcessError as e:
+                    logger.warning(f"DVC add failed: {e}")
+                except FileNotFoundError:
+                    logger.warning("DVC not found in PATH")
                 
         except Exception as e:
             logger.warning(f"Failed to save DVC artifact: {e}")
@@ -363,9 +369,15 @@ class AdvancedExperimentTracker:
             
             # Add to DVC if available
             if 'dvc' in self.active_trackers:
-                os.system(f"dvc add {dest_path}")
-                if metadata:
-                    os.system(f"dvc add {metadata_path}")
+                try:
+                    import subprocess
+                    subprocess.run(['dvc', 'add', str(dest_path)], check=True, capture_output=True)
+                    if metadata:
+                        subprocess.run(['dvc', 'add', str(metadata_path)], check=True, capture_output=True)
+                except subprocess.CalledProcessError as e:
+                    logger.warning(f"DVC add failed: {e}")
+                except FileNotFoundError:
+                    logger.warning("DVC not found in PATH")
                     
         except Exception as e:
             logger.warning(f"Failed to save DVC model: {e}")

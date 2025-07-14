@@ -647,9 +647,17 @@ class MMLController:
             # Salvar estado interno
             state_file = meta_dir / "mml_state.pkl"
             with open(state_file, 'wb') as f:
+                # Create serializable version of feedback loops (exclude function references)
+                serializable_feedback_loops = {}
+                for k, v in self.feedback_loops.items():
+                    loop_data = v.__dict__.copy()
+                    # Remove non-serializable function reference
+                    loop_data.pop('feedback_function', None)
+                    serializable_feedback_loops[k] = loop_data
+                
                 pickle.dump({
                     'learning_patterns': {k: v.to_dict() for k, v in self.learning_patterns.items()},
-                    'feedback_loops': {k: v.__dict__ for k, v in self.feedback_loops.items()},
+                    'feedback_loops': serializable_feedback_loops,
                     'decision_history': self.decision_history[-100:],  # Últimas 100 decisões
                     'cev_components': {
                         'knowledge_expansion_rate': self.knowledge_expansion_rate,

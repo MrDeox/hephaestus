@@ -1,0 +1,16 @@
+2025-07-13 23:19:58.915 | INFO     | __main__:main:341 - 🏛️ Hephaestus RSI System - Complete Demonstration
+2025-07-13 23:19:58.915 | INFO     | __main__:main:342 - ================================================================================
+2025-07-13 23:19:58.916 | INFO     | __main__:demonstrate_complete_cycle:264 - 🎯 Starting Complete RSI Cycle Demonstration
+2025-07-13 23:19:58.916 | INFO     | __main__:demonstrate_complete_cycle:265 - ============================================================
+2025-07-13 23:19:58.916 | INFO     | __main__:demonstrate_complete_cycle:269 - 🔍 Phase 1: System Status Check
+2025-07-13 23:19:58.922 | INFO     | __main__:demonstrate_complete_cycle:271 - ✅ System Status: Hephaestus RSI AI System - Complete Recursive Self-Improvement
+2025-07-13 23:19:58.922 | INFO     | __main__:demonstrate_complete_cycle:272 - 🔧 Features Available: 11
+2025-07-13 23:19:58.922 | INFO     | __main__:demonstrate_complete_cycle:273 - 🧪 Hypothesis System: True
+2025-07-13 23:19:58.923 | INFO     | __main__:demonstrate_complete_cycle:274 - 
+2025-07-13 23:19:58.923 | INFO     | __main__:demonstrate_complete_cycle:277 - 🔍 Phase 2: Basic System Operation
+2025-07-13 23:19:58.923 | INFO     | __main__:run_prediction_demo:38 - 🔮 Running prediction demonstration...
+2025-07-13 23:19:59.149 | ERROR    | __main__:run_prediction_demo:72 - Prediction failed: 500 Server Error: Internal Server Error for url: http://localhost:8000/predict
+2025-07-13 23:19:59.149 | ERROR    | __main__:demonstrate_complete_cycle:336 - ❌ RSI Cycle demonstration failed: 500 Server Error: Internal Server Error for url: http://localhost:8000/predict
+2025-07-13 23:19:59.149 | ERROR    | __main__:main:357 - ❌ Demonstration failed: 500 Server Error: Internal Server Error for url: http://localhost:8000/predict
+2025-07-13 23:19:59.149 | INFO     | __main__:main:358 - 💡 Make sure the Hephaestus system is running on http://localhost:8000
+2025-07-13 23:19:59.149 | INFO     | __main__:main:359 -    Start it with: python -m src.main

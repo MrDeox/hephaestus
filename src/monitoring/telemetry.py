@@ -140,11 +140,14 @@ class TelemetryCollector:
             )
         
         if self.enable_console_export:
-            from opentelemetry.exporter.console import ConsoleSpanExporter
-            console_exporter = ConsoleSpanExporter()
-            tracer_provider.add_span_processor(
-                BatchSpanProcessor(console_exporter)
-            )
+            try:
+                from opentelemetry.exporter.console import ConsoleSpanExporter
+                console_exporter = ConsoleSpanExporter()
+                tracer_provider.add_span_processor(
+                    BatchSpanProcessor(console_exporter)
+                )
+            except ImportError:
+                logger.warning("Console span exporter not available")
         
         # Set global tracer provider
         trace.set_tracer_provider(tracer_provider)
@@ -158,8 +161,14 @@ class TelemetryCollector:
     def _setup_metrics(self):
         """Setup metrics collection."""
         # Create metric reader
+        exporter = self._create_metrics_exporter()
+        if exporter is None:
+            # Skip metrics setup if exporter is not available
+            logger.warning("Metrics exporter not available, skipping metrics setup")
+            return
+            
         metric_reader = PeriodicExportingMetricReader(
-            exporter=self._create_metrics_exporter(),
+            exporter=exporter,
             export_interval_millis=10000  # 10 seconds
         )
         
@@ -193,12 +202,20 @@ class TelemetryCollector:
     def _create_metrics_exporter(self):
         """Create metrics exporter."""
         if self.enable_console_export:
-            from opentelemetry.exporter.console import ConsoleMetricsExporter
-            return ConsoleMetricsExporter()
+            try:
+                from opentelemetry.exporter.console import ConsoleMetricsExporter
+                return ConsoleMetricsExporter()
+            except ImportError:
+                logger.warning("Console metrics exporter not available")
+                return None
         else:
             # Return console exporter for now
-            from opentelemetry.exporter.console import ConsoleMetricsExporter
-            return ConsoleMetricsExporter()
+            try:
+                from opentelemetry.exporter.console import ConsoleMetricsExporter
+                return ConsoleMetricsExporter()
+            except ImportError:
+                logger.warning("Console metrics exporter not available")
+                return None
     
     def _create_custom_metrics(self):
         """Create custom metrics for RSI system."""
@@ -578,7 +595,7 @@ def initialize_telemetry(
     """Initialize global telemetry provider."""
     global _telemetry_provider
     
-    _telemetry_provider = RSITelemetryProvider(
+    _telemetry_provider = TelemetryCollector(
         service_name=service_name,
         service_version=service_version,
         environment=environment,
@@ -592,6 +609,11 @@ def initialize_telemetry(
 
 def get_telemetry_provider() -> Optional[TelemetryCollector]:
     """Get the global telemetry provider."""
+    return _telemetry_provider
+
+
+def get_telemetry_collector() -> Optional[TelemetryCollector]:
+    """Get the global telemetry collector (alias for get_telemetry_provider)."""
     return _telemetry_provider
 
 

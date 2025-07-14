@@ -5,7 +5,7 @@ Integra geração de código real com deployment canário para RSI verdadeiro.
 
 import asyncio
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass
@@ -229,6 +229,10 @@ class RSIExecutionPipeline:
             spec = HypothesisSpec.from_hypothesis(hypothesis)
             
             # Gerar código real
+            if not self.code_generator:
+                logger.error("❌ Code generator não inicializado")
+                return None
+            
             artifact = await self.code_generator.process_hypothesis(hypothesis)
             
             if artifact:
@@ -305,6 +309,10 @@ class RSIExecutionPipeline:
             await self._save_artifact_to_disk(artifact, artifact_dir)
             
             # Executar deployment canário
+            if not self.deployment_orchestrator:
+                logger.error("❌ Deployment orchestrator não inicializado")
+                return False
+            
             deployment_success = await self.deployment_orchestrator.deploy_artifact(
                 artifact_dir, deployment_id
             )
@@ -333,6 +341,10 @@ class RSIExecutionPipeline:
                 return False
             
             # Obter status do deployment
+            if not self.deployment_orchestrator:
+                logger.error("❌ Deployment orchestrator não inicializado")
+                return False
+            
             deployment_status = await self.deployment_orchestrator.get_deployment_status(
                 result.deployment_id
             )
@@ -462,7 +474,7 @@ class RSIExecutionPipeline:
         logger.warning(f"🔄 Pipeline rollback: {reason}")
         
         # Executar rollback do deployment se necessário
-        if result.deployment_id:
+        if result.deployment_id and self.deployment_orchestrator:
             deployment_status = await self.deployment_orchestrator.get_deployment_status(
                 result.deployment_id
             )

@@ -206,7 +206,15 @@ class RSIOrchestrator:
             
             # Enhanced learning systems
             try:
-                self.meta_learning_system = RSIMetaLearningSystem()
+                # Create default meta-learning config
+                from src.learning.meta_learning import MetaLearningConfig
+                meta_config = MetaLearningConfig()
+                
+                self.meta_learning_system = RSIMetaLearningSystem(
+                    config=meta_config,
+                    state_manager=self.state_manager,
+                    validator=self.validator
+                )
                 self.continual_learning_system = RSIContinualLearningSystem()
                 self.rl_system = RSIRLSystem()
                 self.lightning_orchestrator = RSILightningOrchestrator()
@@ -229,9 +237,9 @@ class RSIOrchestrator:
             # Memory system - initialize to None first to ensure attribute exists
             self.memory_system = None
             
-            # Optimization (optional)
-            self.optuna_optimizer = OptunaOptimizer() if OptunaOptimizer else None
-            self.ray_tune_orchestrator = RayTuneOrchestrator() if RayTuneOrchestrator else None
+            # Optimization (optional) - initialize later after dependencies are ready
+            self.optuna_optimizer = None
+            self.ray_tune_orchestrator = None
             
             # RSI Hypothesis Testing System
             self.hypothesis_orchestrator = None
@@ -267,7 +275,9 @@ class RSIOrchestrator:
             self._initialize_meta_learning_system()
             
             # Autonomous Revenue Generation System
+            logger.info("About to initialize revenue generation system...")
             self._initialize_revenue_generation_system()
+            logger.info(f"Revenue generator status: {getattr(self, 'revenue_generator', 'MISSING')}")
             
         except Exception as e:
             logger.error("Failed to initialize some components: {}", str(e))
@@ -1087,6 +1097,11 @@ class RSIOrchestrator:
             }
             
             # Execute through real pipeline
+            if self.execution_pipeline is None:
+                logger.warning("⚠️ Execution pipeline is None - using fallback execution")
+                await self._run_fallback_rsi_execution()
+                return
+                
             result = await self.execution_pipeline.execute_hypothesis(hypothesis)
             
             if result.success:
@@ -1396,10 +1411,16 @@ class RSIOrchestrator:
         
         try:
             # Create marketing campaign
+            from src.bootstrap.marketing_engine import MarketingChannel, ContentType
+            
+            # Convert string values to enums
+            channel = MarketingChannel(campaign_data['channel']) if isinstance(campaign_data['channel'], str) else campaign_data['channel']
+            content_type = ContentType(campaign_data['content_type']) if isinstance(campaign_data['content_type'], str) else campaign_data['content_type']
+            
             campaign = await self.marketing_engine.create_campaign(
                 name=campaign_data['name'],
-                channel=campaign_data['channel'],
-                content_type=campaign_data['content_type'],
+                channel=channel,
+                content_type=content_type,
                 target_audience=campaign_data['target_audience'],
                 value_proposition=campaign_data['value_proposition']
             )
@@ -2213,6 +2234,10 @@ async def trigger_real_improvement(improvement_targets: Dict[str, float] = None)
         
         # Take the best hypothesis
         best_hypothesis = hypothesis_result.hypotheses[0]
+        
+        # Check if execution pipeline is available
+        if not orchestrator.execution_pipeline:
+            raise HTTPException(status_code=503, detail="Execution pipeline not initialized")
         
         # Execute through real RSI pipeline
         execution_result = await orchestrator.execution_pipeline.execute_hypothesis(

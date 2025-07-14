@@ -1,0 +1,24 @@
+{
+  "timestamp": 1752459599.0279558,
+  "checkpoint_id": "checkpoint_1752459598926",
+  "model_state_hash": "c36002d8676eaef86e1181e9d1b3393be0f70cbc073601b243d4afc46d3bfea1",
+  "system_metrics": {
+    "cpu_percent": 86.0,
+    "memory_percent": 68.7,
+    "timestamp": 1752459599.0279257
+  },
+  "safety_scores": {
+    "overall_safety": 0.8,
+    "resource_safety": 0.9,
+    "performance_safety": 0.85,
+    "operational_safety": 0.75
+  },
+  "operation_context": {
+    "operation_name": "prediction_pred_1752459598926",
+    "safety_level": "low",
+    "timestamp": 1752459599.027947,
+    "circuit_state": "closed",
+    "failure_count": 0
+  },
+  "checkpoint_size_mb": 0.0
+}

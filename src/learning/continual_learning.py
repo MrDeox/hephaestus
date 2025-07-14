@@ -19,34 +19,33 @@ import pickle
 import json
 from pathlib import Path
 
+# Initialize logger first
+logger = logging.getLogger(__name__)
+
 # Try to import avalanche components
 try:
     from avalanche.benchmarks import SplitMNIST, SplitCIFAR10, SplitCIFAR100
-    from avalanche.benchmarks.generators import nc_benchmark, ni_benchmark
+    from avalanche.benchmarks import nc_benchmark, ni_benchmark
     from avalanche.benchmarks.utils import AvalancheDataset
     from avalanche.core import BaseSGDPlugin
     from avalanche.evaluation.metrics import accuracy_metrics, loss_metrics, timing_metrics
     from avalanche.evaluation.metrics import StreamAccuracy, StreamLoss, StreamTime
     from avalanche.logging import InteractiveLogger, TensorboardLogger, TextLogger
     from avalanche.models import SimpleMLP, SlimResNet18
-    from avalanche.training.plugins import ReplayPlugin, GDumbPlugin, LwFPlugin
+    from avalanche.training.plugins import ReplayPlugin, LwFPlugin
     from avalanche.training.plugins import EWCPlugin, SynapticIntelligencePlugin
-    from avalanche.training.plugins import GEMPlugin, AGEMPlugin, CoPEPlugin, LFLPlugin
-    from avalanche.training.strategies import Naive, Replay, GDumb, LwF, EWC, SynapticIntelligence
-    from avalanche.training.strategies import GEM, AGEM, CoPE, LFL, Cumulative
+    # Updated import paths for strategies
+    from avalanche.training.supervised import Naive, Cumulative, JointTraining
     from avalanche.training.templates import SupervisedTemplate
     AVALANCHE_AVAILABLE = True
-except ImportError:
+    logger.info("✅ Avalanche library successfully imported and available")
+except ImportError as e:
     AVALANCHE_AVAILABLE = False
-    logger = logging.getLogger(__name__)
-    logger.warning("Avalanche not available. Using fallback implementations.")
+    logger.warning(f"Avalanche not available ({e}). Using fallback implementations.")
 
 from ..core.state import RSIStateManager, RSIState
 from ..validation.validators import RSIValidator
 from ..monitoring.audit_logger import get_audit_logger
-
-
-logger = logging.getLogger(__name__)
 
 
 class ContinualLearningStrategy(Enum):

@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-07-14T01:45:51.291784+00:00",
+  "total_gaps": 2,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 0,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 1,
+    "knowledge": 0,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "perf_latency_1752457551",
+      "gap_type": "performance",
+      "severity": "high",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 2018.95ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 2018.9482892785272,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 2018.9482892785272,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-14T01:45:51.191508+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T01:45:51.191510+00:00",
+      "impact_score": 8.07579315711411,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "obs_metrics_1752457551",
+      "gap_type": "observability",
+      "severity": "medium",
+      "title": "Insufficient Metrics Coverage",
+      "description": "Only 70.1% of system components have adequate metrics",
+      "evidence": {
+        "coverage_percentage": 0.7006353760066014
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T01:45:51.291692+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T01:45:51.291694+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "monitoring",
+        "telemetry"
+      ],
+      "potential_solutions": [
+        "Add missing metrics",
+        "Implement distributed tracing",
+        "Enhance logging coverage",
+        "Setup alerting rules"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}
