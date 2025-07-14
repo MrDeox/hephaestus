@@ -1,0 +1,24 @@
+{
+  "self_development_cycle": {
+    "phase_1_scan": "Identificar necessidades de capacidade",
+    "phase_2_research": "Pesquisar solu\u00e7\u00f5es dispon\u00edveis",
+    "phase_3_acquire": "Adquirir nova capacidade",
+    "phase_4_integrate": "Integrar com sistema existente",
+    "phase_5_validate": "Validar funcionamento",
+    "phase_6_optimize": "Otimizar performance"
+  },
+  "capability_acquisition_methods": [
+    "api_integration",
+    "library_installation",
+    "code_generation",
+    "model_training",
+    "service_connection",
+    "workflow_automation"
+  ],
+  "autonomous_learning_targets": {
+    "new_skills_per_week": 2,
+    "integration_success_rate": 0.8,
+    "performance_improvement": 0.15,
+    "automation_increase": 0.25
+  }
+}
