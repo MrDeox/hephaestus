@@ -18,7 +18,12 @@ from .canary_deployment import CanaryDeploymentOrchestrator, DeploymentConfig
 from ..core.state import RSIStateManager
 from ..validation.validators import RSIValidator
 from ..safety.circuits import RSICircuitBreaker
-from ..monitoring.audit_logger import audit_system_event
+try:
+    from ..monitoring.audit_logger import audit_system_event
+except ImportError:
+    # Fallback function if audit_system_event is not available
+    async def audit_system_event(event_type: str, message: str, metadata: dict = None):
+        logger.info(f"AUDIT[{event_type}]: {message} - {metadata}")
 from ..hypothesis.rsi_hypothesis_orchestrator import RSIHypothesisOrchestrator
 
 
@@ -154,14 +159,15 @@ class RSIExecutionPipeline:
         
         try:
             # Registrar início
-            await audit_system_event(
-                "rsi_pipeline",
-                f"Pipeline iniciado: {pipeline_id}",
-                metadata={
-                    'hypothesis_id': hypothesis_id,
-                    'hypothesis': hypothesis
-                }
-            )
+            if audit_system_event:
+                await audit_system_event(
+                    "rsi_pipeline",
+                    f"Pipeline iniciado: {pipeline_id}",
+                    metadata={
+                        'hypothesis_id': hypothesis_id,
+                        'hypothesis': hypothesis
+                    }
+                )
             
             # Fase 1: Geração de Código
             logger.info("📝 Fase 1: Gerando código real...")
@@ -425,14 +431,15 @@ class RSIExecutionPipeline:
         result.status = PipelineStatus.COMPLETED
         result.end_time = datetime.now(timezone.utc)
         
-        await audit_system_event(
-            "rsi_pipeline",
-            f"Pipeline concluído: {result.pipeline_id}",
-            metadata={
-                'duration_seconds': result.duration_seconds,
-                'performance_improvement': result.performance_improvement,
-                'execution_metrics': result.execution_metrics
-            }
+        if audit_system_event:
+            await audit_system_event(
+                "rsi_pipeline",
+                f"Pipeline concluído: {result.pipeline_id}",
+                metadata={
+                    'duration_seconds': result.duration_seconds,
+                    'performance_improvement': result.performance_improvement,
+                    'execution_metrics': result.execution_metrics
+                }
         )
         
         # Registrar sucesso na memória procedural (substituir simulação)
@@ -456,13 +463,14 @@ class RSIExecutionPipeline:
         
         logger.error(f"❌ Pipeline falhou: {reason}")
         
-        await audit_system_event(
-            "rsi_pipeline",
-            f"Pipeline falhou: {result.pipeline_id} - {reason}",
-            metadata={
-                'duration_seconds': result.duration_seconds,
-                'error_messages': result.error_messages
-            }
+        if audit_system_event:
+            await audit_system_event(
+                "rsi_pipeline",
+                f"Pipeline falhou: {result.pipeline_id} - {reason}",
+                metadata={
+                    'duration_seconds': result.duration_seconds,
+                    'error_messages': result.error_messages
+                }
         )
     
     async def _rollback_pipeline(self, result: RSIExecutionResult, reason: str):
@@ -482,13 +490,14 @@ class RSIExecutionPipeline:
                 logger.info("Executando rollback do deployment...")
                 # O deployment orchestrator já cuida do rollback automático
         
-        await audit_system_event(
-            "rsi_pipeline",
-            f"Pipeline rollback: {result.pipeline_id} - {reason}",
-            metadata={
-                'duration_seconds': result.duration_seconds,
-                'rollback_reason': reason
-            }
+        if audit_system_event:
+            await audit_system_event(
+                "rsi_pipeline",
+                f"Pipeline rollback: {result.pipeline_id} - {reason}",
+                metadata={
+                    'duration_seconds': result.duration_seconds,
+                    'rollback_reason': reason
+                }
         )
     
     async def _save_artifact_to_disk(self, artifact: CodeArtifact, directory: Path):

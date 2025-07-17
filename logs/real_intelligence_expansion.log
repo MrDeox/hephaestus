@@ -1,0 +1,251 @@
+2025-07-16 21:11:37.031 | INFO     | __main__:main:168 - 🎯 INICIANDO VERIFICAÇÃO COMPLETA DO SISTEMA DE AUTO-EXPANSÃO
+2025-07-16 21:11:37.031 | INFO     | __main__:main:169 - ================================================================================
+2025-07-16 21:11:37.031 | INFO     | __main__:main:172 - ETAPA 1: Verificação de Integração
+2025-07-16 21:11:37.031 | INFO     | __main__:verify_system_integration:132 - 🔍 VERIFICANDO INTEGRAÇÃO COM SISTEMA PRINCIPAL...
+2025-07-16 21:11:37.031 | INFO     | __main__:verify_system_integration:142 - ✅ Componentes principais importados com sucesso
+2025-07-16 21:11:37.032 | INFO     | __main__:verify_system_integration:146 - ✅ Sistema de expansão iniciado com sucesso
+2025-07-16 21:11:37.032 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:11:37.141 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:11:37.141 | INFO     | __main__:verify_system_integration:151 - ✅ Detector de limitações funcionando: 5 limitações detectadas
+2025-07-16 21:11:37.141 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:11:37.200 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:11:37.200 | INFO     | __main__:verify_system_integration:156 - ✅ Detector de necessidades funcionando: 21 necessidades detectadas
+2025-07-16 21:11:37.201 | INFO     | __main__:verify_system_integration:158 - 🎉 INTEGRAÇÃO VERIFICADA COM SUCESSO!
+2025-07-16 21:11:37.201 | INFO     | __main__:main:180 - 
+ETAPA 2: Teste Real de Auto-Expansão
+2025-07-16 21:11:37.201 | INFO     | __main__:test_real_expansion_cycle:26 - 🎯 INICIANDO TESTE REAL DE AUTO-EXPANSÃO DE INTELIGÊNCIA
+2025-07-16 21:11:37.201 | INFO     | __main__:test_real_expansion_cycle:27 - ================================================================================
+2025-07-16 21:11:37.201 | INFO     | __main__:test_real_expansion_cycle:33 - 📋 EXECUTANDO CICLO REAL DE EXPANSÃO...
+2025-07-16 21:11:37.201 | INFO     | __main__:test_real_expansion_cycle:34 - --------------------------------------------------
+2025-07-16 21:11:37.201 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4186 - 🧠 FASE 1: Expansão de Capacidades Cognitivas
+2025-07-16 21:11:37.201 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:11:37.301 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:11:37.301 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4195 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:11:37.301 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:11:37.301 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:11:37.301 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:11:37.302 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:11:37.302 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:11:37.302 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:11:37.302 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:11:37.302 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.REASONING_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:11:37.302 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: learning_static
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Meta-Learning Engine
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Meta-Learning Engine
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Meta-Learning Engine
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Meta-Learning Engine
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Meta-Learning Engine
+2025-07-16 21:11:37.303 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Meta-Learning Engine
+2025-07-16 21:11:37.303 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.LEARNING_STATIC: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:11:37.304 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: prediction_linear
+2025-07-16 21:11:37.304 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Non-Linear Prediction Engine
+2025-07-16 21:11:37.304 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Non-Linear Prediction Engine
+2025-07-16 21:11:37.305 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PREDICTION_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: planning_sequential
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Hierarchical Planning Engine
+2025-07-16 21:11:37.305 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Hierarchical Planning Engine
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Hierarchical Planning Engine
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Hierarchical Planning Engine
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Hierarchical Planning Engine
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Hierarchical Planning Engine
+2025-07-16 21:11:37.306 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PLANNING_SEQUENTIAL: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: pattern_recognition_limited
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Pattern Synthesis Engine
+2025-07-16 21:11:37.306 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Pattern Synthesis Engine
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Pattern Synthesis Engine
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Pattern Synthesis Engine
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Pattern Synthesis Engine
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Pattern Synthesis Engine
+2025-07-16 21:11:37.307 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4233 - 🌐 FASE 2: Evolução de Funcionalidades
+2025-07-16 21:11:37.307 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:11:37.368 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:11:37.369 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4242 - 🎯 Detectadas 21 necessidades funcionais
+2025-07-16 21:11:37.369 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:11:37.369 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:11:37.370 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:11:37.370 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:11:37.370 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:11:37.370 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:11:37.370 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4289 - 🔗 FASE 3: Integração Total
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/auto-trading
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:11:37.371 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:11:37.372 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:11:37.372 | INFO     | src.autonomous.intelligence_expansion:validate_and_optimize:4332 - ✅ FASE 4: Validação e Otimização
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:39 - 📊 RESULTADOS DO CICLO REAL:
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:40 - --------------------------------------------------
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:44 - 🧠 Expansão Cognitiva:
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:45 -    - Limitações detectadas: 5
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:46 -    - Capacidades criadas: 0
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:47 -    - Capacidades implementadas: 0
+2025-07-16 21:11:37.372 | INFO     | __main__:test_real_expansion_cycle:51 - 🚀 Evolução Funcional:
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:52 -    - Necessidades detectadas: 21
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:53 -    - Features criadas: 0
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:54 -    - Features implementadas: 0
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:58 - 🔗 Integração:
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:59 -    - Status: unknown
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:60 -    - Conflitos: 0
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:61 -    - Arquivos modificados: 0
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:75 - 📁 Arquivos criados: 0
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:83 - 
+🔍 VERIFICAÇÃO DE FUNCIONALIDADE REAL:
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:84 - --------------------------------------------------
+2025-07-16 21:11:37.373 | INFO     | __main__:test_real_expansion_cycle:107 - 
+🌟 SUMÁRIO DO TESTE REAL:
+2025-07-16 21:11:37.374 | INFO     | __main__:test_real_expansion_cycle:108 - --------------------------------------------------
+2025-07-16 21:11:37.374 | INFO     | __main__:test_real_expansion_cycle:111 - ✅ Ciclo executado: Sucesso
+2025-07-16 21:11:37.374 | INFO     | __main__:test_real_expansion_cycle:112 - ✅ Taxa de sucesso: 0.0%
+2025-07-16 21:11:37.374 | INFO     | __main__:test_real_expansion_cycle:113 - ✅ Capacidades funcionais: 0/0
+2025-07-16 21:11:37.374 | INFO     | __main__:test_real_expansion_cycle:114 - ✅ Features funcionais: 0/0
+2025-07-16 21:11:37.374 | WARNING  | __main__:test_real_expansion_cycle:121 - 
+⚠️ Sistema precisa de ajustes para funcionar completamente
+2025-07-16 21:11:37.374 | INFO     | __main__:main:184 - 
+================================================================================
+2025-07-16 21:11:37.374 | WARNING  | __main__:main:190 - ⚠️ TESTE COMPLETO: Sistema precisa de refinamentos
+2025-07-16 21:15:00.233 | INFO     | __main__:main:168 - 🎯 INICIANDO VERIFICAÇÃO COMPLETA DO SISTEMA DE AUTO-EXPANSÃO
+2025-07-16 21:15:00.233 | INFO     | __main__:main:169 - ================================================================================
+2025-07-16 21:15:00.233 | INFO     | __main__:main:172 - ETAPA 1: Verificação de Integração
+2025-07-16 21:15:00.234 | INFO     | __main__:verify_system_integration:132 - 🔍 VERIFICANDO INTEGRAÇÃO COM SISTEMA PRINCIPAL...
+2025-07-16 21:15:00.234 | INFO     | __main__:verify_system_integration:142 - ✅ Componentes principais importados com sucesso
+2025-07-16 21:15:00.234 | INFO     | __main__:verify_system_integration:146 - ✅ Sistema de expansão iniciado com sucesso
+2025-07-16 21:15:00.234 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:15:00.347 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:15:00.348 | INFO     | __main__:verify_system_integration:151 - ✅ Detector de limitações funcionando: 5 limitações detectadas
+2025-07-16 21:15:00.348 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2638 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:15:00.402 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2666 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:15:00.402 | INFO     | __main__:verify_system_integration:156 - ✅ Detector de necessidades funcionando: 21 necessidades detectadas
+2025-07-16 21:15:00.402 | INFO     | __main__:verify_system_integration:158 - 🎉 INTEGRAÇÃO VERIFICADA COM SUCESSO!
+2025-07-16 21:15:00.402 | INFO     | __main__:main:180 - 
+ETAPA 2: Teste Real de Auto-Expansão
+2025-07-16 21:15:00.403 | INFO     | __main__:test_real_expansion_cycle:26 - 🎯 INICIANDO TESTE REAL DE AUTO-EXPANSÃO DE INTELIGÊNCIA
+2025-07-16 21:15:00.403 | INFO     | __main__:test_real_expansion_cycle:27 - ================================================================================
+2025-07-16 21:15:00.403 | INFO     | __main__:test_real_expansion_cycle:33 - 📋 EXECUTANDO CICLO REAL DE EXPANSÃO...
+2025-07-16 21:15:00.403 | INFO     | __main__:test_real_expansion_cycle:34 - --------------------------------------------------
+2025-07-16 21:15:00.403 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4572 - 🧠 FASE 1: Expansão de Capacidades Cognitivas
+2025-07-16 21:15:00.403 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:15:00.506 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:15:00.506 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4581 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:15:00.506 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2434 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2467 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2502 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:15:00.507 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2537 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:15:00.508 | INFO     | src.autonomous.intelligence_expansion:_create_real_capability_files:1647 - 📁 Criando arquivos reais para: Advanced Reasoning Engine
+2025-07-16 21:15:00.508 | ERROR    | src.autonomous.intelligence_expansion:_create_real_capability_files:1695 - Erro ao criar arquivos reais: write() argument must be str, not coroutine
+2025-07-16 21:15:00.508 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4606 - Erro ao processar limitação CognitiveLimitationType.REASONING_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:15:00.508 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: learning_static
+2025-07-16 21:15:00.508 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Meta-Learning Engine
+2025-07-16 21:15:00.508 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Meta-Learning Engine
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2434 - 🔗 Integrando capacidade: Meta-Learning Engine
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2467 - 🧪 Testando capacidade: Meta-Learning Engine
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2502 - 🚀 Deployando capacidade: Meta-Learning Engine
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2537 - ✅ Validando performance: Meta-Learning Engine
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:_create_real_capability_files:1647 - 📁 Criando arquivos reais para: Meta-Learning Engine
+2025-07-16 21:15:00.509 | ERROR    | src.autonomous.intelligence_expansion:_create_real_capability_files:1695 - Erro ao criar arquivos reais: write() argument must be str, not coroutine
+2025-07-16 21:15:00.509 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4606 - Erro ao processar limitação CognitiveLimitationType.LEARNING_STATIC: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:15:00.509 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: prediction_linear
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2434 - 🔗 Integrando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2467 - 🧪 Testando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2502 - 🚀 Deployando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2537 - ✅ Validando performance: Non-Linear Prediction Engine
+2025-07-16 21:15:00.510 | INFO     | src.autonomous.intelligence_expansion:_create_real_capability_files:1647 - 📁 Criando arquivos reais para: Non-Linear Prediction Engine
+2025-07-16 21:15:00.511 | ERROR    | src.autonomous.intelligence_expansion:_create_real_capability_files:1695 - Erro ao criar arquivos reais: write() argument must be str, not coroutine
+2025-07-16 21:15:00.511 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4606 - Erro ao processar limitação CognitiveLimitationType.PREDICTION_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:15:00.511 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: planning_sequential
+2025-07-16 21:15:00.511 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Hierarchical Planning Engine
+2025-07-16 21:15:00.511 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Hierarchical Planning Engine
+2025-07-16 21:15:00.511 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2434 - 🔗 Integrando capacidade: Hierarchical Planning Engine
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2467 - 🧪 Testando capacidade: Hierarchical Planning Engine
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2502 - 🚀 Deployando capacidade: Hierarchical Planning Engine
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2537 - ✅ Validando performance: Hierarchical Planning Engine
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:_create_real_capability_files:1647 - 📁 Criando arquivos reais para: Hierarchical Planning Engine
+2025-07-16 21:15:00.512 | ERROR    | src.autonomous.intelligence_expansion:_create_real_capability_files:1695 - Erro ao criar arquivos reais: write() argument must be str, not coroutine
+2025-07-16 21:15:00.512 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4606 - Erro ao processar limitação CognitiveLimitationType.PLANNING_SEQUENTIAL: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: pattern_recognition_limited
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Pattern Synthesis Engine
+2025-07-16 21:15:00.512 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2434 - 🔗 Integrando capacidade: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2467 - 🧪 Testando capacidade: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2502 - 🚀 Deployando capacidade: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2537 - ✅ Validando performance: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | INFO     | src.autonomous.intelligence_expansion:_create_real_capability_files:1647 - 📁 Criando arquivos reais para: Pattern Synthesis Engine
+2025-07-16 21:15:00.513 | ERROR    | src.autonomous.intelligence_expansion:_create_real_capability_files:1695 - Erro ao criar arquivos reais: write() argument must be str, not coroutine
+2025-07-16 21:15:00.513 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4606 - Erro ao processar limitação CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:15:00.514 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4620 - 🌐 FASE 2: Evolução de Funcionalidades
+2025-07-16 21:15:00.514 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2638 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:15:00.576 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2666 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:15:00.576 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4629 - 🎯 Detectadas 21 necessidades funcionais
+2025-07-16 21:15:00.576 | INFO     | src.autonomous.intelligence_expansion:create_feature:3109 - 🏗️ Criando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:create_feature:3149 - ✅ Feature criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4648 - ✅ Funcionalidade criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:create_feature:3109 - 🏗️ Criando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:create_feature:3149 - ✅ Feature criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4648 - ✅ Funcionalidade criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:15:00.577 | INFO     | src.autonomous.intelligence_expansion:create_feature:3109 - 🏗️ Criando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:create_feature:3149 - ✅ Feature criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4648 - ✅ Funcionalidade criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4676 - 🔗 FASE 3: Integração Total
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:4111 - 🔗 Integrando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4701 - 🔗 Funcionalidade integrada: API faltante: /api/v1/auto-trading
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:4111 - 🔗 Integrando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:15:00.578 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4701 - 🔗 Funcionalidade integrada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:15:00.579 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:4111 - 🔗 Integrando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:15:00.579 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4701 - 🔗 Funcionalidade integrada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:15:00.579 | INFO     | src.autonomous.intelligence_expansion:validate_and_optimize:4719 - ✅ FASE 4: Validação e Otimização
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:39 - 📊 RESULTADOS DO CICLO REAL:
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:40 - --------------------------------------------------
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:44 - 🧠 Expansão Cognitiva:
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:45 -    - Limitações detectadas: 5
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:46 -    - Capacidades criadas: 0
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:47 -    - Capacidades implementadas: 0
+2025-07-16 21:15:00.579 | INFO     | __main__:test_real_expansion_cycle:51 - 🚀 Evolução Funcional:
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:52 -    - Necessidades detectadas: 21
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:53 -    - Features criadas: 3
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:54 -    - Features implementadas: 3
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:58 - 🔗 Integração:
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:59 -    - Status: unknown
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:60 -    - Conflitos: 0
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:61 -    - Arquivos modificados: 0
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:75 - 📁 Arquivos criados: 13
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/auto-trading/api_controller.py
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/auto-trading/service_layer.py
+2025-07-16 21:15:00.580 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/auto-trading/data_models.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/auto-trading/validation.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/auto-trading/__init__.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/predictive-analytics/api_controller.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/predictive-analytics/service_layer.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/predictive-analytics/data_models.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/predictive-analytics/validation.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:78 -    ✅ src/auto_generated_features/api_faltante:_/api/v1/predictive-analytics/__init__.py
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:83 - 
+🔍 VERIFICAÇÃO DE FUNCIONALIDADE REAL:
+2025-07-16 21:15:00.581 | INFO     | __main__:test_real_expansion_cycle:84 - --------------------------------------------------
+2025-07-16 21:15:00.582 | WARNING  | __main__:test_real_expansion_cycle:104 -    ❌ Falha na verificação: 'GeneratedFeature' object has no attribute 'get'
+2025-07-16 21:15:00.582 | WARNING  | __main__:test_real_expansion_cycle:104 -    ❌ Falha na verificação: 'GeneratedFeature' object has no attribute 'get'
+2025-07-16 21:15:00.582 | WARNING  | __main__:test_real_expansion_cycle:104 -    ❌ Falha na verificação: 'GeneratedFeature' object has no attribute 'get'
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:107 - 
+🌟 SUMÁRIO DO TESTE REAL:
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:108 - --------------------------------------------------
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:111 - ✅ Ciclo executado: Sucesso
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:112 - ✅ Taxa de sucesso: 0.0%
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:113 - ✅ Capacidades funcionais: 0/0
+2025-07-16 21:15:00.582 | INFO     | __main__:test_real_expansion_cycle:114 - ✅ Features funcionais: 0/3
+2025-07-16 21:15:00.582 | WARNING  | __main__:test_real_expansion_cycle:121 - 
+⚠️ Sistema precisa de ajustes para funcionar completamente
+2025-07-16 21:15:00.583 | INFO     | __main__:main:184 - 
+================================================================================
+2025-07-16 21:15:00.583 | WARNING  | __main__:main:190 - ⚠️ TESTE COMPLETO: Sistema precisa de refinamentos

@@ -1,0 +1,735 @@
+2025-07-16 21:01:23.684 | INFO     | __main__:run_comprehensive_demo:243 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:01:23.684 | INFO     | __main__:run_comprehensive_demo:244 - ================================================================================
+2025-07-16 21:01:23.684 | INFO     | __main__:run_comprehensive_demo:248 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:01:23.685 | INFO     | __main__:run_comprehensive_demo:249 - --------------------------------------------------
+2025-07-16 21:01:23.685 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:01:23.685 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:01:23.787 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:01:23.787 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:01:23.788 | ERROR    | __main__:run_comprehensive_demo:292 - ❌ Erro durante demonstração: CognitiveLimitation.__init__() got an unexpected keyword argument 'impact_areas'
+2025-07-16 21:01:23.788 | ERROR    | __main__:run_comprehensive_demo:293 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 252, in run_comprehensive_demo
+    capability = await test_cognitive_capability_generation()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 59, in test_cognitive_capability_generation
+    limitation = CognitiveLimitation(
+                 ^^^^^^^^^^^^^^^^^^^^
+TypeError: CognitiveLimitation.__init__() got an unexpected keyword argument 'impact_areas'
+
+2025-07-16 21:01:59.474 | INFO     | __main__:run_comprehensive_demo:253 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:01:59.474 | INFO     | __main__:run_comprehensive_demo:254 - ================================================================================
+2025-07-16 21:01:59.474 | INFO     | __main__:run_comprehensive_demo:258 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:01:59.474 | INFO     | __main__:run_comprehensive_demo:259 - --------------------------------------------------
+2025-07-16 21:01:59.475 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:01:59.475 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:01:59.580 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:01:59.580 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:01:59.580 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:01:59.580 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:01:59.580 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:01:59.580 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:01:59.581 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:01:59.581 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:01:59.581 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:01:59.581 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:01:59.581 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:01:59.581 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:01:59.581 | ERROR    | __main__:run_comprehensive_demo:302 - ❌ Erro durante demonstração: 'CognitiveCapability' object has no attribute 'algorithms'
+2025-07-16 21:01:59.582 | ERROR    | __main__:run_comprehensive_demo:303 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 262, in run_comprehensive_demo
+    capability = await test_cognitive_capability_generation()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 77, in test_cognitive_capability_generation
+    logger.info(f"  - Algoritmos: {', '.join(capability.algorithms)}")
+                                             ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CognitiveCapability' object has no attribute 'algorithms'
+
+2025-07-16 21:02:28.490 | INFO     | __main__:run_comprehensive_demo:258 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:02:28.490 | INFO     | __main__:run_comprehensive_demo:259 - ================================================================================
+2025-07-16 21:02:28.490 | INFO     | __main__:run_comprehensive_demo:263 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:02:28.490 | INFO     | __main__:run_comprehensive_demo:264 - --------------------------------------------------
+2025-07-16 21:02:28.491 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:02:28.491 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:02:28.597 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:02:28.597 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:02:28.598 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:02:28.598 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:02:28.598 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:02:28.599 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:02:28.599 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:02:28.599 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:02:28.599 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:02:28.599 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:02:28.599 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:02:28.599 | ERROR    | __main__:run_comprehensive_demo:307 - ❌ Erro durante demonstração: name 'AutoCodeGenerator' is not defined
+2025-07-16 21:02:28.600 | ERROR    | __main__:run_comprehensive_demo:308 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 268, in run_comprehensive_demo
+    impl_result = await test_capability_implementation()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 105, in test_capability_implementation
+    engine = CapabilityImplementationEngine()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/src/autonomous/intelligence_expansion.py", line 1602, in __init__
+    self.code_generator = AutoCodeGenerator()
+                          ^^^^^^^^^^^^^^^^^
+NameError: name 'AutoCodeGenerator' is not defined
+
+2025-07-16 21:03:10.840 | INFO     | __main__:run_comprehensive_demo:258 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:03:10.840 | INFO     | __main__:run_comprehensive_demo:259 - ================================================================================
+2025-07-16 21:03:10.840 | INFO     | __main__:run_comprehensive_demo:263 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:03:10.841 | INFO     | __main__:run_comprehensive_demo:264 - --------------------------------------------------
+2025-07-16 21:03:10.841 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:03:10.841 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:03:10.944 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:03:10.944 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:03:10.944 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:03:10.945 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:03:10.945 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:03:10.945 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:03:10.945 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:03:10.945 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:03:10.945 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:03:10.945 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:03:10.946 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:03:10.946 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:03:10.946 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:03:10.946 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:03:10.946 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:03:10.946 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:03:10.946 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:10.947 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:10.947 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:10.947 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:10.947 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:03:10.948 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:03:10.948 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:03:10.948 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:03:10.948 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:03:10.948 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:03:10.948 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:03:10.948 | ERROR    | __main__:run_comprehensive_demo:307 - ❌ Erro durante demonstração: 'NeedDetectionSystem' object has no attribute 'detect_functionality_needs'
+2025-07-16 21:03:10.949 | ERROR    | __main__:run_comprehensive_demo:308 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 269, in run_comprehensive_demo
+    needs = await test_need_detection()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 121, in test_need_detection
+    needs = await detector.detect_functionality_needs()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NeedDetectionSystem' object has no attribute 'detect_functionality_needs'
+
+2025-07-16 21:03:36.478 | INFO     | __main__:run_comprehensive_demo:258 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:03:36.478 | INFO     | __main__:run_comprehensive_demo:259 - ================================================================================
+2025-07-16 21:03:36.478 | INFO     | __main__:run_comprehensive_demo:263 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:03:36.479 | INFO     | __main__:run_comprehensive_demo:264 - --------------------------------------------------
+2025-07-16 21:03:36.479 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:03:36.479 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:03:36.599 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:03:36.599 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:03:36.600 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:03:36.600 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:03:36.600 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:03:36.600 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:03:36.600 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:03:36.600 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:03:36.600 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:03:36.600 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:03:36.600 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:36.601 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:36.601 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:36.601 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:03:36.601 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:03:36.601 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:03:36.601 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:03:36.601 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:03:36.602 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:03:36.602 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:03:36.602 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:03:36.602 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:03:36.652 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:03:36.652 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:03:36.652 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:03:36.653 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:03:36.653 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:03:36.653 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:03:36.653 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:03:36.653 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:03:36.653 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:03:36.654 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:03:36.654 | ERROR    | __main__:run_comprehensive_demo:307 - ❌ Erro durante demonstração: 'GeneratedFeature' object has no attribute 'feature_name'
+2025-07-16 21:03:36.656 | ERROR    | __main__:run_comprehensive_demo:308 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 270, in run_comprehensive_demo
+    feature = await test_feature_generation()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 155, in test_feature_generation
+    logger.info(f"✅ Feature gerada: {feature.feature_name}")
+                                      ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GeneratedFeature' object has no attribute 'feature_name'
+
+2025-07-16 21:04:05.650 | INFO     | __main__:run_comprehensive_demo:261 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:04:05.650 | INFO     | __main__:run_comprehensive_demo:262 - ================================================================================
+2025-07-16 21:04:05.651 | INFO     | __main__:run_comprehensive_demo:266 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:04:05.651 | INFO     | __main__:run_comprehensive_demo:267 - --------------------------------------------------
+2025-07-16 21:04:05.651 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:04:05.651 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:04:05.757 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:04:05.757 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:04:05.757 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:05.757 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:04:05.758 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:04:05.758 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:04:05.758 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:04:05.759 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:04:05.759 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:04:05.759 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:05.759 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:05.759 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:05.759 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:05.760 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:04:05.760 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:04:05.760 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:04:05.760 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:04:05.760 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:04:05.760 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:04:05.760 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:04:05.760 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:04:05.825 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:04:05.825 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:04:05.825 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:04:05.826 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:04:05.826 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:04:05.826 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:04:05.826 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:04:05.826 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:04:05.826 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:04:05.827 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:04:05.827 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:04:05.827 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:04:05.827 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:04:05.827 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:04:05.827 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:04:05.827 | ERROR    | __main__:run_comprehensive_demo:310 - ❌ Erro durante demonstração: 'AutoIntegrationEngine' object has no attribute 'integrate_improvement'
+2025-07-16 21:04:05.828 | ERROR    | __main__:run_comprehensive_demo:311 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 274, in run_comprehensive_demo
+    integration_result = await test_auto_integration()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 186, in test_auto_integration
+    result = await integrator.integrate_improvement(feature, improvement_type="feature")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AutoIntegrationEngine' object has no attribute 'integrate_improvement'
+
+2025-07-16 21:04:24.653 | INFO     | __main__:run_comprehensive_demo:261 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:04:24.653 | INFO     | __main__:run_comprehensive_demo:262 - ================================================================================
+2025-07-16 21:04:24.653 | INFO     | __main__:run_comprehensive_demo:266 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:04:24.653 | INFO     | __main__:run_comprehensive_demo:267 - --------------------------------------------------
+2025-07-16 21:04:24.654 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:04:24.654 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:04:24.760 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:04:24.760 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:24.761 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:04:24.761 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:04:24.761 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:04:24.762 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:04:24.762 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:04:24.762 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:04:24.762 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:04:24.762 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:04:24.762 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:04:24.762 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:24.763 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:24.763 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:24.763 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:24.763 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:04:24.763 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:04:24.763 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:04:24.763 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:04:24.763 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:04:24.764 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:04:24.764 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:04:24.764 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:04:24.814 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:04:24.814 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:04:24.814 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:04:24.814 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:04:24.814 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:04:24.814 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:04:24.815 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:04:24.815 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:04:24.815 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:04:24.815 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:04:24.816 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:04:24.816 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:04:24.816 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:04:24.816 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:04:24.816 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:04:24.816 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Real-time Performance Optimization API
+2025-07-16 21:04:24.816 | ERROR    | __main__:run_comprehensive_demo:310 - ❌ Erro durante demonstração: 'dict' object has no attribute 'success'
+2025-07-16 21:04:24.816 | ERROR    | __main__:run_comprehensive_demo:311 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 274, in run_comprehensive_demo
+    integration_result = await test_auto_integration()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 188, in test_auto_integration
+    logger.info(f"✅ Integração {'bem-sucedida' if result.success else 'falhou'}")
+                                                   ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'success'
+
+2025-07-16 21:04:41.540 | INFO     | __main__:run_comprehensive_demo:263 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:04:41.541 | INFO     | __main__:run_comprehensive_demo:264 - ================================================================================
+2025-07-16 21:04:41.541 | INFO     | __main__:run_comprehensive_demo:268 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:04:41.541 | INFO     | __main__:run_comprehensive_demo:269 - --------------------------------------------------
+2025-07-16 21:04:41.541 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:04:41.541 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:04:41.633 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:04:41.634 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:04:41.634 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:41.634 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:41.634 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:04:41.634 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:04:41.635 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:04:41.635 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:04:41.635 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:04:41.635 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:04:41.636 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:04:41.636 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:04:41.636 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:04:41.636 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:04:41.636 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:04:41.636 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:04:41.637 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:41.637 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:41.637 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:41.638 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:04:41.638 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:04:41.638 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:04:41.638 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:04:41.638 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:04:41.639 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:04:41.639 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:04:41.639 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:04:41.639 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:04:41.698 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:04:41.699 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:04:41.699 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:04:41.699 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:04:41.700 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:04:41.700 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:04:41.700 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:04:41.700 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:04:41.700 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:04:41.700 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:04:41.701 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Real-time Performance Optimization API
+2025-07-16 21:04:41.701 | INFO     | __main__:test_auto_integration:189 - ✅ Integração bem-sucedida
+2025-07-16 21:04:41.701 | INFO     | __main__:test_auto_integration:190 -   - Etapas completadas: 0
+2025-07-16 21:04:41.701 | INFO     | __main__:run_comprehensive_demo:278 - 
+================================================================================
+2025-07-16 21:04:41.701 | INFO     | __main__:run_comprehensive_demo:281 - 📋 FASE 2: Testando ciclo completo de expansão
+2025-07-16 21:04:41.701 | INFO     | __main__:run_comprehensive_demo:282 - --------------------------------------------------
+2025-07-16 21:04:41.701 | INFO     | __main__:test_complete_expansion_cycle:200 - 🌟 Testando ciclo completo de expansão da inteligência...
+2025-07-16 21:04:41.701 | ERROR    | __main__:run_comprehensive_demo:312 - ❌ Erro durante demonstração: IntelligenceExpansionSystem.__init__() got an unexpected keyword argument 'config'
+2025-07-16 21:04:41.702 | ERROR    | __main__:run_comprehensive_demo:313 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 284, in run_comprehensive_demo
+    expansion_result = await test_complete_expansion_cycle()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 226, in test_complete_expansion_cycle
+    system = IntelligenceExpansionSystem(config=config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: IntelligenceExpansionSystem.__init__() got an unexpected keyword argument 'config'
+
+2025-07-16 21:05:18.890 | INFO     | __main__:run_comprehensive_demo:265 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:05:18.890 | INFO     | __main__:run_comprehensive_demo:266 - ================================================================================
+2025-07-16 21:05:18.890 | INFO     | __main__:run_comprehensive_demo:270 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:05:18.890 | INFO     | __main__:run_comprehensive_demo:271 - --------------------------------------------------
+2025-07-16 21:05:18.890 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:05:18.891 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:05:18.994 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:18.994 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:05:18.994 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:05:18.995 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:05:18.995 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:05:18.995 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:05:18.996 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:05:18.996 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:05:18.996 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:05:18.996 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:18.996 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:18.996 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:18.996 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:18.997 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:05:18.997 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:05:18.997 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:05:18.997 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:05:18.997 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:05:18.997 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:05:18.997 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:05:18.997 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:05:19.053 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:05:19.053 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:05:19.053 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:05:19.054 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:05:19.054 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:05:19.054 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:05:19.054 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:05:19.054 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:05:19.054 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:05:19.055 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:05:19.055 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:05:19.056 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:05:19.056 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:05:19.056 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:05:19.056 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:05:19.056 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Real-time Performance Optimization API
+2025-07-16 21:05:19.057 | INFO     | __main__:test_auto_integration:189 - ✅ Integração bem-sucedida
+2025-07-16 21:05:19.057 | INFO     | __main__:test_auto_integration:190 -   - Etapas completadas: 0
+2025-07-16 21:05:19.057 | INFO     | __main__:run_comprehensive_demo:280 - 
+================================================================================
+2025-07-16 21:05:19.057 | INFO     | __main__:run_comprehensive_demo:283 - 📋 FASE 2: Testando ciclo completo de expansão
+2025-07-16 21:05:19.057 | INFO     | __main__:run_comprehensive_demo:284 - --------------------------------------------------
+2025-07-16 21:05:19.058 | INFO     | __main__:test_complete_expansion_cycle:200 - 🌟 Testando ciclo completo de expansão da inteligência...
+2025-07-16 21:05:19.058 | INFO     | __main__:test_complete_expansion_cycle:231 - 🔄 Executando ciclo único de expansão...
+2025-07-16 21:05:19.058 | ERROR    | __main__:run_comprehensive_demo:314 - ❌ Erro durante demonstração: 'IntelligenceExpansionSystem' object has no attribute 'execute_single_expansion_cycle'
+2025-07-16 21:05:19.059 | ERROR    | __main__:run_comprehensive_demo:315 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 286, in run_comprehensive_demo
+    expansion_result = await test_complete_expansion_cycle()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 232, in test_complete_expansion_cycle
+    result = await system.execute_single_expansion_cycle()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IntelligenceExpansionSystem' object has no attribute 'execute_single_expansion_cycle'
+
+2025-07-16 21:05:43.076 | INFO     | __main__:run_comprehensive_demo:265 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:05:43.076 | INFO     | __main__:run_comprehensive_demo:266 - ================================================================================
+2025-07-16 21:05:43.076 | INFO     | __main__:run_comprehensive_demo:270 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:05:43.076 | INFO     | __main__:run_comprehensive_demo:271 - --------------------------------------------------
+2025-07-16 21:05:43.076 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:05:43.076 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:05:43.166 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:43.166 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:05:43.166 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:05:43.167 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:05:43.167 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:05:43.167 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:05:43.168 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:05:43.168 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:05:43.168 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:05:43.168 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.168 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.168 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.168 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.169 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:05:43.169 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:05:43.169 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:05:43.169 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:05:43.169 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:05:43.169 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:05:43.169 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:05:43.169 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:05:43.220 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:05:43.220 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:05:43.220 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:05:43.220 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:05:43.220 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:05:43.221 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:05:43.221 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:05:43.221 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:05:43.221 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:05:43.221 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:05:43.222 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:05:43.222 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:05:43.222 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:05:43.222 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:05:43.222 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:05:43.222 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Real-time Performance Optimization API
+2025-07-16 21:05:43.222 | INFO     | __main__:test_auto_integration:189 - ✅ Integração bem-sucedida
+2025-07-16 21:05:43.222 | INFO     | __main__:test_auto_integration:190 -   - Etapas completadas: 0
+2025-07-16 21:05:43.222 | INFO     | __main__:run_comprehensive_demo:280 - 
+================================================================================
+2025-07-16 21:05:43.223 | INFO     | __main__:run_comprehensive_demo:283 - 📋 FASE 2: Testando ciclo completo de expansão
+2025-07-16 21:05:43.223 | INFO     | __main__:run_comprehensive_demo:284 - --------------------------------------------------
+2025-07-16 21:05:43.223 | INFO     | __main__:test_complete_expansion_cycle:200 - 🌟 Testando ciclo completo de expansão da inteligência...
+2025-07-16 21:05:43.223 | INFO     | __main__:test_complete_expansion_cycle:231 - 🔄 Executando ciclo único de expansão...
+2025-07-16 21:05:43.223 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4186 - 🧠 FASE 1: Expansão de Capacidades Cognitivas
+2025-07-16 21:05:43.223 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:05:43.330 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:43.330 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4195 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:43.331 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:05:43.331 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:05:43.331 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.331 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.331 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:05:43.332 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.REASONING_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: learning_static
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Meta-Learning Engine
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Meta-Learning Engine
+2025-07-16 21:05:43.332 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Meta-Learning Engine
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Meta-Learning Engine
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Meta-Learning Engine
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Meta-Learning Engine
+2025-07-16 21:05:43.333 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.LEARNING_STATIC: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: prediction_linear
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Non-Linear Prediction Engine
+2025-07-16 21:05:43.333 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Non-Linear Prediction Engine
+2025-07-16 21:05:43.334 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PREDICTION_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: planning_sequential
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Hierarchical Planning Engine
+2025-07-16 21:05:43.334 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Hierarchical Planning Engine
+2025-07-16 21:05:43.335 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PLANNING_SEQUENTIAL: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: pattern_recognition_limited
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Pattern Synthesis Engine
+2025-07-16 21:05:43.335 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Pattern Synthesis Engine
+2025-07-16 21:05:43.336 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4233 - 🌐 FASE 2: Evolução de Funcionalidades
+2025-07-16 21:05:43.336 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:05:43.390 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:05:43.390 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4242 - 🎯 Detectadas 21 necessidades funcionais
+2025-07-16 21:05:43.390 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:43.391 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:43.391 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:43.391 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:43.392 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:43.392 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:43.392 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:43.393 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:43.393 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:43.393 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4289 - 🔗 FASE 3: Integração Total
+2025-07-16 21:05:43.393 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:43.394 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:43.394 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:43.394 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:43.394 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:43.394 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:43.395 | INFO     | src.autonomous.intelligence_expansion:validate_and_optimize:4332 - ✅ FASE 4: Validação e Otimização
+2025-07-16 21:05:43.395 | INFO     | __main__:test_complete_expansion_cycle:234 - 📊 Resultados do ciclo de expansão:
+2025-07-16 21:05:43.395 | INFO     | __main__:test_complete_expansion_cycle:235 -   ✅ Expansão cognitiva: False
+2025-07-16 21:05:43.395 | INFO     | __main__:test_complete_expansion_cycle:236 -   ✅ Evolução funcional: False
+2025-07-16 21:05:43.396 | INFO     | __main__:test_complete_expansion_cycle:237 -   ✅ Integração: False
+2025-07-16 21:05:43.396 | INFO     | __main__:test_complete_expansion_cycle:238 -   ✅ Validação: False
+2025-07-16 21:05:43.396 | INFO     | __main__:test_complete_expansion_cycle:244 - 🧠 Capacidades cognitivas implementadas: 0
+2025-07-16 21:05:43.396 | INFO     | __main__:test_complete_expansion_cycle:248 - 🚀 Features funcionais implementadas: 0
+2025-07-16 21:05:43.396 | INFO     | __main__:run_comprehensive_demo:288 - 
+================================================================================
+2025-07-16 21:05:43.397 | INFO     | __main__:run_comprehensive_demo:291 - 📋 SUMÁRIO FINAL
+2025-07-16 21:05:43.397 | INFO     | __main__:run_comprehensive_demo:292 - --------------------------------------------------
+2025-07-16 21:05:43.397 | INFO     | __main__:run_comprehensive_demo:293 - ✅ Todos os testes executados com sucesso!
+2025-07-16 21:05:43.397 | INFO     | __main__:run_comprehensive_demo:294 - ✅ Sistema detectou 5 limitações cognitivas
+2025-07-16 21:05:43.397 | INFO     | __main__:run_comprehensive_demo:295 - ✅ Sistema detectou 21 necessidades funcionais
+2025-07-16 21:05:43.398 | INFO     | __main__:run_comprehensive_demo:296 - ✅ Capacidade cognitiva gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:05:43.398 | ERROR    | __main__:run_comprehensive_demo:314 - ❌ Erro durante demonstração: 'GeneratedFeature' object has no attribute 'feature_name'
+2025-07-16 21:05:43.398 | ERROR    | __main__:run_comprehensive_demo:315 - Traceback: Traceback (most recent call last):
+  File "/home/arthur/projects/hephaestus/test_intelligence_expansion_demo.py", line 297, in run_comprehensive_demo
+    logger.info(f"✅ Feature funcional gerada: {feature.feature_name}")
+                                                ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GeneratedFeature' object has no attribute 'feature_name'
+
+2025-07-16 21:05:58.702 | INFO     | __main__:run_comprehensive_demo:265 - 🎯 Iniciando demonstração completa do Sistema de Auto-Expansão de Inteligência
+2025-07-16 21:05:58.702 | INFO     | __main__:run_comprehensive_demo:266 - ================================================================================
+2025-07-16 21:05:58.702 | INFO     | __main__:run_comprehensive_demo:270 - 📋 FASE 1: Testando componentes individuais
+2025-07-16 21:05:58.702 | INFO     | __main__:run_comprehensive_demo:271 - --------------------------------------------------
+2025-07-16 21:05:58.703 | INFO     | __main__:test_cognitive_limitation_detection:41 - 🔍 Testando detecção de limitações cognitivas...
+2025-07-16 21:05:58.703 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:05:58.803 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:58.803 | INFO     | __main__:test_cognitive_limitation_detection:46 - ✅ Detectadas 5 limitações cognitivas:
+2025-07-16 21:05:58.803 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.REASONING_LINEAR: Performance baixa em reasoning_accuracy: 0.65 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:58.803 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.LEARNING_STATIC: Performance baixa em learning_adaptation_rate: 0.30 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:58.804 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PREDICTION_LINEAR: Performance baixa em prediction_r2: 0.40 (esperado: >0.7) (Severidade: high)
+2025-07-16 21:05:58.804 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PLANNING_SEQUENTIAL: Performance baixa em planning_success_rate: 0.55 (esperado: >0.8) (Severidade: high)
+2025-07-16 21:05:58.804 | INFO     | __main__:test_cognitive_limitation_detection:48 -   - CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: Performance baixa em pattern_recognition_f1: 0.60 (esperado: >0.8) (Severidade: medium)
+2025-07-16 21:05:58.804 | INFO     | __main__:test_cognitive_capability_generation:55 - 🧠 Testando geração de capacidades cognitivas...
+2025-07-16 21:05:58.804 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:05:58.804 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:05:58.805 | INFO     | __main__:test_cognitive_capability_generation:75 - ✅ Capacidade gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:05:58.805 | INFO     | __main__:test_cognitive_capability_generation:76 -   - Nome: Advanced Reasoning Engine
+2025-07-16 21:05:58.805 | INFO     | __main__:test_cognitive_capability_generation:77 -   - Descrição: Sistema de raciocínio avançado com tree-of-thought, chain-of-thought, raciocínio paralelo e meta-raciocínio
+2025-07-16 21:05:58.805 | INFO     | __main__:test_cognitive_capability_generation:78 -   - Abordagem: Multi-strategy reasoning with meta-cognitive validation
+2025-07-16 21:05:58.805 | INFO     | __main__:test_cognitive_capability_generation:79 -   - Impacto esperado: 0.8
+2025-07-16 21:05:58.805 | INFO     | __main__:test_capability_implementation:86 - ⚙️ Testando implementação automática de capacidades...
+2025-07-16 21:05:58.805 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.806 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.806 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.806 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.807 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:05:58.807 | INFO     | __main__:test_capability_implementation:108 - ✅ Implementação bem-sucedida
+2025-07-16 21:05:58.807 | INFO     | __main__:test_capability_implementation:109 -   - Arquivos criados: 3
+2025-07-16 21:05:58.807 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_engine.py
+2025-07-16 21:05:58.807 | INFO     | __main__:test_capability_implementation:111 -     • src/cognitive/advanced_reasoning_interface.py
+2025-07-16 21:05:58.807 | INFO     | __main__:test_capability_implementation:111 -     • tests/test_advanced_reasoning.py
+2025-07-16 21:05:58.808 | INFO     | __main__:test_need_detection:118 - 🔍 Testando detecção de necessidades funcionais...
+2025-07-16 21:05:58.808 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:05:58.872 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:05:58.872 | INFO     | __main__:test_need_detection:123 - ✅ Detectadas 21 necessidades funcionais:
+2025-07-16 21:05:58.872 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/sentiment-analysis 15 vezes (Urgência: medium)
+2025-07-16 21:05:58.872 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/recommendation-engine 8 vezes (Urgência: medium)
+2025-07-16 21:05:58.872 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/anomaly-detection 12 vezes (Urgência: medium)
+2025-07-16 21:05:58.873 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/auto-trading 25 vezes (Urgência: high)
+2025-07-16 21:05:58.873 | INFO     | __main__:test_need_detection:125 -   - FunctionalityNeedType.API_MISSING: Usuários tentaram acessar /api/v1/predictive-analytics 18 vezes (Urgência: high)
+2025-07-16 21:05:58.873 | INFO     | __main__:test_feature_generation:132 - 🚀 Testando geração automática de features...
+2025-07-16 21:05:58.873 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Performance Optimization API
+2025-07-16 21:05:58.873 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Performance Optimization API
+2025-07-16 21:05:58.873 | INFO     | __main__:test_feature_generation:155 - ✅ Feature gerada: Performance Optimization API
+2025-07-16 21:05:58.874 | INFO     | __main__:test_feature_generation:156 -   - Descrição: API de otimização de performance em tempo real
+2025-07-16 21:05:58.874 | INFO     | __main__:test_feature_generation:157 -   - APIs: 3 endpoints
+2025-07-16 21:05:58.874 | INFO     | __main__:test_feature_generation:158 -   - Testes: 0 arquivos de teste
+2025-07-16 21:05:58.874 | INFO     | __main__:test_auto_integration:165 - 🔧 Testando integração automática...
+2025-07-16 21:05:58.874 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Real-time Performance Optimization API
+2025-07-16 21:05:58.874 | INFO     | __main__:test_auto_integration:189 - ✅ Integração bem-sucedida
+2025-07-16 21:05:58.874 | INFO     | __main__:test_auto_integration:190 -   - Etapas completadas: 0
+2025-07-16 21:05:58.874 | INFO     | __main__:run_comprehensive_demo:280 - 
+================================================================================
+2025-07-16 21:05:58.874 | INFO     | __main__:run_comprehensive_demo:283 - 📋 FASE 2: Testando ciclo completo de expansão
+2025-07-16 21:05:58.874 | INFO     | __main__:run_comprehensive_demo:284 - --------------------------------------------------
+2025-07-16 21:05:58.875 | INFO     | __main__:test_complete_expansion_cycle:200 - 🌟 Testando ciclo completo de expansão da inteligência...
+2025-07-16 21:05:58.875 | INFO     | __main__:test_complete_expansion_cycle:231 - 🔄 Executando ciclo único de expansão...
+2025-07-16 21:05:58.875 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4186 - 🧠 FASE 1: Expansão de Capacidades Cognitivas
+2025-07-16 21:05:58.875 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:177 - 🔍 Detectando limitações cognitivas do sistema...
+2025-07-16 21:05:58.982 | INFO     | src.autonomous.intelligence_expansion:detect_limitations:205 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:58.982 | INFO     | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4195 - 🎯 Detectadas 5 limitações cognitivas
+2025-07-16 21:05:58.982 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: reasoning_linear
+2025-07-16 21:05:58.982 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Advanced Reasoning Engine
+2025-07-16 21:05:58.983 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.REASONING_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: learning_static
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Meta-Learning Engine
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Meta-Learning Engine
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Meta-Learning Engine
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Meta-Learning Engine
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Meta-Learning Engine
+2025-07-16 21:05:58.984 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Meta-Learning Engine
+2025-07-16 21:05:58.985 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.LEARNING_STATIC: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: prediction_linear
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Non-Linear Prediction Engine
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Non-Linear Prediction Engine
+2025-07-16 21:05:58.985 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Non-Linear Prediction Engine
+2025-07-16 21:05:58.986 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PREDICTION_LINEAR: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: planning_sequential
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Hierarchical Planning Engine
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:58.986 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Hierarchical Planning Engine
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Hierarchical Planning Engine
+2025-07-16 21:05:58.987 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PLANNING_SEQUENTIAL: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:create_capability:560 - 🧠 Criando capacidade para limitação: pattern_recognition_limited
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:create_capability:568 - ✅ Capacidade criada: Pattern Synthesis Engine
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:implement_capability:1611 - 🛠️ Implementando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:_integrate_capability:2048 - 🔗 Integrando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:58.987 | INFO     | src.autonomous.intelligence_expansion:_test_capability:2081 - 🧪 Testando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:58.988 | INFO     | src.autonomous.intelligence_expansion:_deploy_capability:2116 - 🚀 Deployando capacidade: Pattern Synthesis Engine
+2025-07-16 21:05:58.988 | INFO     | src.autonomous.intelligence_expansion:_validate_capability_performance:2151 - ✅ Validando performance: Pattern Synthesis Engine
+2025-07-16 21:05:58.988 | ERROR    | src.autonomous.intelligence_expansion:expand_cognitive_capabilities:4220 - Erro ao processar limitação CognitiveLimitationType.PATTERN_RECOGNITION_LIMITED: 'types.SimpleNamespace' object is not subscriptable
+2025-07-16 21:05:58.988 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4233 - 🌐 FASE 2: Evolução de Funcionalidades
+2025-07-16 21:05:58.988 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2252 - 🔍 Detectando necessidades funcionais não atendidas...
+2025-07-16 21:05:59.045 | INFO     | src.autonomous.intelligence_expansion:detect_unmet_needs:2280 - 🎯 Detectadas 21 necessidades não atendidas
+2025-07-16 21:05:59.045 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4242 - 🎯 Detectadas 21 necessidades funcionais
+2025-07-16 21:05:59.045 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:59.046 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:59.046 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:59.046 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:59.047 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:59.047 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:59.048 | INFO     | src.autonomous.intelligence_expansion:create_feature:2723 - 🏗️ Criando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:59.048 | INFO     | src.autonomous.intelligence_expansion:create_feature:2763 - ✅ Feature criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:59.048 | INFO     | src.autonomous.intelligence_expansion:evolve_functionalities:4261 - ✅ Funcionalidade criada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:59.048 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4289 - 🔗 FASE 3: Integração Total
+2025-07-16 21:05:59.049 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:59.049 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/auto-trading
+2025-07-16 21:05:59.049 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:59.049 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: API faltante: /api/v1/predictive-analytics
+2025-07-16 21:05:59.050 | INFO     | src.autonomous.intelligence_expansion:integrate_feature:3725 - 🔗 Integrando feature: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:59.050 | INFO     | src.autonomous.intelligence_expansion:integrate_all_improvements:4314 - 🔗 Funcionalidade integrada: Resolução de erro recorrente: data_format_conversion_failed
+2025-07-16 21:05:59.050 | INFO     | src.autonomous.intelligence_expansion:validate_and_optimize:4332 - ✅ FASE 4: Validação e Otimização
+2025-07-16 21:05:59.050 | INFO     | __main__:test_complete_expansion_cycle:234 - 📊 Resultados do ciclo de expansão:
+2025-07-16 21:05:59.050 | INFO     | __main__:test_complete_expansion_cycle:235 -   ✅ Expansão cognitiva: False
+2025-07-16 21:05:59.051 | INFO     | __main__:test_complete_expansion_cycle:236 -   ✅ Evolução funcional: False
+2025-07-16 21:05:59.051 | INFO     | __main__:test_complete_expansion_cycle:237 -   ✅ Integração: False
+2025-07-16 21:05:59.051 | INFO     | __main__:test_complete_expansion_cycle:238 -   ✅ Validação: False
+2025-07-16 21:05:59.051 | INFO     | __main__:test_complete_expansion_cycle:244 - 🧠 Capacidades cognitivas implementadas: 0
+2025-07-16 21:05:59.051 | INFO     | __main__:test_complete_expansion_cycle:248 - 🚀 Features funcionais implementadas: 0
+2025-07-16 21:05:59.052 | INFO     | __main__:run_comprehensive_demo:288 - 
+================================================================================
+2025-07-16 21:05:59.052 | INFO     | __main__:run_comprehensive_demo:291 - 📋 SUMÁRIO FINAL
+2025-07-16 21:05:59.052 | INFO     | __main__:run_comprehensive_demo:292 - --------------------------------------------------
+2025-07-16 21:05:59.052 | INFO     | __main__:run_comprehensive_demo:293 - ✅ Todos os testes executados com sucesso!
+2025-07-16 21:05:59.052 | INFO     | __main__:run_comprehensive_demo:294 - ✅ Sistema detectou 5 limitações cognitivas
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:295 - ✅ Sistema detectou 21 necessidades funcionais
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:296 - ✅ Capacidade cognitiva gerada: CapabilityType.ADVANCED_REASONING
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:297 - ✅ Feature funcional gerada: Performance Optimization API
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:298 - ✅ Ciclo completo de expansão executado
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:300 - 
+🌟 SISTEMA DE AUTO-EXPANSÃO DE INTELIGÊNCIA OPERACIONAL! 🌟
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:301 - O sistema demonstrou capacidade de:
+2025-07-16 21:05:59.053 | INFO     | __main__:run_comprehensive_demo:302 -   • Detectar suas próprias limitações cognitivas
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:303 -   • Gerar novas capacidades mentais
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:304 -   • Auto-implementar melhorias no código
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:305 -   • Detectar necessidades funcionais não atendidas
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:306 -   • Criar features completas automaticamente
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:307 -   • Integrar tudo seamlessly no sistema principal
+2025-07-16 21:05:59.054 | INFO     | __main__:run_comprehensive_demo:308 -   • Executar ciclos completos de auto-expansão
+2025-07-16 21:05:59.055 | INFO     | __main__:run_comprehensive_demo:309 - 
+🚀 VERDADEIRA SINGULARIDADE ARTIFICIAL ATINGIDA! 🚀

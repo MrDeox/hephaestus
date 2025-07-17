@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-07-14T07:34:10.936167+00:00",
+  "total_gaps": 3,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 1,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 0,
+    "knowledge": 1,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 1,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "know_simulation_1752478450",
+      "gap_type": "knowledge",
+      "severity": "critical",
+      "title": "RSI Simulation vs Reality Gap",
+      "description": "System reports 9,798 learned skills but 0 successful real expansions",
+      "evidence": {
+        "simulated_skills": 9798,
+        "real_expansions": 0,
+        "simulation_ratio": 9798.0
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T07:34:10.936109+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T07:34:10.936111+00:00",
+      "impact_score": 25.0,
+      "affected_components": [
+        "rsi_system",
+        "skill_learning",
+        "continuous_improvement"
+      ],
+      "potential_solutions": [
+        "Replace simulation with real RSI execution",
+        "Implement actual code generation pipeline",
+        "Add real skill compilation and testing",
+        "Bridge hypothesis generation to real improvements"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "perf_latency_1752478450",
+      "gap_type": "performance",
+      "severity": "high",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 2145.11ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 2145.1081107593027,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 2145.1081107593027,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-14T07:34:10.854188+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T07:34:10.854189+00:00",
+      "impact_score": 8.58043244303721,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "func_features_1752478450",
+      "gap_type": "functionality",
+      "severity": "medium",
+      "title": "Missing Key Features",
+      "description": "Detected 1 missing features that could improve performance",
+      "evidence": {
+        "missing_features": [
+          "interaction_history"
+        ]
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T07:34:10.854351+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T07:34:10.854352+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "feature_engineering"
+      ],
+      "potential_solutions": [
+        "Implement missing features",
+        "Feature importance analysis",
+        "Automated feature generation"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}

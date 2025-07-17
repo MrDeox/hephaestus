@@ -256,6 +256,14 @@ class RSIHypothesisValidator:
                 timestamp=time.time()
             )
     
+    async def validate_hypothesis_comprehensive(self, 
+                                              hypothesis: RSIHypothesis,
+                                              context: Optional[Dict[str, Any]] = None) -> HypothesisValidationResult:
+        """
+        Comprehensive validation method alias for backwards compatibility.
+        """
+        return await self.validate_hypothesis(hypothesis, ValidationLevel.COMPREHENSIVE, context)
+    
     async def _perform_basic_validation(self, 
                                       hypothesis: RSIHypothesis, 
                                       context: Optional[Dict[str, Any]]) -> List[ValidationCheck]:

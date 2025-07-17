@@ -1,0 +1,78 @@
+{
+  "iteration": 10,
+  "start_time": "2025-07-14T06:44:10.264994+00:00",
+  "cev_components": {
+    "knew_more": {
+      "gaps_analyzed": 3,
+      "patterns_learned": 99,
+      "knowledge_quality": 0.49379231368079457,
+      "expansion_rate": 0.23579476910000013
+    },
+    "thought_faster": {
+      "processing_speed_improvement": 0.11190253095359914,
+      "insight_discovery_rate": 0.24117946746749314,
+      "optimization_shortcuts": 3,
+      "acceleration_factor": 1.5513282159785162
+    },
+    "were_more": {
+      "objective_alignment_score": 0.8335603193512212,
+      "value_consistency": 0.9724242880419798,
+      "goal_achievement_rate": 0.7498683069489478,
+      "ethical_compliance": 1.0
+    },
+    "grown_together": {
+      "system_integration_score": 0.7792878826672425,
+      "collaborative_learning_rate": 0.7753352062703728,
+      "knowledge_sharing_efficiency": 0.771349212073534,
+      "collective_intelligence": 0.7386066118196155
+    }
+  },
+  "feedback_updates": {
+    "performance": {
+      "feedback_value": 0.0,
+      "effectiveness": 0.0,
+      "history_length": 10
+    },
+    "success_rate": {
+      "feedback_value": 0.0,
+      "effectiveness": 0.0,
+      "history_length": 10
+    },
+    "meta_efficiency": {
+      "feedback_value": 0.5,
+      "effectiveness": 0.5,
+      "history_length": 10
+    }
+  },
+  "patterns_discovered": [],
+  "decisions_made": [
+    {
+      "type": "parameter",
+      "component": "learning_rate",
+      "adjustment": 0.1,
+      "iteration": 10,
+      "timestamp": "2025-07-14T06:44:10.359153+00:00"
+    },
+    {
+      "type": "architecture",
+      "component": "pipeline",
+      "change": "add_cache_layer",
+      "iteration": 10,
+      "timestamp": "2025-07-14T06:44:10.359157+00:00"
+    },
+    {
+      "type": "process",
+      "component": "validation",
+      "optimization": "parallel_execution",
+      "iteration": 10,
+      "timestamp": "2025-07-14T06:44:10.359159+00:00"
+    }
+  ],
+  "performance_metrics": {
+    "cycle_efficiency": 0.8160878474272413,
+    "learning_velocity": 0.7961877379390628,
+    "pattern_quality": 0.9729400383954344,
+    "decision_effectiveness": 0.7918979710806058,
+    "cev_alignment_score": 0.8651089509895697
+  }
+}

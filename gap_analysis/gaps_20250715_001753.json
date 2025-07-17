@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-07-15T03:17:53.967927+00:00",
+  "total_gaps": 3,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 1,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 1,
+    "knowledge": 0,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "perf_latency_1752549473",
+      "gap_type": "performance",
+      "severity": "high",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 2515.54ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 2515.5372489560737,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 2515.5372489560737,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-15T03:17:53.869997+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-15T03:17:53.869998+00:00",
+      "impact_score": 10.062148995824295,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "func_features_1752549473",
+      "gap_type": "functionality",
+      "severity": "medium",
+      "title": "Missing Key Features",
+      "description": "Detected 2 missing features that could improve performance",
+      "evidence": {
+        "missing_features": [
+          "user_engagement_score",
+          "interaction_history"
+        ]
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-15T03:17:53.870118+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-15T03:17:53.870119+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "feature_engineering"
+      ],
+      "potential_solutions": [
+        "Implement missing features",
+        "Feature importance analysis",
+        "Automated feature generation"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "obs_metrics_1752549473",
+      "gap_type": "observability",
+      "severity": "medium",
+      "title": "Insufficient Metrics Coverage",
+      "description": "Only 70.8% of system components have adequate metrics",
+      "evidence": {
+        "coverage_percentage": 0.7076111629491928
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-15T03:17:53.967861+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-15T03:17:53.967863+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "monitoring",
+        "telemetry"
+      ],
+      "potential_solutions": [
+        "Add missing metrics",
+        "Implement distributed tracing",
+        "Enhance logging coverage",
+        "Setup alerting rules"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}

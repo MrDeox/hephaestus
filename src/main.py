@@ -1,3 +1,6 @@
+from .core.component_initializer import ComponentInitializer
+from .core.configuration_manager import ConfigurationManager
+
 """
 Enhanced RSI Orchestrator with Advanced Metacognitive Monitoring.
 Production-ready Recursive Self-Improvement AI system with comprehensive safety measures.
@@ -89,6 +92,17 @@ except ImportError as e:
     logger.warning("Revenue Generation System not available: {}", str(e))
     REVENUE_GENERATION_AVAILABLE = False
 
+# Real Revenue Engine imports
+try:
+    from src.revenue.real_revenue_engine import RealRevenueEngine
+    from src.api.revenue_endpoints import router as revenue_router, initialize_revenue_api
+    from src.api.revenue_dashboard import dashboard_router, initialize_dashboard
+    from src.revenue.email_marketing_automation import create_email_marketing_automation
+    REAL_REVENUE_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Real Revenue Engine not available: {}", str(e))
+    REAL_REVENUE_AVAILABLE = False
+
 # Email Automation and Marketing imports
 try:
     from src.services.email_automation import (
@@ -111,6 +125,39 @@ try:
 except ImportError as e:
     logger.warning("Meta-Learning System not fully available: {}", str(e))
     META_LEARNING_AVAILABLE = False
+
+# RSI-Agent Co-Evolution System imports
+try:
+    from src.coevolution.rsi_agent_orchestrator import (
+        RSIAgentOrchestrator, create_rsi_agent_orchestrator
+    )
+    from src.agents.rsi_tool_agent import (
+        RSIToolAgent, create_rsi_tool_agent
+    )
+    RSI_AGENT_COEVOLUTION_AVAILABLE = True
+except ImportError as e:
+    logger.warning("RSI-Agent Co-Evolution System not available: {}", str(e))
+    RSI_AGENT_COEVOLUTION_AVAILABLE = False
+
+# Auto-Fix System imports
+try:
+    from src.autonomous.auto_fix_system import (
+        auto_fix_rsi_pipeline_error, AutoFixSystem
+    )
+    AUTO_FIX_SYSTEM_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Auto-Fix System not available: {}", str(e))
+    AUTO_FIX_SYSTEM_AVAILABLE = False
+
+# Architecture Evolution System imports
+try:
+    from src.autonomous.architecture_evolution import (
+        evolve_architecture, ArchitectureEvolution
+    )
+    ARCHITECTURE_EVOLUTION_AVAILABLE = True
+except ImportError as e:
+    logger.warning("Architecture Evolution System not available: {}", str(e))
+    ARCHITECTURE_EVOLUTION_AVAILABLE = False
 
 # Pydantic models for API
 class PredictionRequest(BaseModel):
@@ -187,210 +234,16 @@ class RSIOrchestrator:
         self.streaming_active = False
         
         # Initialize core components
-        self._initialize_core_components()
-        
+        # Core components initialization moved to component_initializer
         # Setup enhanced logging
         self._setup_enhanced_logging()
         
         logger.info("Enhanced RSI Orchestrator initialized for {} environment", environment)
 
-    def _initialize_core_components(self):
-        """Initialize all core RSI components"""
-        try:
-            # Core state and model management
-            self.state_manager = RSIStateManager(initial_state=RSIState())
-            self.model_version_manager = ModelVersionManager()
-            
-            # Learning systems
-            self.online_learner = RSIOnlineLearner()
-            
-            # Enhanced learning systems
-            try:
-                # Create default meta-learning config
-                from src.learning.meta_learning import MetaLearningConfig
-                meta_config = MetaLearningConfig()
-                
-                self.meta_learning_system = RSIMetaLearningSystem(
-                    config=meta_config,
-                    state_manager=self.state_manager,
-                    validator=self.validator
-                )
-                self.continual_learning_system = RSIContinualLearningSystem()
-                self.rl_system = RSIRLSystem()
-                self.lightning_orchestrator = RSILightningOrchestrator()
-            except Exception as e:
-                logger.warning("Some advanced learning systems not available: {}", str(e))
-                self.meta_learning_system = None
-                self.continual_learning_system = None
-                self.rl_system = None
-                self.lightning_orchestrator = None
-            
-            # Validation and safety
-            self.validator = RSIValidator()
-            self.circuit_manager = CircuitBreakerManager()
-            self.sandbox = RSISandbox()
-            
-            # Monitoring and telemetry
-            self.behavioral_monitor = BehavioralMonitor()
-            self.telemetry = TelemetryCollector()
-            
-            # Memory system - initialize to None first to ensure attribute exists
-            self.memory_system = None
-            
-            # Optimization (optional) - initialize later after dependencies are ready
-            self.optuna_optimizer = None
-            self.ray_tune_orchestrator = None
-            
-            # RSI Hypothesis Testing System
-            self.hypothesis_orchestrator = None
-            if HYPOTHESIS_SYSTEM_AVAILABLE:
-                try:
-                    self.hypothesis_orchestrator = RSIHypothesisOrchestrator(
-                        state_manager=self.state_manager,
-                        validator=self.validator,
-                        circuit_breaker=self.circuit_manager,
-                        environment=self.environment
-                    )
-                    logger.info("✅ RSI Hypothesis Testing System initialized")
-                except Exception as e:
-                    logger.warning("Failed to initialize RSI Hypothesis System: {}", str(e))
-            
-            # Real RSI Execution Pipeline
-            self.execution_pipeline = None
-            self.deployment_orchestrator = None
-            if REAL_EXECUTION_AVAILABLE:
-                try:
-                    self.execution_pipeline = create_rsi_execution_pipeline(
-                        state_manager=self.state_manager,
-                        validator=self.validator,
-                        circuit_breaker=self.circuit_manager,
-                        hypothesis_orchestrator=self.hypothesis_orchestrator
-                    )
-                    self.deployment_orchestrator = self.execution_pipeline.deployment_orchestrator
-                    logger.info("✅ Real RSI Execution Pipeline initialized")
-                except Exception as e:
-                    logger.warning("Failed to initialize Real RSI Execution Pipeline: {}", str(e))
-            
-            # Meta-Learning System (Gap Scanner + MML Controller) - Initialize after all dependencies
-            self._initialize_meta_learning_system()
-            
-            # Autonomous Revenue Generation System
-            logger.info("About to initialize revenue generation system...")
-            self._initialize_revenue_generation_system()
-            logger.info(f"Revenue generator status: {getattr(self, 'revenue_generator', 'MISSING')}")
-            
-        except Exception as e:
-            logger.error("Failed to initialize some components: {}", str(e))
 
-    def _initialize_meta_learning_system(self):
-        """Initialize Meta-Learning System components with proper dependency management"""
-        self.gap_scanner = None
-        self.mml_controller = None
-        
-        if META_LEARNING_AVAILABLE:
-            try:
-                # Ensure telemetry and behavioral monitor are available
-                if not hasattr(self, 'telemetry') or self.telemetry is None:
-                    logger.warning("Telemetry not available for Gap Scanner, using fallback")
-                    from src.monitoring.telemetry import TelemetryCollector
-                    self.telemetry = TelemetryCollector()
-                
-                if not hasattr(self, 'behavioral_monitor') or self.behavioral_monitor is None:
-                    logger.warning("Behavioral Monitor not available for Gap Scanner, using fallback")
-                    try:
-                        from src.monitoring.anomaly_detection import BehavioralMonitor
-                        self.behavioral_monitor = BehavioralMonitor()
-                    except Exception as e:
-                        logger.warning("BehavioralMonitor initialization failed: {}, using None", str(e))
-                        self.behavioral_monitor = None
-                
-                # Initialize Gap Scanner
-                self.gap_scanner = create_gap_scanner(
-                    state_manager=self.state_manager,
-                    telemetry_collector=self.telemetry,
-                    behavioral_monitor=self.behavioral_monitor
-                )
-                logger.info("✅ Gap Scanner initialized successfully")
-                
-                # Initialize MML Controller with or without execution pipeline
-                if hasattr(self, 'execution_pipeline') and self.execution_pipeline is not None:
-                    self.mml_controller = create_mml_controller(
-                        gap_scanner=self.gap_scanner,
-                        execution_pipeline=self.execution_pipeline,
-                        state_manager=self.state_manager,
-                        validator=self.validator
-                    )
-                    logger.info("✅ MML Controller initialized successfully with Execution Pipeline")
-                else:
-                    # Initialize with minimal components
-                    self.mml_controller = create_mml_controller(
-                        gap_scanner=self.gap_scanner,
-                        execution_pipeline=None,
-                        state_manager=self.state_manager,
-                        validator=self.validator
-                    )
-                    logger.info("✅ MML Controller initialized successfully (fallback mode)")
-                    
-                logger.info("✅ Meta-Learning System initialized (Gap Scanner + MML Controller)")
-                
-            except Exception as e:
-                logger.error("Failed to initialize Meta-Learning System: {}", str(e))
-                import traceback
-                logger.error("Traceback: {}", traceback.format_exc())
-                # Set to None to prevent further errors
-                self.gap_scanner = None
-                self.mml_controller = None
-        else:
-            logger.warning("Meta-Learning System not available - components will not be initialized")
 
-    def _initialize_revenue_generation_system(self):
-        """Initialize Autonomous Revenue Generation System"""
-        self.revenue_generator = None
-        
-        if REVENUE_GENERATION_AVAILABLE:
-            try:
-                self.revenue_generator = get_revenue_generator()
-                logger.info("✅ Autonomous Revenue Generation System initialized")
-                
-            except Exception as e:
-                logger.error("Failed to initialize Revenue Generation System: {}", str(e))
-                self.revenue_generator = None
-        else:
-            logger.warning("Revenue Generation System not available")
-    
-    def _initialize_email_marketing_system(self):
-        """Initialize Email Marketing and Web Automation System"""
-        self.email_service = None
-        self.email_manager = None
-        self.marketing_engine = None
-        self.web_agent = None
-        
-        if EMAIL_MARKETING_AVAILABLE:
-            try:
-                # Initialize email automation service
-                self.email_service = create_email_automation_service()
-                self.email_manager = create_email_service_manager()
-                
-                # Initialize marketing engine
-                self.marketing_engine = create_marketing_engine()
-                
-                # Initialize web automation agent
-                self.web_agent = create_web_automation_agent()
-                
-                logger.info("✅ Email Marketing and Web Automation System initialized")
-                
-                # Integrate with RSI system for self-improvement
-                self._integrate_marketing_with_rsi()
-                
-            except Exception as e:
-                logger.error("Failed to initialize Email Marketing System: {}", str(e))
-                self.email_service = None
-                self.email_manager = None
-                self.marketing_engine = None
-                self.web_agent = None
-        else:
-            logger.warning("Email Marketing System not available")
-    
+
+
     def _integrate_marketing_with_rsi(self):
         """Integrate marketing system with RSI for continuous improvement"""
         try:
@@ -1777,6 +1630,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include revenue API routers if available
+if REAL_REVENUE_AVAILABLE:
+    app.include_router(revenue_router)
+    app.include_router(dashboard_router)
+
 # WebSocket endpoint for real-time monitoring
 @app.websocket("/ws/monitor")
 async def websocket_monitor(websocket: WebSocket):
@@ -2396,6 +2254,193 @@ async def get_revenue_opportunities():
     except Exception as e:
         logger.error("Error getting revenue opportunities: {}", str(e))
         raise HTTPException(status_code=500, detail=f"Error getting opportunities: {str(e)}")
+
+
+# RSI-Agent Co-Evolution Endpoints
+@app.post("/coevolution/start")
+async def start_rsi_agent_coevolution(initial_targets: Optional[Dict[str, float]] = None):
+    """Start RSI-Agent co-evolution cycle"""
+    try:
+        if not orchestrator.rsi_agent_coevolution_orchestrator:
+            raise HTTPException(status_code=503, detail="RSI-Agent Co-Evolution System not available")
+        
+        logger.info("🔄 Starting RSI-Agent co-evolution cycle...")
+        
+        # Use provided targets or defaults
+        targets = initial_targets or {
+            "revenue_improvement": 0.15,
+            "execution_efficiency": 0.80,
+            "learning_acceleration": 0.20
+        }
+        
+        # Start co-evolution session
+        results = await orchestrator.rsi_agent_coevolution_orchestrator.start_coevolution_cycle(targets)
+        
+        return {
+            "status": "success",
+            "message": "RSI-Agent co-evolution completed",
+            "results": results
+        }
+        
+    except Exception as e:
+        logger.error("Error in RSI-Agent co-evolution: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Co-evolution error: {str(e)}")
+
+@app.get("/coevolution/status")
+async def get_coevolution_status():
+    """Get current status of RSI-Agent co-evolution"""
+    try:
+        if not orchestrator.rsi_agent_coevolution_orchestrator:
+            raise HTTPException(status_code=503, detail="RSI-Agent Co-Evolution System not available")
+        
+        status = await orchestrator.rsi_agent_coevolution_orchestrator.get_coevolution_status()
+        return status
+        
+    except Exception as e:
+        logger.error("Error getting co-evolution status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Status error: {str(e)}")
+
+
+# Auto-Fix System Endpoints
+@app.post("/auto-fix/run")
+async def run_auto_fix():
+    """Execute auto-fix system to detect and correct RSI pipeline errors"""
+    try:
+        if not orchestrator.auto_fix_system:
+            raise HTTPException(status_code=503, detail="Auto-Fix System not available")
+        
+        logger.info("🔧 Manual auto-fix triggered via API")
+        
+        # Execute auto-fix
+        result = await orchestrator.auto_fix_system.auto_fix_rsi_pipeline_error()
+        
+        return {
+            "status": "completed",
+            "message": "Auto-fix system executed successfully",
+            "result": result
+        }
+        
+    except Exception as e:
+        logger.error("Error in auto-fix system: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Auto-fix error: {str(e)}")
+
+@app.get("/auto-fix/status")
+async def get_auto_fix_status():
+    """Get current status of auto-fix system"""
+    try:
+        if not orchestrator.auto_fix_system:
+            raise HTTPException(status_code=503, detail="Auto-Fix System not available")
+        
+        return {
+            "status": "available",
+            "system_initialized": True,
+            "log_paths": orchestrator.auto_fix_system.log_paths,
+            "backup_directory": str(orchestrator.auto_fix_system.applicator.backup_dir)
+        }
+        
+    except Exception as e:
+        logger.error("Error getting auto-fix status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Status error: {str(e)}")
+
+
+# Architecture Evolution Endpoints
+@app.post("/evolve/architecture")
+async def evolve_system_architecture():
+    """Execute architecture evolution system to redesign and improve system structure"""
+    try:
+        if not orchestrator.architecture_evolution:
+            raise HTTPException(status_code=503, detail="Architecture Evolution System not available")
+        
+        logger.info("🏗️ Manual architecture evolution triggered via API")
+        
+        # Execute architecture evolution
+        result = await orchestrator.architecture_evolution.evolve_architecture()
+        
+        return {
+            "status": "completed",
+            "message": "Architecture evolution system executed successfully",
+            "result": result
+        }
+        
+    except Exception as e:
+        logger.error("Error in architecture evolution: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Architecture evolution error: {str(e)}")
+
+@app.get("/evolve/status")
+async def get_architecture_evolution_status():
+    """Get current status of architecture evolution system"""
+    try:
+        if not orchestrator.architecture_evolution:
+            raise HTTPException(status_code=503, detail="Architecture Evolution System not available")
+        
+        return {
+            "status": "available",
+            "system_initialized": True,
+            "analysis_directories": orchestrator.architecture_evolution.analysis_dirs,
+            "last_evolution": "not_implemented_yet",
+            "capabilities": [
+                "Architectural analysis",
+                "Issue detection", 
+                "Refactoring proposals",
+                "Safe code transformation",
+                "Improvement validation"
+            ]
+        }
+        
+    except Exception as e:
+        logger.error("Error getting architecture evolution status: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Status error: {str(e)}")
+
+@app.post("/evolve/analyze")
+async def analyze_current_architecture():
+    """Analyze current system architecture without making changes"""
+    try:
+        if not orchestrator.architecture_evolution:
+            raise HTTPException(status_code=503, detail="Architecture Evolution System not available")
+        
+        logger.info("🔍 Architecture analysis triggered via API")
+        
+        # Just analyze, don't evolve
+        metrics = await orchestrator.architecture_evolution._analyze_current_architecture()
+        issues = await orchestrator.architecture_evolution.issue_detector.detect_issues(metrics)
+        proposals = await orchestrator.architecture_evolution.proposer.propose_refactorings(issues, metrics)
+        
+        return {
+            "status": "completed", 
+            "message": "Architecture analysis completed",
+            "analysis": {
+                "files_analyzed": len(metrics),
+                "issues_detected": len(issues),
+                "proposals_generated": len(proposals),
+                "metrics_summary": {
+                    "total_lines": sum(m.lines_of_code for m in metrics),
+                    "avg_complexity": sum(m.cyclomatic_complexity for m in metrics) / len(metrics) if metrics else 0,
+                    "high_priority_issues": len([i for i in issues if i.severity == "high"])
+                },
+                "top_issues": [
+                    {
+                        "type": issue.issue_type,
+                        "severity": issue.severity,
+                        "file": issue.file_path,
+                        "description": issue.description
+                    }
+                    for issue in sorted(issues, key=lambda x: x.impact_score, reverse=True)[:5]
+                ],
+                "top_proposals": [
+                    {
+                        "type": proposal.refactoring_type,
+                        "description": proposal.description,
+                        "priority": proposal.priority_score,
+                        "risk": proposal.risk_level
+                    }
+                    for proposal in proposals[:3]
+                ]
+            }
+        }
+        
+    except Exception as e:
+        logger.error("Error in architecture analysis: {}", str(e))
+        raise HTTPException(status_code=500, detail=f"Analysis error: {str(e)}")
 
 
 # Email Marketing and Web Automation Endpoints

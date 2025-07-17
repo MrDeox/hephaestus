@@ -1,0 +1,78 @@
+{
+  "iteration": 11,
+  "start_time": "2025-07-14T07:14:10.647024+00:00",
+  "cev_components": {
+    "knew_more": {
+      "gaps_analyzed": 3,
+      "patterns_learned": 105,
+      "knowledge_quality": 0.49588853955951806,
+      "expansion_rate": 0.25937424601000014
+    },
+    "thought_faster": {
+      "processing_speed_improvement": 0.07233688337801836,
+      "insight_discovery_rate": 0.10827337104312998,
+      "optimization_shortcuts": 2,
+      "acceleration_factor": 1.628894626777442
+    },
+    "were_more": {
+      "objective_alignment_score": 0.8336578404291612,
+      "value_consistency": 0.9710573391811113,
+      "goal_achievement_rate": 0.6019669333251049,
+      "ethical_compliance": 1.0
+    },
+    "grown_together": {
+      "system_integration_score": 0.7539450155741725,
+      "collaborative_learning_rate": 0.7372086194150802,
+      "knowledge_sharing_efficiency": 0.8682644812557996,
+      "collective_intelligence": 0.7433932211791557
+    }
+  },
+  "feedback_updates": {
+    "performance": {
+      "feedback_value": 0.0,
+      "effectiveness": 0.0,
+      "history_length": 11
+    },
+    "success_rate": {
+      "feedback_value": 0.0,
+      "effectiveness": 0.0,
+      "history_length": 11
+    },
+    "meta_efficiency": {
+      "feedback_value": 0.5,
+      "effectiveness": 0.5,
+      "history_length": 11
+    }
+  },
+  "patterns_discovered": [],
+  "decisions_made": [
+    {
+      "type": "parameter",
+      "component": "learning_rate",
+      "adjustment": 0.1,
+      "iteration": 11,
+      "timestamp": "2025-07-14T07:14:10.744224+00:00"
+    },
+    {
+      "type": "architecture",
+      "component": "pipeline",
+      "change": "add_cache_layer",
+      "iteration": 11,
+      "timestamp": "2025-07-14T07:14:10.744228+00:00"
+    },
+    {
+      "type": "process",
+      "component": "validation",
+      "optimization": "parallel_execution",
+      "iteration": 11,
+      "timestamp": "2025-07-14T07:14:10.744230+00:00"
+    }
+  ],
+  "performance_metrics": {
+    "cycle_efficiency": 0.7253650985944682,
+    "learning_velocity": 0.6564774649842182,
+    "pattern_quality": 0.8408405917368755,
+    "decision_effectiveness": 0.8476606488863491,
+    "cev_alignment_score": 0.8931755225839079
+  }
+}

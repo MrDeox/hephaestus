@@ -1,0 +1,139 @@
+{
+  "timestamp": "2025-07-14T06:14:09.963829+00:00",
+  "total_gaps": 4,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 1,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 1,
+    "knowledge": 1,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 1,
+    "high": 0,
+    "medium": 3,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "know_simulation_1752473649",
+      "gap_type": "knowledge",
+      "severity": "critical",
+      "title": "RSI Simulation vs Reality Gap",
+      "description": "System reports 9,798 learned skills but 0 successful real expansions",
+      "evidence": {
+        "simulated_skills": 9798,
+        "real_expansions": 0,
+        "simulation_ratio": 9798.0
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T06:14:09.963725+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T06:14:09.963726+00:00",
+      "impact_score": 25.0,
+      "affected_components": [
+        "rsi_system",
+        "skill_learning",
+        "continuous_improvement"
+      ],
+      "potential_solutions": [
+        "Replace simulation with real RSI execution",
+        "Implement actual code generation pipeline",
+        "Add real skill compilation and testing",
+        "Bridge hypothesis generation to real improvements"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "func_features_1752473649",
+      "gap_type": "functionality",
+      "severity": "medium",
+      "title": "Missing Key Features",
+      "description": "Detected 1 missing features that could improve performance",
+      "evidence": {
+        "missing_features": [
+          "interaction_history"
+        ]
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T06:14:09.876781+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T06:14:09.876782+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "feature_engineering"
+      ],
+      "potential_solutions": [
+        "Implement missing features",
+        "Feature importance analysis",
+        "Automated feature generation"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "obs_metrics_1752473649",
+      "gap_type": "observability",
+      "severity": "medium",
+      "title": "Insufficient Metrics Coverage",
+      "description": "Only 61.9% of system components have adequate metrics",
+      "evidence": {
+        "coverage_percentage": 0.6192061115336969
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-14T06:14:09.963638+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T06:14:09.963640+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "monitoring",
+        "telemetry"
+      ],
+      "potential_solutions": [
+        "Add missing metrics",
+        "Implement distributed tracing",
+        "Enhance logging coverage",
+        "Setup alerting rules"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "perf_latency_1752473649",
+      "gap_type": "performance",
+      "severity": "medium",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 1737.20ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 1737.1990200445591,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 1737.1990200445591,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-14T06:14:09.876600+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-14T06:14:09.876602+00:00",
+      "impact_score": 5.211597060133677,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}

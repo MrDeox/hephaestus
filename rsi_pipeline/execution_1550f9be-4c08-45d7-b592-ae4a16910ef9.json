@@ -1,0 +1,16 @@
+{
+  "pipeline_id": "1550f9be-4c08-45d7-b592-ae4a16910ef9",
+  "hypothesis_id": "real_rsi_1752461647",
+  "status": "failed",
+  "start_time": "2025-07-14T02:54:07.327523+00:00",
+  "end_time": "2025-07-14T02:54:07.327708+00:00",
+  "duration_seconds": 0.000185,
+  "success": false,
+  "code_artifact_hash": null,
+  "deployment_id": null,
+  "performance_improvement": null,
+  "error_messages": [
+    "Erro: object NoneType can't be used in 'await' expression"
+  ],
+  "execution_metrics": {}
+}

@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-07-16T23:18:25.090353+00:00",
+  "total_gaps": 2,
+  "gaps_by_type": {
+    "performance": 1,
+    "functionality": 1,
+    "security": 0,
+    "reliability": 0,
+    "scalability": 0,
+    "observability": 0,
+    "knowledge": 0,
+    "capability": 0
+  },
+  "gaps_by_severity": {
+    "critical": 0,
+    "high": 0,
+    "medium": 2,
+    "low": 0,
+    "info": 0
+  },
+  "gaps": [
+    {
+      "gap_id": "func_features_1752707904",
+      "gap_type": "functionality",
+      "severity": "medium",
+      "title": "Missing Key Features",
+      "description": "Detected 1 missing features that could improve performance",
+      "evidence": {
+        "missing_features": [
+          "user_engagement_score"
+        ]
+      },
+      "metrics_data": {},
+      "detected_at": "2025-07-16T23:18:24.971837+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-16T23:18:24.971838+00:00",
+      "impact_score": 6.0,
+      "affected_components": [
+        "feature_engineering"
+      ],
+      "potential_solutions": [
+        "Implement missing features",
+        "Feature importance analysis",
+        "Automated feature generation"
+      ],
+      "status": "open",
+      "assigned_to": null
+    },
+    {
+      "gap_id": "perf_latency_1752707904",
+      "gap_type": "performance",
+      "severity": "medium",
+      "title": "High Latency Detected",
+      "description": "P99 latency is 1637.36ms, exceeding threshold of 1000ms",
+      "evidence": {
+        "p99_latency": 1637.3566266751805,
+        "threshold": 1000,
+        "sample_size": 100
+      },
+      "metrics_data": {
+        "current_p99": 1637.3566266751805,
+        "threshold_p99": 1000
+      },
+      "detected_at": "2025-07-16T23:18:24.971695+00:00",
+      "first_observed": null,
+      "last_updated": "2025-07-16T23:18:24.971696+00:00",
+      "impact_score": 4.912069880025541,
+      "affected_components": [
+        "api_server",
+        "prediction_service"
+      ],
+      "potential_solutions": [
+        "Implement caching layer",
+        "Optimize database queries",
+        "Add horizontal scaling",
+        "Profile and optimize hot paths"
+      ],
+      "status": "open",
+      "assigned_to": null
+    }
+  ]
+}
